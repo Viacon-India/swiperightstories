@@ -141,9 +141,9 @@ function img()
 		jQuery(document).ready(function($) {
 			$("img").not('.content-writer-card-figure img, .about-author-card-figure img').removeAttr("srcset");
 			$("img").not('.content-writer-card-figure img, .about-author-card-figure img').each((index, img) => {
-				img.src = img.src.replace("http://localhost/followthefashion/wp-content/uploads/","https://www.followthefashion.org/wp-content/uploads/");
-				img.src = img.src.replace("http://localhost/projects/followthefashion/wp-content/uploads/","https://www.followthefashion.org/wp-content/uploads/");
-				img.src = img.src.replace("https://www.viaconprojects.com/followthefashion/wp-content/uploads/", "https://www.followthefashion.org/wp-content/uploads/");
+				img.src = img.src.replace("http://localhost/swiperightstories/wp-content/uploads/","https://www.followthefashion.org/wp-content/uploads/");
+				img.src = img.src.replace("http://localhost/projects/swiperightstories/wp-content/uploads/","https://www.followthefashion.org/wp-content/uploads/");
+				img.src = img.src.replace("https://www.viaconprojects.com/swiperightstories/wp-content/uploads/", "https://www.followthefashion.org/wp-content/uploads/");
 			});
 		});
 	</script>
