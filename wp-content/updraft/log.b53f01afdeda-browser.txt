@@ -1,0 +1,918 @@
+0000.128 (R) [notice] Looking for db archive: file name: backup_2024-12-05-1038_localhost_followthefashion_8072fc3d6fda-db.gz
+0000.128 (R) [notice] Archive is expected to be size: 49641.2 KB: OK
+0000.138 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.159 (R) [notice] Unpacking backup... (backup_2024-12-05-1038_localhost_followthefashion_8072fc3d6fda-db.gz, 48.5 Mb)
+0000.272 (R) [notice] Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.343 (R) [notice] Enabling Maintenance mode&#8230;
+0000.375 (R) [notice] Backup of: http://localhost/followthefashion
+0000.396 (R) [notice] Content URL: http://localhost/followthefashion/wp-content
+0000.396 (R) [notice] Uploads URL: http://localhost/followthefashion/wp-content/uploads
+0000.396 (R) [notice] Old table prefix: wp_
+0000.396 (R) [notice] Old ABSPATH: C:\xampp\htdocs\followthefashion/
+0000.397 (R) [notice] UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.397 (R) [notice] Site information: multisite = 0
+0000.397 (R) [notice] Site information: sql_mode = ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0000.398 (R) [notice] New table prefix: 7q_
+0000.409 (R) [notice] Processing table (MyISAM):  wp_options - will restore as: 7q_options
+0000.513 (R) [notice] Atomic restore: dropping original table (wp_options)
+0000.527 (R) [notice] Atomic restore: renaming new table (7q_options) to final table name (wp_options)
+0000.689 (R) [notice] Search and replacing table: wp_options: rows: 2038
+0000.895 (R) [notice] Processing table (MyISAM):  wp_users - will restore as: 7q_users
+0000.922 (R) [notice] Atomic restore: dropping original table (wp_users)
+0000.935 (R) [notice] Atomic restore: renaming new table (7q_users) to final table name (wp_users)
+0000.945 (R) [notice] Search and replacing table: wp_users: rows: 388
+0000.974 (R) [notice] Processing table (MyISAM):  wp_usermeta - will restore as: 7q_usermeta
+0001.176 (R) [notice] Atomic restore: dropping original table (wp_usermeta)
+0001.191 (R) [notice] Atomic restore: renaming new table (7q_usermeta) to final table name (wp_usermeta)
+0001.199 (R) [notice] Search and replacing table: wp_usermeta: rows: 12489
+0001.399 (R) [notice] Searching and replacing reached row: 5000
+0001.635 (R) [notice] Searching and replacing reached row: 10000
+0001.792 (R) [notice] Processing table (MyISAM):  wp_actionscheduler_actions - will restore as: 7q_actionscheduler_actions
+0001.829 (R) [notice] Atomic restore: dropping original table (wp_actionscheduler_actions)
+0001.834 (R) [notice] Atomic restore: renaming new table (7q_actionscheduler_actions) to final table name (wp_actionscheduler_actions)
+0001.844 (R) [notice] Search and replacing table: wp_actionscheduler_actions: rows: 13
+0001.848 (R) [notice] Processing table (MyISAM):  wp_actionscheduler_claims - will restore as: 7q_actionscheduler_claims
+0001.860 (R) [notice] Atomic restore: dropping original table (wp_actionscheduler_claims)
+0001.866 (R) [notice] Atomic restore: renaming new table (7q_actionscheduler_claims) to final table name (wp_actionscheduler_claims)
+0001.873 (R) [notice] Search and replacing table: wp_actionscheduler_claims: rows: 21
+0001.875 (R) [notice] Processing table (MyISAM):  wp_actionscheduler_groups - will restore as: 7q_actionscheduler_groups
+0001.885 (R) [notice] Atomic restore: dropping original table (wp_actionscheduler_groups)
+0001.890 (R) [notice] Atomic restore: renaming new table (7q_actionscheduler_groups) to final table name (wp_actionscheduler_groups)
+0001.898 (R) [notice] Search and replacing table: wp_actionscheduler_groups: rows: 7
+0001.899 (R) [notice] Processing table (MyISAM):  wp_actionscheduler_logs - will restore as: 7q_actionscheduler_logs
+0001.913 (R) [notice] Atomic restore: dropping original table (wp_actionscheduler_logs)
+0001.918 (R) [notice] Database queries processed: 50 in 1.64 seconds
+0001.918 (R) [notice] Atomic restore: renaming new table (7q_actionscheduler_logs) to final table name (wp_actionscheduler_logs)
+0001.926 (R) [notice] Search and replacing table: wp_actionscheduler_logs: rows: 41
+0001.929 (R) [notice] Processing table (MyISAM):  wp_commentmeta - will restore as: 7q_commentmeta
+0001.939 (R) [notice] Atomic restore: dropping original table (wp_commentmeta)
+0001.951 (R) [notice] Atomic restore: renaming new table (7q_commentmeta) to final table name (wp_commentmeta)
+0001.960 (R) [notice] Search and replacing table: wp_commentmeta: rows: 0
+0001.960 (R) [notice] Processing table (MyISAM):  wp_comments - will restore as: 7q_comments
+0002.550 (R) [notice] Atomic restore: dropping original table (wp_comments)
+0002.581 (R) [notice] Atomic restore: renaming new table (7q_comments) to final table name (wp_comments)
+0002.590 (R) [notice] Search and replacing table: wp_comments: rows: 6846
+0003.071 (R) [notice] Searching and replacing reached row: 5000
+0003.275 (R) [notice] Processing table (MyISAM):  wp_links - will restore as: 7q_links
+0003.311 (R) [notice] Atomic restore: dropping original table (wp_links)
+0003.325 (R) [notice] Atomic restore: renaming new table (7q_links) to final table name (wp_links)
+0003.334 (R) [notice] Search and replacing table: wp_links: rows: 7
+0003.336 (R) [notice] Processing table (MyISAM):  wp_postmeta - will restore as: 7q_postmeta
+0003.854 (R) [notice] Database queries processed: 100 in 3.57 seconds
+0004.659 (R) [notice] Atomic restore: dropping original table (wp_postmeta)
+0004.681 (R) [notice] Atomic restore: renaming new table (7q_postmeta) to final table name (wp_postmeta)
+0005.183 (R) [notice] Search and replacing table: wp_postmeta: rows: 193
+0005.702 (R) [notice] Processing table (MyISAM):  wp_posts - will restore as: 7q_posts
+0006.067 (R) [notice] Database queries processed: 150 in 5.79 seconds
+0006.536 (R) [notice] Atomic restore: dropping original table (wp_posts)
+0006.557 (R) [notice] Atomic restore: renaming new table (7q_posts) to final table name (wp_posts)
+0006.568 (R) [notice] Search and replacing table: wp_posts: rows: 9986
+0007.503 (R) [notice] Searching and replacing reached row: 5000
+0009.245 (R) [notice] Processing table (MyISAM):  wp_term_relationships - will restore as: 7q_term_relationships
+0009.333 (R) [notice] Atomic restore: dropping original table (wp_term_relationships)
+0009.351 (R) [notice] Atomic restore: renaming new table (7q_term_relationships) to final table name (wp_term_relationships)
+0009.356 (R) [notice] Skipping this table: data in this table (wp_term_relationships) should not be search/replaced
+0009.356 (R) [notice] Processing table (MyISAM):  wp_term_taxonomy - will restore as: 7q_term_taxonomy
+0009.534 (R) [notice] Atomic restore: dropping original table (wp_term_taxonomy)
+0009.567 (R) [notice] Atomic restore: renaming new table (7q_term_taxonomy) to final table name (wp_term_taxonomy)
+0009.574 (R) [notice] Search and replacing table: wp_term_taxonomy: rows: 4178
+0009.777 (R) [notice] Processing table (MyISAM):  wp_termmeta - will restore as: 7q_termmeta
+0009.791 (R) [notice] Atomic restore: dropping original table (wp_termmeta)
+0009.809 (R) [notice] Atomic restore: renaming new table (7q_termmeta) to final table name (wp_termmeta)
+0009.818 (R) [notice] Search and replacing table: wp_termmeta: rows: 22
+0009.820 (R) [notice] Processing table (MyISAM):  wp_terms - will restore as: 7q_terms
+0009.939 (R) [notice] Atomic restore: dropping original table (wp_terms)
+0009.967 (R) [notice] Atomic restore: renaming new table (7q_terms) to final table name (wp_terms)
+0009.974 (R) [notice] Search and replacing table: wp_terms: rows: 4178
+0010.135 (R) [notice] Processing table (MyISAM):  wp_cegg_autoblog - will restore as: 7q_cegg_autoblog
+0010.163 (R) [notice] Atomic restore: dropping original table (wp_cegg_autoblog)
+0010.172 (R) [notice] Database queries processed: 200 in 9.89 seconds
+0010.172 (R) [notice] Atomic restore: renaming new table (7q_cegg_autoblog) to final table name (wp_cegg_autoblog)
+0010.183 (R) [notice] Search and replacing table: wp_cegg_autoblog: rows: 0
+0010.183 (R) [notice] Processing table (MyISAM):  wp_cegg_price_alert - will restore as: 7q_cegg_price_alert
+0010.195 (R) [notice] Atomic restore: dropping original table (wp_cegg_price_alert)
+0010.200 (R) [notice] Atomic restore: renaming new table (7q_cegg_price_alert) to final table name (wp_cegg_price_alert)
+0010.209 (R) [notice] Search and replacing table: wp_cegg_price_alert: rows: 0
+0010.209 (R) [notice] Processing table (MyISAM):  wp_cegg_price_history - will restore as: 7q_cegg_price_history
+0010.219 (R) [notice] Atomic restore: dropping original table (wp_cegg_price_history)
+0010.224 (R) [notice] Atomic restore: renaming new table (7q_cegg_price_history) to final table name (wp_cegg_price_history)
+0010.233 (R) [notice] Search and replacing table: wp_cegg_price_history: rows: 0
+0010.233 (R) [notice] Processing table (MyISAM):  wp_cegg_product - will restore as: 7q_cegg_product
+0010.244 (R) [notice] Atomic restore: dropping original table (wp_cegg_product)
+0010.249 (R) [notice] Atomic restore: renaming new table (7q_cegg_product) to final table name (wp_cegg_product)
+0010.258 (R) [notice] Search and replacing table: wp_cegg_product: rows: 0
+0010.259 (R) [notice] Processing table (InnoDB):  wp_easywpsmtp_debug_events - will restore as: 7q_easywpsmtp_debug_events
+0010.291 (R) [notice] Atomic restore: dropping original table (wp_easywpsmtp_debug_events)
+0010.303 (R) [notice] Atomic restore: renaming new table (7q_easywpsmtp_debug_events) to final table name (wp_easywpsmtp_debug_events)
+0010.317 (R) [notice] Search and replacing table: wp_easywpsmtp_debug_events: rows: 71
+0010.321 (R) [notice] Processing table (MyISAM):  wp_easywpsmtp_tasks_meta - will restore as: 7q_easywpsmtp_tasks_meta
+0010.337 (R) [notice] Atomic restore: dropping original table (wp_easywpsmtp_tasks_meta)
+0010.341 (R) [notice] Atomic restore: renaming new table (7q_easywpsmtp_tasks_meta) to final table name (wp_easywpsmtp_tasks_meta)
+0010.353 (R) [notice] Search and replacing table: wp_easywpsmtp_tasks_meta: rows: 1
+0010.356 (R) [notice] Processing table (MyISAM):  wp_ewwwio_images - will restore as: 7q_ewwwio_images
+0013.163 (R) [notice] Atomic restore: dropping original table (wp_ewwwio_images)
+0013.173 (R) [notice] Atomic restore: renaming new table (7q_ewwwio_images) to final table name (wp_ewwwio_images)
+0013.185 (R) [notice] Search and replacing table: wp_ewwwio_images: rows: 86240
+0013.631 (R) [notice] Searching and replacing reached row: 5000
+0014.110 (R) [notice] Searching and replacing reached row: 10000
+0014.613 (R) [notice] Searching and replacing reached row: 15000
+0015.155 (R) [notice] Searching and replacing reached row: 20000
+0015.716 (R) [notice] Searching and replacing reached row: 25000
+0016.305 (R) [notice] Searching and replacing reached row: 30000
+0016.913 (R) [notice] Searching and replacing reached row: 35000
+0017.544 (R) [notice] Searching and replacing reached row: 40000
+0018.193 (R) [notice] Searching and replacing reached row: 45000
+0018.872 (R) [notice] Searching and replacing reached row: 50000
+0019.580 (R) [notice] Searching and replacing reached row: 55000
+0020.318 (R) [notice] Searching and replacing reached row: 60000
+0021.088 (R) [notice] Searching and replacing reached row: 65000
+0021.882 (R) [notice] Searching and replacing reached row: 70000
+0022.706 (R) [notice] Searching and replacing reached row: 75000
+0023.558 (R) [notice] Searching and replacing reached row: 80000
+0024.446 (R) [notice] Searching and replacing reached row: 85000
+0025.046 (R) [notice] Processing table (MyISAM):  wp_ewwwio_queue - will restore as: 7q_ewwwio_queue
+0025.046 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0025.063 (R) [notice] Atomic restore: dropping original table (wp_ewwwio_queue)
+0025.186 (R) [notice] Database queries processed: 250 in 24.91 seconds
+0025.187 (R) [notice] Atomic restore: renaming new table (7q_ewwwio_queue) to final table name (wp_ewwwio_queue)
+0025.198 (R) [notice] Search and replacing table: wp_ewwwio_queue: rows: 0
+0025.198 (R) [notice] Processing table (MyISAM):  wp_ig_actions - will restore as: 7q_ig_actions
+0025.227 (R) [notice] Atomic restore: dropping original table (wp_ig_actions)
+0025.232 (R) [notice] Atomic restore: renaming new table (7q_ig_actions) to final table name (wp_ig_actions)
+0025.241 (R) [notice] Search and replacing table: wp_ig_actions: rows: 689
+0025.305 (R) [notice] Processing table (MyISAM):  wp_ig_blocked_emails - will restore as: 7q_ig_blocked_emails
+0025.444 (R) [notice] Atomic restore: dropping original table (wp_ig_blocked_emails)
+0025.449 (R) [notice] Atomic restore: renaming new table (7q_ig_blocked_emails) to final table name (wp_ig_blocked_emails)
+0025.456 (R) [notice] Search and replacing table: wp_ig_blocked_emails: rows: 0
+0025.456 (R) [notice] Processing table (MyISAM):  wp_ig_campaigns - will restore as: 7q_ig_campaigns
+0025.470 (R) [notice] Atomic restore: dropping original table (wp_ig_campaigns)
+0025.475 (R) [notice] Atomic restore: renaming new table (7q_ig_campaigns) to final table name (wp_ig_campaigns)
+0025.484 (R) [notice] Search and replacing table: wp_ig_campaigns: rows: 2
+0025.486 (R) [notice] Processing table (MyISAM):  wp_ig_contact_meta - will restore as: 7q_ig_contact_meta
+0025.495 (R) [notice] Atomic restore: dropping original table (wp_ig_contact_meta)
+0025.500 (R) [notice] Atomic restore: renaming new table (7q_ig_contact_meta) to final table name (wp_ig_contact_meta)
+0025.507 (R) [notice] Search and replacing table: wp_ig_contact_meta: rows: 0
+0025.507 (R) [notice] Processing table (MyISAM):  wp_ig_contactmeta - will restore as: 7q_ig_contactmeta
+0025.518 (R) [notice] Atomic restore: dropping original table (wp_ig_contactmeta)
+0025.522 (R) [notice] Atomic restore: renaming new table (7q_ig_contactmeta) to final table name (wp_ig_contactmeta)
+0025.531 (R) [notice] Search and replacing table: wp_ig_contactmeta: rows: 0
+0025.531 (R) [notice] Processing table (MyISAM):  wp_ig_contacts - will restore as: 7q_ig_contacts
+0025.531 (R) [notice] Requested table collation (utf8_general_ci) is not present - changing to utf8mb3_general_ci.
+0025.545 (R) [notice] Atomic restore: dropping original table (wp_ig_contacts)
+0025.551 (R) [notice] Atomic restore: renaming new table (7q_ig_contacts) to final table name (wp_ig_contacts)
+0025.562 (R) [notice] Search and replacing table: wp_ig_contacts: rows: 50
+0025.569 (R) [notice] Processing table (MyISAM):  wp_ig_contacts_ips - will restore as: 7q_ig_contacts_ips
+0025.579 (R) [notice] Atomic restore: dropping original table (wp_ig_contacts_ips)
+0025.585 (R) [notice] Atomic restore: renaming new table (7q_ig_contacts_ips) to final table name (wp_ig_contacts_ips)
+0025.593 (R) [notice] Search and replacing table: wp_ig_contacts_ips: rows: 1
+0025.594 (R) [notice] Processing table (MyISAM):  wp_ig_custom_fields - will restore as: 7q_ig_custom_fields
+0025.604 (R) [notice] Atomic restore: dropping original table (wp_ig_custom_fields)
+0025.608 (R) [notice] Atomic restore: renaming new table (7q_ig_custom_fields) to final table name (wp_ig_custom_fields)
+0025.616 (R) [notice] Search and replacing table: wp_ig_custom_fields: rows: 0
+0025.617 (R) [notice] Processing table (MyISAM):  wp_ig_forms - will restore as: 7q_ig_forms
+0025.627 (R) [notice] Atomic restore: dropping original table (wp_ig_forms)
+0025.632 (R) [notice] Atomic restore: renaming new table (7q_ig_forms) to final table name (wp_ig_forms)
+0025.639 (R) [notice] Search and replacing table: wp_ig_forms: rows: 1
+0025.641 (R) [notice] Processing table (MyISAM):  wp_ig_links - will restore as: 7q_ig_links
+0025.650 (R) [notice] Atomic restore: dropping original table (wp_ig_links)
+0025.654 (R) [notice] Atomic restore: renaming new table (7q_ig_links) to final table name (wp_ig_links)
+0025.664 (R) [notice] Search and replacing table: wp_ig_links: rows: 0
+0025.664 (R) [notice] Processing table (MyISAM):  wp_ig_lists - will restore as: 7q_ig_lists
+0025.676 (R) [notice] Atomic restore: dropping original table (wp_ig_lists)
+0025.680 (R) [notice] Atomic restore: renaming new table (7q_ig_lists) to final table name (wp_ig_lists)
+0025.688 (R) [notice] Search and replacing table: wp_ig_lists: rows: 2
+0025.689 (R) [notice] Processing table (MyISAM):  wp_ig_lists_contacts - will restore as: 7q_ig_lists_contacts
+0025.700 (R) [notice] Atomic restore: dropping original table (wp_ig_lists_contacts)
+0025.705 (R) [notice] Atomic restore: renaming new table (7q_ig_lists_contacts) to final table name (wp_ig_lists_contacts)
+0025.714 (R) [notice] Search and replacing table: wp_ig_lists_contacts: rows: 51
+0025.719 (R) [notice] Processing table (MyISAM):  wp_ig_mailing_queue - will restore as: 7q_ig_mailing_queue
+0025.756 (R) [notice] Atomic restore: dropping original table (wp_ig_mailing_queue)
+0025.760 (R) [notice] Atomic restore: renaming new table (7q_ig_mailing_queue) to final table name (wp_ig_mailing_queue)
+0025.768 (R) [notice] Search and replacing table: wp_ig_mailing_queue: rows: 327
+0025.882 (R) [notice] Processing table (MyISAM):  wp_ig_queue - will restore as: 7q_ig_queue
+0026.028 (R) [notice] Atomic restore: dropping original table (wp_ig_queue)
+0026.033 (R) [notice] Atomic restore: renaming new table (7q_ig_queue) to final table name (wp_ig_queue)
+0026.045 (R) [notice] Search and replacing table: wp_ig_queue: rows: 0
+0026.045 (R) [notice] Processing table (MyISAM):  wp_ig_sending_queue - will restore as: 7q_ig_sending_queue
+0026.066 (R) [notice] Atomic restore: dropping original table (wp_ig_sending_queue)
+0026.071 (R) [notice] Atomic restore: renaming new table (7q_ig_sending_queue) to final table name (wp_ig_sending_queue)
+0026.079 (R) [notice] Search and replacing table: wp_ig_sending_queue: rows: 441
+0026.116 (R) [notice] Processing table (MyISAM):  wp_ig_temp_import - will restore as: 7q_ig_temp_import
+0026.125 (R) [notice] Atomic restore: dropping original table (wp_ig_temp_import)
+0026.130 (R) [notice] Atomic restore: renaming new table (7q_ig_temp_import) to final table name (wp_ig_temp_import)
+0026.137 (R) [notice] Search and replacing table: wp_ig_temp_import: rows: 0
+0026.137 (R) [notice] Processing table (MyISAM):  wp_ig_unsubscribe_feedback - will restore as: 7q_ig_unsubscribe_feedback
+0026.148 (R) [notice] Atomic restore: dropping original table (wp_ig_unsubscribe_feedback)
+0026.152 (R) [notice] Atomic restore: renaming new table (7q_ig_unsubscribe_feedback) to final table name (wp_ig_unsubscribe_feedback)
+0026.161 (R) [notice] Search and replacing table: wp_ig_unsubscribe_feedback: rows: 0
+0026.161 (R) [notice] Processing table (MyISAM):  wp_ig_wc_cart - will restore as: 7q_ig_wc_cart
+0026.171 (R) [notice] Atomic restore: dropping original table (wp_ig_wc_cart)
+0026.177 (R) [notice] Atomic restore: renaming new table (7q_ig_wc_cart) to final table name (wp_ig_wc_cart)
+0026.186 (R) [notice] Search and replacing table: wp_ig_wc_cart: rows: 0
+0026.186 (R) [notice] Processing table (MyISAM):  wp_ig_wc_guests - will restore as: 7q_ig_wc_guests
+0026.196 (R) [notice] Atomic restore: dropping original table (wp_ig_wc_guests)
+0026.201 (R) [notice] Atomic restore: renaming new table (7q_ig_wc_guests) to final table name (wp_ig_wc_guests)
+0026.211 (R) [notice] Search and replacing table: wp_ig_wc_guests: rows: 0
+0026.211 (R) [notice] Processing table (MyISAM):  wp_ig_workflows - will restore as: 7q_ig_workflows
+0026.222 (R) [notice] Atomic restore: dropping original table (wp_ig_workflows)
+0026.230 (R) [notice] Atomic restore: renaming new table (7q_ig_workflows) to final table name (wp_ig_workflows)
+0026.238 (R) [notice] Search and replacing table: wp_ig_workflows: rows: 4
+0026.239 (R) [notice] Processing table (MyISAM):  wp_ig_workflows_queue - will restore as: 7q_ig_workflows_queue
+0026.250 (R) [notice] Atomic restore: dropping original table (wp_ig_workflows_queue)
+0026.255 (R) [notice] Atomic restore: renaming new table (7q_ig_workflows_queue) to final table name (wp_ig_workflows_queue)
+0026.262 (R) [notice] Search and replacing table: wp_ig_workflows_queue: rows: 1
+0026.263 (R) [notice] Processing table (MyISAM):  wp_jetpack_sync_queue - will restore as: 7q_jetpack_sync_queue
+0026.263 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0026.275 (R) [notice] Atomic restore: dropping original table (wp_jetpack_sync_queue)
+0026.278 (R) [notice] Atomic restore: renaming new table (7q_jetpack_sync_queue) to final table name (wp_jetpack_sync_queue)
+0026.287 (R) [notice] Search and replacing table: wp_jetpack_sync_queue: rows: 0
+0026.287 (R) [notice] Processing table (MyISAM):  wp_litespeed_img_optm - will restore as: 7q_litespeed_img_optm
+0031.872 (R) [notice] Atomic restore: dropping original table (wp_litespeed_img_optm)
+0031.898 (R) [notice] Atomic restore: renaming new table (7q_litespeed_img_optm) to final table name (wp_litespeed_img_optm)
+0031.905 (R) [notice] Search and replacing table: wp_litespeed_img_optm: rows: 477299
+0032.166 (R) [notice] Searching and replacing reached row: 5000
+0032.465 (R) [notice] Searching and replacing reached row: 10000
+0032.800 (R) [notice] Searching and replacing reached row: 15000
+0033.152 (R) [notice] Searching and replacing reached row: 20000
+0033.523 (R) [notice] Searching and replacing reached row: 25000
+0033.921 (R) [notice] Searching and replacing reached row: 30000
+0034.331 (R) [notice] Searching and replacing reached row: 35000
+0034.758 (R) [notice] Searching and replacing reached row: 40000
+0035.198 (R) [notice] Searching and replacing reached row: 45000
+0035.654 (R) [notice] Searching and replacing reached row: 50000
+0036.154 (R) [notice] Searching and replacing reached row: 55000
+0036.639 (R) [notice] Searching and replacing reached row: 60000
+0037.137 (R) [notice] Searching and replacing reached row: 65000
+0037.649 (R) [notice] Searching and replacing reached row: 70000
+0038.179 (R) [notice] Searching and replacing reached row: 75000
+0038.722 (R) [notice] Searching and replacing reached row: 80000
+0039.282 (R) [notice] Searching and replacing reached row: 85000
+0039.858 (R) [notice] Searching and replacing reached row: 90000
+0040.449 (R) [notice] Searching and replacing reached row: 95000
+0041.054 (R) [notice] Searching and replacing reached row: 100000
+0041.675 (R) [notice] Searching and replacing reached row: 105000
+0042.307 (R) [notice] Searching and replacing reached row: 110000
+0042.954 (R) [notice] Searching and replacing reached row: 115000
+0043.613 (R) [notice] Searching and replacing reached row: 120000
+0044.297 (R) [notice] Searching and replacing reached row: 125000
+0044.988 (R) [notice] Searching and replacing reached row: 130000
+0045.695 (R) [notice] Searching and replacing reached row: 135000
+0046.420 (R) [notice] Searching and replacing reached row: 140000
+0047.158 (R) [notice] Searching and replacing reached row: 145000
+0047.909 (R) [notice] Searching and replacing reached row: 150000
+0048.678 (R) [notice] Searching and replacing reached row: 155000
+0049.461 (R) [notice] Searching and replacing reached row: 160000
+0050.260 (R) [notice] Searching and replacing reached row: 165000
+0051.078 (R) [notice] Searching and replacing reached row: 170000
+0051.909 (R) [notice] Searching and replacing reached row: 175000
+0052.751 (R) [notice] Searching and replacing reached row: 180000
+0053.608 (R) [notice] Searching and replacing reached row: 185000
+0054.480 (R) [notice] Searching and replacing reached row: 190000
+0055.367 (R) [notice] Searching and replacing reached row: 195000
+0056.269 (R) [notice] Searching and replacing reached row: 200000
+0057.188 (R) [notice] Searching and replacing reached row: 205000
+0058.121 (R) [notice] Searching and replacing reached row: 210000
+0059.079 (R) [notice] Searching and replacing reached row: 215000
+0060.048 (R) [notice] Searching and replacing reached row: 220000
+0061.026 (R) [notice] Searching and replacing reached row: 225000
+0062.025 (R) [notice] Searching and replacing reached row: 230000
+0063.041 (R) [notice] Searching and replacing reached row: 235000
+0064.074 (R) [notice] Searching and replacing reached row: 240000
+0065.110 (R) [notice] Searching and replacing reached row: 245000
+0066.172 (R) [notice] Searching and replacing reached row: 250000
+0067.249 (R) [notice] Searching and replacing reached row: 255000
+0068.328 (R) [notice] Searching and replacing reached row: 260000
+0069.426 (R) [notice] Searching and replacing reached row: 265000
+0070.538 (R) [notice] Searching and replacing reached row: 270000
+0071.663 (R) [notice] Searching and replacing reached row: 275000
+0072.805 (R) [notice] Searching and replacing reached row: 280000
+0073.961 (R) [notice] Searching and replacing reached row: 285000
+0075.136 (R) [notice] Searching and replacing reached row: 290000
+0076.320 (R) [notice] Searching and replacing reached row: 295000
+0077.521 (R) [notice] Searching and replacing reached row: 300000
+0078.739 (R) [notice] Searching and replacing reached row: 305000
+0079.973 (R) [notice] Searching and replacing reached row: 310000
+0081.217 (R) [notice] Searching and replacing reached row: 315000
+0082.478 (R) [notice] Searching and replacing reached row: 320000
+0083.751 (R) [notice] Searching and replacing reached row: 325000
+0085.040 (R) [notice] Searching and replacing reached row: 330000
+0086.346 (R) [notice] Searching and replacing reached row: 335000
+0087.667 (R) [notice] Searching and replacing reached row: 340000
+0089.001 (R) [notice] Searching and replacing reached row: 345000
+0090.349 (R) [notice] Searching and replacing reached row: 350000
+0091.716 (R) [notice] Searching and replacing reached row: 355000
+0093.097 (R) [notice] Searching and replacing reached row: 360000
+0094.494 (R) [notice] Searching and replacing reached row: 365000
+0095.926 (R) [notice] Searching and replacing reached row: 370000
+0097.352 (R) [notice] Searching and replacing reached row: 375000
+0098.801 (R) [notice] Searching and replacing reached row: 380000
+0100.257 (R) [notice] Searching and replacing reached row: 385000
+0101.730 (R) [notice] Searching and replacing reached row: 390000
+0103.221 (R) [notice] Searching and replacing reached row: 395000
+0104.731 (R) [notice] Searching and replacing reached row: 400000
+0106.252 (R) [notice] Searching and replacing reached row: 405000
+0107.800 (R) [notice] Searching and replacing reached row: 410000
+0109.347 (R) [notice] Searching and replacing reached row: 415000
+0110.906 (R) [notice] Searching and replacing reached row: 420000
+0112.480 (R) [notice] Searching and replacing reached row: 425000
+0114.076 (R) [notice] Searching and replacing reached row: 430000
+0115.684 (R) [notice] Searching and replacing reached row: 435000
+0117.308 (R) [notice] Searching and replacing reached row: 440000
+0118.964 (R) [notice] Searching and replacing reached row: 445000
+0120.617 (R) [notice] Searching and replacing reached row: 450000
+0122.292 (R) [notice] Searching and replacing reached row: 455000
+0123.985 (R) [notice] Searching and replacing reached row: 460000
+0125.706 (R) [notice] Searching and replacing reached row: 465000
+0127.424 (R) [notice] Searching and replacing reached row: 470000
+0129.170 (R) [notice] Searching and replacing reached row: 475000
+0130.998 (R) [notice] Processing table (MyISAM):  wp_litespeed_img_optming - will restore as: 7q_litespeed_img_optming
+0131.010 (R) [notice] Atomic restore: dropping original table (wp_litespeed_img_optming)
+0131.014 (R) [notice] Atomic restore: renaming new table (7q_litespeed_img_optming) to final table name (wp_litespeed_img_optming)
+0131.023 (R) [notice] Search and replacing table: wp_litespeed_img_optming: rows: 0
+0131.023 (R) [notice] Processing table (MyISAM):  wp_post_views - will restore as: 7q_post_views
+0133.367 (R) [notice] Atomic restore: dropping original table (wp_post_views)
+0133.376 (R) [notice] Atomic restore: renaming new table (7q_post_views) to final table name (wp_post_views)
+0133.388 (R) [notice] Search and replacing table: wp_post_views: rows: 89294
+0133.653 (R) [notice] Searching and replacing reached row: 5000
+0133.916 (R) [notice] Searching and replacing reached row: 10000
+0134.182 (R) [notice] Searching and replacing reached row: 15000
+0134.447 (R) [notice] Searching and replacing reached row: 20000
+0134.714 (R) [notice] Searching and replacing reached row: 25000
+0134.981 (R) [notice] Searching and replacing reached row: 30000
+0135.250 (R) [notice] Searching and replacing reached row: 35000
+0135.520 (R) [notice] Searching and replacing reached row: 40000
+0135.791 (R) [notice] Searching and replacing reached row: 45000
+0136.063 (R) [notice] Searching and replacing reached row: 50000
+0136.335 (R) [notice] Searching and replacing reached row: 55000
+0136.610 (R) [notice] Searching and replacing reached row: 60000
+0136.885 (R) [notice] Searching and replacing reached row: 65000
+0137.160 (R) [notice] Searching and replacing reached row: 70000
+0137.437 (R) [notice] Searching and replacing reached row: 75000
+0137.714 (R) [notice] Searching and replacing reached row: 80000
+0137.993 (R) [notice] Searching and replacing reached row: 85000
+0138.236 (R) [notice] Processing table (MyISAM):  wp_smush_dir_images - will restore as: 7q_smush_dir_images
+0138.266 (R) [notice] Atomic restore: dropping original table (wp_smush_dir_images)
+0138.271 (R) [notice] Atomic restore: renaming new table (7q_smush_dir_images) to final table name (wp_smush_dir_images)
+0138.282 (R) [notice] Search and replacing table: wp_smush_dir_images: rows: 289
+0138.304 (R) [notice] Processing table (MyISAM):  wp_vi_wad_ali_orders_info - will restore as: 7q_vi_wad_ali_orders_info
+0138.313 (R) [notice] Atomic restore: dropping original table (wp_vi_wad_ali_orders_info)
+0138.317 (R) [notice] Atomic restore: renaming new table (7q_vi_wad_ali_orders_info) to final table name (wp_vi_wad_ali_orders_info)
+0138.326 (R) [notice] Search and replacing table: wp_vi_wad_ali_orders_info: rows: 0
+0138.326 (R) [notice] Processing table (MyISAM):  wp_vi_wad_error_product_images - will restore as: 7q_vi_wad_error_product_images
+0138.334 (R) [notice] Atomic restore: dropping original table (wp_vi_wad_error_product_images)
+0138.341 (R) [notice] Atomic restore: renaming new table (7q_vi_wad_error_product_images) to final table name (wp_vi_wad_error_product_images)
+0138.349 (R) [notice] Search and replacing table: wp_vi_wad_error_product_images: rows: 0
+0138.349 (R) [notice] Processing table (MyISAM):  wp_wacv_abandoned_cart_record - will restore as: 7q_wacv_abandoned_cart_record
+0138.349 (R) [notice] Requested table collation (utf8_unicode_ci) is not present - changing to utf8mb3_general_ci.
+0138.361 (R) [notice] Atomic restore: dropping original table (wp_wacv_abandoned_cart_record)
+0138.366 (R) [notice] Atomic restore: renaming new table (7q_wacv_abandoned_cart_record) to final table name (wp_wacv_abandoned_cart_record)
+0138.376 (R) [notice] Search and replacing table: wp_wacv_abandoned_cart_record: rows: 0
+0138.376 (R) [notice] Processing table (MyISAM):  wp_wacv_cart_log - will restore as: 7q_wacv_cart_log
+0138.376 (R) [notice] Requested table collation (utf8_unicode_ci) is not present - changing to utf8mb3_general_ci.
+0138.387 (R) [notice] Atomic restore: dropping original table (wp_wacv_cart_log)
+0138.391 (R) [notice] Atomic restore: renaming new table (7q_wacv_cart_log) to final table name (wp_wacv_cart_log)
+0138.399 (R) [notice] Search and replacing table: wp_wacv_cart_log: rows: 0
+0138.399 (R) [notice] Processing table (MyISAM):  wp_wacv_email_history - will restore as: 7q_wacv_email_history
+0138.399 (R) [notice] Requested table collation (utf8_unicode_ci) is not present - changing to utf8mb3_general_ci.
+0138.420 (R) [notice] Atomic restore: dropping original table (wp_wacv_email_history)
+0138.433 (R) [notice] Atomic restore: renaming new table (7q_wacv_email_history) to final table name (wp_wacv_email_history)
+0138.446 (R) [notice] Search and replacing table: wp_wacv_email_history: rows: 0
+0138.446 (R) [notice] Processing table (MyISAM):  wp_wacv_guest_info_record - will restore as: 7q_wacv_guest_info_record
+0138.457 (R) [notice] Atomic restore: dropping original table (wp_wacv_guest_info_record)
+0138.462 (R) [notice] Atomic restore: renaming new table (7q_wacv_guest_info_record) to final table name (wp_wacv_guest_info_record)
+0138.473 (R) [notice] Search and replacing table: wp_wacv_guest_info_record: rows: 0
+0138.473 (R) [notice] Processing table (MyISAM):  wp_wc_admin_note_actions - will restore as: 7q_wc_admin_note_actions
+0138.484 (R) [notice] Atomic restore: dropping original table (wp_wc_admin_note_actions)
+0138.491 (R) [notice] Atomic restore: renaming new table (7q_wc_admin_note_actions) to final table name (wp_wc_admin_note_actions)
+0138.498 (R) [notice] Search and replacing table: wp_wc_admin_note_actions: rows: 4
+0138.500 (R) [notice] Processing table (MyISAM):  wp_wc_admin_notes - will restore as: 7q_wc_admin_notes
+0138.511 (R) [notice] Atomic restore: dropping original table (wp_wc_admin_notes)
+0138.516 (R) [notice] Atomic restore: renaming new table (7q_wc_admin_notes) to final table name (wp_wc_admin_notes)
+0138.528 (R) [notice] Search and replacing table: wp_wc_admin_notes: rows: 4
+0138.530 (R) [notice] Processing table (MyISAM):  wp_wc_category_lookup - will restore as: 7q_wc_category_lookup
+0138.541 (R) [notice] Atomic restore: dropping original table (wp_wc_category_lookup)
+0138.545 (R) [notice] Atomic restore: renaming new table (7q_wc_category_lookup) to final table name (wp_wc_category_lookup)
+0138.552 (R) [notice] Search and replacing table: wp_wc_category_lookup: rows: 3
+0138.553 (R) [notice] Processing table (MyISAM):  wp_wc_customer_lookup - will restore as: 7q_wc_customer_lookup
+0138.565 (R) [notice] Atomic restore: dropping original table (wp_wc_customer_lookup)
+0138.569 (R) [notice] Atomic restore: renaming new table (7q_wc_customer_lookup) to final table name (wp_wc_customer_lookup)
+0138.580 (R) [notice] Search and replacing table: wp_wc_customer_lookup: rows: 0
+0138.581 (R) [notice] Processing table (MyISAM):  wp_wc_download_log - will restore as: 7q_wc_download_log
+0138.590 (R) [notice] Atomic restore: dropping original table (wp_wc_download_log)
+0138.594 (R) [notice] Atomic restore: renaming new table (7q_wc_download_log) to final table name (wp_wc_download_log)
+0138.603 (R) [notice] Search and replacing table: wp_wc_download_log: rows: 0
+0138.603 (R) [notice] Processing table (MyISAM):  wp_wc_order_coupon_lookup - will restore as: 7q_wc_order_coupon_lookup
+0138.612 (R) [notice] Atomic restore: dropping original table (wp_wc_order_coupon_lookup)
+0138.617 (R) [notice] Atomic restore: renaming new table (7q_wc_order_coupon_lookup) to final table name (wp_wc_order_coupon_lookup)
+0138.624 (R) [notice] Search and replacing table: wp_wc_order_coupon_lookup: rows: 0
+0138.624 (R) [notice] Processing table (MyISAM):  wp_wc_order_product_lookup - will restore as: 7q_wc_order_product_lookup
+0138.634 (R) [notice] Atomic restore: dropping original table (wp_wc_order_product_lookup)
+0138.640 (R) [notice] Atomic restore: renaming new table (7q_wc_order_product_lookup) to final table name (wp_wc_order_product_lookup)
+0138.648 (R) [notice] Search and replacing table: wp_wc_order_product_lookup: rows: 0
+0138.648 (R) [notice] Processing table (MyISAM):  wp_wc_order_stats - will restore as: 7q_wc_order_stats
+0138.659 (R) [notice] Atomic restore: dropping original table (wp_wc_order_stats)
+0138.663 (R) [notice] Atomic restore: renaming new table (7q_wc_order_stats) to final table name (wp_wc_order_stats)
+0138.672 (R) [notice] Search and replacing table: wp_wc_order_stats: rows: 0
+0138.673 (R) [notice] Processing table (MyISAM):  wp_wc_order_tax_lookup - will restore as: 7q_wc_order_tax_lookup
+0138.681 (R) [notice] Atomic restore: dropping original table (wp_wc_order_tax_lookup)
+0138.686 (R) [notice] Atomic restore: renaming new table (7q_wc_order_tax_lookup) to final table name (wp_wc_order_tax_lookup)
+0138.693 (R) [notice] Search and replacing table: wp_wc_order_tax_lookup: rows: 0
+0138.694 (R) [notice] Processing table (MyISAM):  wp_wc_product_meta_lookup - will restore as: 7q_wc_product_meta_lookup
+0138.708 (R) [notice] Atomic restore: dropping original table (wp_wc_product_meta_lookup)
+0138.713 (R) [notice] Atomic restore: renaming new table (7q_wc_product_meta_lookup) to final table name (wp_wc_product_meta_lookup)
+0138.722 (R) [notice] Search and replacing table: wp_wc_product_meta_lookup: rows: 4
+0138.723 (R) [notice] Processing table (MyISAM):  wp_wc_tax_rate_classes - will restore as: 7q_wc_tax_rate_classes
+0138.734 (R) [notice] Atomic restore: dropping original table (wp_wc_tax_rate_classes)
+0138.737 (R) [notice] Atomic restore: renaming new table (7q_wc_tax_rate_classes) to final table name (wp_wc_tax_rate_classes)
+0138.744 (R) [notice] Search and replacing table: wp_wc_tax_rate_classes: rows: 2
+0138.745 (R) [notice] Processing table (MyISAM):  wp_wc_webhooks - will restore as: 7q_wc_webhooks
+0138.758 (R) [notice] Atomic restore: dropping original table (wp_wc_webhooks)
+0138.768 (R) [notice] Atomic restore: renaming new table (7q_wc_webhooks) to final table name (wp_wc_webhooks)
+0138.780 (R) [notice] Search and replacing table: wp_wc_webhooks: rows: 0
+0138.780 (R) [notice] Processing table (MyISAM):  wp_wfblockediplog - will restore as: 7q_wfblockediplog
+0138.780 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0138.793 (R) [notice] Atomic restore: dropping original table (wp_wfblockediplog)
+0138.798 (R) [notice] Atomic restore: renaming new table (7q_wfblockediplog) to final table name (wp_wfblockediplog)
+0138.804 (R) [notice] Skipping this table: data in this table (wp_wfblockediplog) should not be search/replaced
+0138.805 (R) [notice] Processing table (MyISAM):  wp_wfblocks7 - will restore as: 7q_wfblocks7
+0138.805 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0138.814 (R) [notice] Atomic restore: dropping original table (wp_wfblocks7)
+0138.819 (R) [notice] Atomic restore: renaming new table (7q_wfblocks7) to final table name (wp_wfblocks7)
+0138.829 (R) [notice] Search and replacing table: wp_wfblocks7: rows: 0
+0138.829 (R) [notice] Processing table (MyISAM):  wp_wfconfig - will restore as: 7q_wfconfig
+0138.829 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0138.856 (R) [notice] Atomic restore: dropping original table (wp_wfconfig)
+0138.860 (R) [notice] Atomic restore: renaming new table (7q_wfconfig) to final table name (wp_wfconfig)
+0138.867 (R) [notice] Search and replacing table: wp_wfconfig: rows: 287
+0138.891 (R) [notice] Processing table (MyISAM):  wp_wfcrawlers - will restore as: 7q_wfcrawlers
+0138.891 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0138.903 (R) [notice] Atomic restore: dropping original table (wp_wfcrawlers)
+0138.907 (R) [notice] Atomic restore: renaming new table (7q_wfcrawlers) to final table name (wp_wfcrawlers)
+0138.916 (R) [notice] Search and replacing table: wp_wfcrawlers: rows: 59
+0138.921 (R) [notice] Processing table (MyISAM):  wp_wffilechanges - will restore as: 7q_wffilechanges
+0138.921 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0138.931 (R) [notice] Atomic restore: dropping original table (wp_wffilechanges)
+0138.935 (R) [notice] Atomic restore: renaming new table (7q_wffilechanges) to final table name (wp_wffilechanges)
+0138.943 (R) [notice] Search and replacing table: wp_wffilechanges: rows: 0
+0138.943 (R) [notice] Processing table (MyISAM):  wp_wffilemods - will restore as: 7q_wffilemods
+0138.943 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0139.227 (R) [notice] Atomic restore: dropping original table (wp_wffilemods)
+0139.245 (R) [notice] Atomic restore: renaming new table (7q_wffilemods) to final table name (wp_wffilemods)
+0139.251 (R) [notice] Skipping this table: data in this table (wp_wffilemods) should not be search/replaced
+0139.251 (R) [notice] Processing table (MyISAM):  wp_wfhits - will restore as: 7q_wfhits
+0139.251 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0139.305 (R) [notice] Atomic restore: dropping original table (wp_wfhits)
+0139.311 (R) [notice] Atomic restore: renaming new table (7q_wfhits) to final table name (wp_wfhits)
+0139.317 (R) [notice] Skipping this table: data in this table (wp_wfhits) should not be search/replaced
+0139.317 (R) [notice] Processing table (MyISAM):  wp_wfhoover - will restore as: 7q_wfhoover
+0139.317 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0139.326 (R) [notice] Atomic restore: dropping original table (wp_wfhoover)
+0139.331 (R) [notice] Atomic restore: renaming new table (7q_wfhoover) to final table name (wp_wfhoover)
+0139.340 (R) [notice] Search and replacing table: wp_wfhoover: rows: 0
+0139.340 (R) [notice] Processing table (MyISAM):  wp_wfissues - will restore as: 7q_wfissues
+0139.340 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0139.352 (R) [notice] Atomic restore: dropping original table (wp_wfissues)
+0139.356 (R) [notice] Atomic restore: renaming new table (7q_wfissues) to final table name (wp_wfissues)
+0139.364 (R) [notice] Search and replacing table: wp_wfissues: rows: 0
+0139.364 (R) [notice] Processing table (MyISAM):  wp_wfknownfilelist - will restore as: 7q_wfknownfilelist
+0139.365 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0139.550 (R) [notice] Atomic restore: dropping original table (wp_wfknownfilelist)
+0139.559 (R) [notice] Atomic restore: renaming new table (7q_wfknownfilelist) to final table name (wp_wfknownfilelist)
+0139.566 (R) [notice] Search and replacing table: wp_wfknownfilelist: rows: 14486
+0139.742 (R) [notice] Searching and replacing reached row: 5000
+0139.943 (R) [notice] Searching and replacing reached row: 10000
+0140.153 (R) [notice] Processing table (MyISAM):  wp_wflivetraffichuman - will restore as: 7q_wflivetraffichuman
+0140.153 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.167 (R) [notice] Atomic restore: dropping original table (wp_wflivetraffichuman)
+0140.176 (R) [notice] Atomic restore: renaming new table (7q_wflivetraffichuman) to final table name (wp_wflivetraffichuman)
+0140.183 (R) [notice] Search and replacing table: wp_wflivetraffichuman: rows: 0
+0140.183 (R) [notice] Processing table (MyISAM):  wp_wflocs - will restore as: 7q_wflocs
+0140.183 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.202 (R) [notice] Atomic restore: dropping original table (wp_wflocs)
+0140.207 (R) [notice] Atomic restore: renaming new table (7q_wflocs) to final table name (wp_wflocs)
+0140.219 (R) [notice] Search and replacing table: wp_wflocs: rows: 186
+0140.233 (R) [notice] Processing table (MyISAM):  wp_wflogins - will restore as: 7q_wflogins
+0140.233 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.308 (R) [notice] Atomic restore: dropping original table (wp_wflogins)
+0140.313 (R) [notice] Atomic restore: renaming new table (7q_wflogins) to final table name (wp_wflogins)
+0140.327 (R) [notice] Search and replacing table: wp_wflogins: rows: 2002
+0140.467 (R) [notice] Processing table (InnoDB):  wp_wfls_2fa_secrets - will restore as: 7q_wfls_2fa_secrets
+0140.468 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.497 (R) [notice] Atomic restore: dropping original table (wp_wfls_2fa_secrets)
+0140.509 (R) [notice] Atomic restore: renaming new table (7q_wfls_2fa_secrets) to final table name (wp_wfls_2fa_secrets)
+0140.525 (R) [notice] Search and replacing table: wp_wfls_2fa_secrets: rows: 0
+0140.525 (R) [notice] Processing table (MEMORY):  wp_wfls_role_counts - will restore as: 7q_wfls_role_counts
+0140.534 (R) [notice] Atomic restore: dropping original table (wp_wfls_role_counts)
+0140.539 (R) [notice] Atomic restore: renaming new table (7q_wfls_role_counts) to final table name (wp_wfls_role_counts)
+0140.545 (R) [notice] Search and replacing table: wp_wfls_role_counts: rows: 0
+0140.545 (R) [notice] Processing table (InnoDB):  wp_wfls_settings - will restore as: 7q_wfls_settings
+0140.545 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.572 (R) [notice] Atomic restore: dropping original table (wp_wfls_settings)
+0140.583 (R) [notice] Atomic restore: renaming new table (7q_wfls_settings) to final table name (wp_wfls_settings)
+0140.598 (R) [notice] Search and replacing table: wp_wfls_settings: rows: 30
+0140.599 (R) [notice] Processing table (MyISAM):  wp_wfnotifications - will restore as: 7q_wfnotifications
+0140.600 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.619 (R) [notice] Atomic restore: dropping original table (wp_wfnotifications)
+0140.625 (R) [notice] Atomic restore: renaming new table (7q_wfnotifications) to final table name (wp_wfnotifications)
+0140.631 (R) [notice] Search and replacing table: wp_wfnotifications: rows: 396
+0140.728 (R) [notice] Processing table (MyISAM):  wp_wfpendingissues - will restore as: 7q_wfpendingissues
+0140.728 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.757 (R) [notice] Atomic restore: dropping original table (wp_wfpendingissues)
+0140.764 (R) [notice] Atomic restore: renaming new table (7q_wfpendingissues) to final table name (wp_wfpendingissues)
+0140.773 (R) [notice] Search and replacing table: wp_wfpendingissues: rows: 0
+0140.774 (R) [notice] Processing table (MyISAM):  wp_wfreversecache - will restore as: 7q_wfreversecache
+0140.774 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.786 (R) [notice] Database queries processed: 500 in 140.51 seconds
+0140.787 (R) [notice] Atomic restore: dropping original table (wp_wfreversecache)
+0140.792 (R) [notice] Atomic restore: renaming new table (7q_wfreversecache) to final table name (wp_wfreversecache)
+0140.799 (R) [notice] Search and replacing table: wp_wfreversecache: rows: 10
+0140.800 (R) [notice] Processing table (MyISAM):  wp_wfsecurityevents - will restore as: 7q_wfsecurityevents
+0140.800 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.810 (R) [notice] Atomic restore: dropping original table (wp_wfsecurityevents)
+0140.815 (R) [notice] Atomic restore: renaming new table (7q_wfsecurityevents) to final table name (wp_wfsecurityevents)
+0140.824 (R) [notice] Search and replacing table: wp_wfsecurityevents: rows: 0
+0140.824 (R) [notice] Processing table (MyISAM):  wp_wfsnipcache - will restore as: 7q_wfsnipcache
+0140.824 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.833 (R) [notice] Atomic restore: dropping original table (wp_wfsnipcache)
+0140.838 (R) [notice] Atomic restore: renaming new table (7q_wfsnipcache) to final table name (wp_wfsnipcache)
+0140.846 (R) [notice] Search and replacing table: wp_wfsnipcache: rows: 0
+0140.847 (R) [notice] Processing table (MyISAM):  wp_wfstatus - will restore as: 7q_wfstatus
+0140.847 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.889 (R) [notice] Atomic restore: dropping original table (wp_wfstatus)
+0140.893 (R) [notice] Atomic restore: renaming new table (7q_wfstatus) to final table name (wp_wfstatus)
+0140.901 (R) [notice] Search and replacing table: wp_wfstatus: rows: 1537
+0140.978 (R) [notice] Processing table (MyISAM):  wp_wftrafficrates - will restore as: 7q_wftrafficrates
+0140.978 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0140.989 (R) [notice] Atomic restore: dropping original table (wp_wftrafficrates)
+0140.994 (R) [notice] Atomic restore: renaming new table (7q_wftrafficrates) to final table name (wp_wftrafficrates)
+0141.000 (R) [notice] Search and replacing table: wp_wftrafficrates: rows: 13
+0141.002 (R) [notice] Processing table (MyISAM):  wp_wfwaffailures - will restore as: 7q_wfwaffailures
+0141.002 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0141.012 (R) [notice] Atomic restore: dropping original table (wp_wfwaffailures)
+0141.016 (R) [notice] Atomic restore: renaming new table (7q_wfwaffailures) to final table name (wp_wfwaffailures)
+0141.025 (R) [notice] Search and replacing table: wp_wfwaffailures: rows: 0
+0141.025 (R) [notice] Processing table (MyISAM):  wp_woocommerce_api_keys - will restore as: 7q_woocommerce_api_keys
+0141.034 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_api_keys)
+0141.039 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_api_keys) to final table name (wp_woocommerce_api_keys)
+0141.047 (R) [notice] Search and replacing table: wp_woocommerce_api_keys: rows: 0
+0141.048 (R) [notice] Processing table (MyISAM):  wp_woocommerce_attribute_taxonomies - will restore as: 7q_woocommerce_attribute_taxonomies
+0141.058 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_attribute_taxonomies)
+0141.061 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_attribute_taxonomies) to final table name (wp_woocommerce_attribute_taxonomies)
+0141.070 (R) [notice] Search and replacing table: wp_woocommerce_attribute_taxonomies: rows: 0
+0141.070 (R) [notice] Processing table (MyISAM):  wp_woocommerce_downloadable_product_permissions - will restore as: 7q_woocommerce_downloadable_product_permissions
+0141.079 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_downloadable_product_permissions)
+0141.085 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_downloadable_product_permissions) to final table name (wp_woocommerce_downloadable_product_permissions)
+0141.095 (R) [notice] Search and replacing table: wp_woocommerce_downloadable_product_permissions: rows: 0
+0141.096 (R) [notice] Processing table (MyISAM):  wp_woocommerce_log - will restore as: 7q_woocommerce_log
+0141.104 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_log)
+0141.109 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_log) to final table name (wp_woocommerce_log)
+0141.117 (R) [notice] Search and replacing table: wp_woocommerce_log: rows: 0
+0141.117 (R) [notice] Processing table (MyISAM):  wp_woocommerce_order_itemmeta - will restore as: 7q_woocommerce_order_itemmeta
+0141.128 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_order_itemmeta)
+0141.135 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_order_itemmeta) to final table name (wp_woocommerce_order_itemmeta)
+0141.142 (R) [notice] Search and replacing table: wp_woocommerce_order_itemmeta: rows: 0
+0141.143 (R) [notice] Processing table (MyISAM):  wp_woocommerce_order_items - will restore as: 7q_woocommerce_order_items
+0141.153 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_order_items)
+0141.159 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_order_items) to final table name (wp_woocommerce_order_items)
+0141.164 (R) [notice] Skipping this table: data in this table (wp_woocommerce_order_items) should not be search/replaced
+0141.164 (R) [notice] Processing table (MyISAM):  wp_woocommerce_payment_tokenmeta - will restore as: 7q_woocommerce_payment_tokenmeta
+0141.173 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_payment_tokenmeta)
+0141.178 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_payment_tokenmeta) to final table name (wp_woocommerce_payment_tokenmeta)
+0141.187 (R) [notice] Search and replacing table: wp_woocommerce_payment_tokenmeta: rows: 0
+0141.187 (R) [notice] Processing table (MyISAM):  wp_woocommerce_payment_tokens - will restore as: 7q_woocommerce_payment_tokens
+0141.197 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_payment_tokens)
+0141.204 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_payment_tokens) to final table name (wp_woocommerce_payment_tokens)
+0141.211 (R) [notice] Search and replacing table: wp_woocommerce_payment_tokens: rows: 0
+0141.212 (R) [notice] Processing table (MyISAM):  wp_woocommerce_sessions - will restore as: 7q_woocommerce_sessions
+0141.223 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_sessions)
+0141.227 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_sessions) to final table name (wp_woocommerce_sessions)
+0141.232 (R) [notice] Skipping this table: data in this table (wp_woocommerce_sessions) should not be search/replaced
+0141.232 (R) [notice] Processing table (MyISAM):  wp_woocommerce_shipping_zone_locations - will restore as: 7q_woocommerce_shipping_zone_locations
+0141.243 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_shipping_zone_locations)
+0141.246 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_shipping_zone_locations) to final table name (wp_woocommerce_shipping_zone_locations)
+0141.255 (R) [notice] Search and replacing table: wp_woocommerce_shipping_zone_locations: rows: 0
+0141.255 (R) [notice] Processing table (MyISAM):  wp_woocommerce_shipping_zone_methods - will restore as: 7q_woocommerce_shipping_zone_methods
+0141.263 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_shipping_zone_methods)
+0141.268 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_shipping_zone_methods) to final table name (wp_woocommerce_shipping_zone_methods)
+0141.276 (R) [notice] Search and replacing table: wp_woocommerce_shipping_zone_methods: rows: 0
+0141.276 (R) [notice] Processing table (MyISAM):  wp_woocommerce_shipping_zones - will restore as: 7q_woocommerce_shipping_zones
+0141.286 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_shipping_zones)
+0141.290 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_shipping_zones) to final table name (wp_woocommerce_shipping_zones)
+0141.298 (R) [notice] Search and replacing table: wp_woocommerce_shipping_zones: rows: 0
+0141.298 (R) [notice] Processing table (MyISAM):  wp_woocommerce_tax_rate_locations - will restore as: 7q_woocommerce_tax_rate_locations
+0141.309 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_tax_rate_locations)
+0141.313 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_tax_rate_locations) to final table name (wp_woocommerce_tax_rate_locations)
+0141.321 (R) [notice] Search and replacing table: wp_woocommerce_tax_rate_locations: rows: 0
+0141.321 (R) [notice] Processing table (MyISAM):  wp_woocommerce_tax_rates - will restore as: 7q_woocommerce_tax_rates
+0141.336 (R) [notice] Atomic restore: dropping original table (wp_woocommerce_tax_rates)
+0141.342 (R) [notice] Atomic restore: renaming new table (7q_woocommerce_tax_rates) to final table name (wp_woocommerce_tax_rates)
+0141.349 (R) [notice] Search and replacing table: wp_woocommerce_tax_rates: rows: 0
+0141.350 (R) [notice] Processing table (MyISAM):  wp_wotv_woo_track_info - will restore as: 7q_wotv_woo_track_info
+0141.362 (R) [notice] Atomic restore: dropping original table (wp_wotv_woo_track_info)
+0141.367 (R) [notice] Atomic restore: renaming new table (7q_wotv_woo_track_info) to final table name (wp_wotv_woo_track_info)
+0141.381 (R) [notice] Search and replacing table: wp_wotv_woo_track_info: rows: 0
+0141.381 (R) [notice] Processing table (MyISAM):  wp_wpforms_payment_meta - will restore as: 7q_wpforms_payment_meta
+0141.381 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0141.392 (R) [notice] Atomic restore: dropping original table (wp_wpforms_payment_meta)
+0141.399 (R) [notice] Atomic restore: renaming new table (7q_wpforms_payment_meta) to final table name (wp_wpforms_payment_meta)
+0141.407 (R) [notice] Search and replacing table: wp_wpforms_payment_meta: rows: 0
+0141.407 (R) [notice] Processing table (MyISAM):  wp_wpforms_payments - will restore as: 7q_wpforms_payments
+0141.407 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0141.418 (R) [notice] Atomic restore: dropping original table (wp_wpforms_payments)
+0141.424 (R) [notice] Atomic restore: renaming new table (7q_wpforms_payments) to final table name (wp_wpforms_payments)
+0141.433 (R) [notice] Search and replacing table: wp_wpforms_payments: rows: 0
+0141.434 (R) [notice] Processing table (MyISAM):  wp_wpforms_tasks_meta - will restore as: 7q_wpforms_tasks_meta
+0141.434 (R) [notice] Requested table character set (utf8) is not present - changing to utf8mb3.
+0141.446 (R) [notice] Atomic restore: dropping original table (wp_wpforms_tasks_meta)
+0141.451 (R) [notice] Atomic restore: renaming new table (7q_wpforms_tasks_meta) to final table name (wp_wpforms_tasks_meta)
+0141.461 (R) [notice] Search and replacing table: wp_wpforms_tasks_meta: rows: 1
+0141.462 (R) [notice] Processing table (MyISAM):  wp_wsal_metadata - will restore as: 7q_wsal_metadata
+0204.250 (R) [notice] Atomic restore: dropping original table (wp_wsal_metadata)
+0204.260 (R) [notice] Atomic restore: renaming new table (7q_wsal_metadata) to final table name (wp_wsal_metadata)
+0204.267 (R) [notice] Search and replacing table: wp_wsal_metadata: rows: 2431268
+0205.142 (R) [notice] Searching and replacing reached row: 5000
+0206.100 (R) [notice] Searching and replacing reached row: 10000
+0207.021 (R) [notice] Searching and replacing reached row: 15000
+0208.050 (R) [notice] Searching and replacing reached row: 20000
+0209.112 (R) [notice] Searching and replacing reached row: 25000
+0210.161 (R) [notice] Searching and replacing reached row: 30000
+0211.245 (R) [notice] Searching and replacing reached row: 35000
+0212.126 (R) [notice] Searching and replacing reached row: 40000
+0212.852 (R) [notice] Searching and replacing reached row: 45000
+0213.609 (R) [notice] Searching and replacing reached row: 50000
+0214.385 (R) [notice] Searching and replacing reached row: 55000
+0215.209 (R) [notice] Searching and replacing reached row: 60000
+0216.064 (R) [notice] Searching and replacing reached row: 65000
+0216.996 (R) [notice] Searching and replacing reached row: 70000
+0217.898 (R) [notice] Searching and replacing reached row: 75000
+0218.839 (R) [notice] Searching and replacing reached row: 80000
+0219.811 (R) [notice] Searching and replacing reached row: 85000
+0220.843 (R) [notice] Searching and replacing reached row: 90000
+0221.875 (R) [notice] Searching and replacing reached row: 95000
+0222.938 (R) [notice] Searching and replacing reached row: 100000
+0224.035 (R) [notice] Searching and replacing reached row: 105000
+0225.187 (R) [notice] Searching and replacing reached row: 110000
+0226.342 (R) [notice] Searching and replacing reached row: 115000
+0227.545 (R) [notice] Searching and replacing reached row: 120000
+0228.748 (R) [notice] Searching and replacing reached row: 125000
+0230.047 (R) [notice] Searching and replacing reached row: 130000
+0231.301 (R) [notice] Searching and replacing reached row: 135000
+0232.584 (R) [notice] Searching and replacing reached row: 140000
+0233.926 (R) [notice] Searching and replacing reached row: 145000
+0235.264 (R) [notice] Searching and replacing reached row: 150000
+0236.636 (R) [notice] Searching and replacing reached row: 155000
+0238.032 (R) [notice] Searching and replacing reached row: 160000
+0239.507 (R) [notice] Searching and replacing reached row: 165000
+0240.980 (R) [notice] Searching and replacing reached row: 170000
+0242.498 (R) [notice] Searching and replacing reached row: 175000
+0244.029 (R) [notice] Searching and replacing reached row: 180000
+0245.608 (R) [notice] Searching and replacing reached row: 185000
+0247.205 (R) [notice] Searching and replacing reached row: 190000
+0248.820 (R) [notice] Searching and replacing reached row: 195000
+0250.473 (R) [notice] Searching and replacing reached row: 200000
+0252.148 (R) [notice] Searching and replacing reached row: 205000
+0253.847 (R) [notice] Searching and replacing reached row: 210000
+0255.563 (R) [notice] Searching and replacing reached row: 215000
+0257.325 (R) [notice] Searching and replacing reached row: 220000
+0259.101 (R) [notice] Searching and replacing reached row: 225000
+0260.915 (R) [notice] Searching and replacing reached row: 230000
+0262.764 (R) [notice] Searching and replacing reached row: 235000
+0264.657 (R) [notice] Searching and replacing reached row: 240000
+0266.556 (R) [notice] Searching and replacing reached row: 245000
+0268.492 (R) [notice] Searching and replacing reached row: 250000
+0270.495 (R) [notice] Searching and replacing reached row: 255000
+0272.484 (R) [notice] Searching and replacing reached row: 260000
+0274.514 (R) [notice] Searching and replacing reached row: 265000
+0276.572 (R) [notice] Searching and replacing reached row: 270000
+0278.654 (R) [notice] Searching and replacing reached row: 275000
+0280.776 (R) [notice] Searching and replacing reached row: 280000
+0282.937 (R) [notice] Searching and replacing reached row: 285000
+0285.117 (R) [notice] Searching and replacing reached row: 290000
+0287.337 (R) [notice] Searching and replacing reached row: 295000
+0289.572 (R) [notice] Searching and replacing reached row: 300000
+0291.856 (R) [notice] Searching and replacing reached row: 305000
+0294.191 (R) [notice] Searching and replacing reached row: 310000
+0296.532 (R) [notice] Searching and replacing reached row: 315000
+0298.870 (R) [notice] Searching and replacing reached row: 320000
+0301.289 (R) [notice] Searching and replacing reached row: 325000
+0303.723 (R) [notice] Searching and replacing reached row: 330000
+0306.171 (R) [notice] Searching and replacing reached row: 335000
+0308.700 (R) [notice] Searching and replacing reached row: 340000
+0311.220 (R) [notice] Searching and replacing reached row: 345000
+0313.755 (R) [notice] Searching and replacing reached row: 350000
+0316.309 (R) [notice] Searching and replacing reached row: 355000
+0318.882 (R) [notice] Searching and replacing reached row: 360000
+0321.526 (R) [notice] Searching and replacing reached row: 365000
+0324.218 (R) [notice] Searching and replacing reached row: 370000
+0326.936 (R) [notice] Searching and replacing reached row: 375000
+0329.625 (R) [notice] Searching and replacing reached row: 380000
+0332.367 (R) [notice] Searching and replacing reached row: 385000
+0335.126 (R) [notice] Searching and replacing reached row: 390000
+0337.927 (R) [notice] Searching and replacing reached row: 395000
+0340.742 (R) [notice] Searching and replacing reached row: 400000
+0343.627 (R) [notice] Searching and replacing reached row: 405000
+0346.541 (R) [notice] Searching and replacing reached row: 410000
+0349.413 (R) [notice] Searching and replacing reached row: 415000
+0352.380 (R) [notice] Searching and replacing reached row: 420000
+0355.363 (R) [notice] Searching and replacing reached row: 425000
+0358.394 (R) [notice] Searching and replacing reached row: 430000
+0361.425 (R) [notice] Searching and replacing reached row: 435000
+0364.511 (R) [notice] Searching and replacing reached row: 440000
+0367.621 (R) [notice] Searching and replacing reached row: 445000
+0370.751 (R) [notice] Searching and replacing reached row: 450000
+0373.884 (R) [notice] Searching and replacing reached row: 455000
+0377.050 (R) [notice] Searching and replacing reached row: 460000
+0380.260 (R) [notice] Searching and replacing reached row: 465000
+0383.499 (R) [notice] Searching and replacing reached row: 470000
+0386.761 (R) [notice] Searching and replacing reached row: 475000
+0390.058 (R) [notice] Searching and replacing reached row: 480000
+0393.385 (R) [notice] Searching and replacing reached row: 485000
+0396.760 (R) [notice] Searching and replacing reached row: 490000
+0400.141 (R) [notice] Searching and replacing reached row: 495000
+0403.523 (R) [notice] Searching and replacing reached row: 500000
+0406.928 (R) [notice] Searching and replacing reached row: 505000
+0410.393 (R) [notice] Searching and replacing reached row: 510000
+0413.860 (R) [notice] Searching and replacing reached row: 515000
+0417.379 (R) [notice] Searching and replacing reached row: 520000
+0420.937 (R) [notice] Searching and replacing reached row: 525000
+0424.526 (R) [notice] Searching and replacing reached row: 530000
+0428.138 (R) [notice] Searching and replacing reached row: 535000
+0431.795 (R) [notice] Searching and replacing reached row: 540000
+0435.447 (R) [notice] Searching and replacing reached row: 545000
+0439.123 (R) [notice] Searching and replacing reached row: 550000
+0442.822 (R) [notice] Searching and replacing reached row: 555000
+0446.563 (R) [notice] Searching and replacing reached row: 560000
+0450.342 (R) [notice] Searching and replacing reached row: 565000
+0454.137 (R) [notice] Searching and replacing reached row: 570000
+0457.956 (R) [notice] Searching and replacing reached row: 575000
+0461.826 (R) [notice] Searching and replacing reached row: 580000
+0465.688 (R) [notice] Searching and replacing reached row: 585000
+0469.620 (R) [notice] Searching and replacing reached row: 590000
+0473.603 (R) [notice] Searching and replacing reached row: 595000
+0477.592 (R) [notice] Searching and replacing reached row: 600000
+0481.626 (R) [notice] Searching and replacing reached row: 605000
+0485.668 (R) [notice] Searching and replacing reached row: 610000
+0489.746 (R) [notice] Searching and replacing reached row: 615000
+0493.896 (R) [notice] Searching and replacing reached row: 620000
+0498.011 (R) [notice] Searching and replacing reached row: 625000
+0502.173 (R) [notice] Searching and replacing reached row: 630000
+0506.352 (R) [notice] Searching and replacing reached row: 635000
+0510.571 (R) [notice] Searching and replacing reached row: 640000
+0514.808 (R) [notice] Searching and replacing reached row: 645000
+0519.103 (R) [notice] Searching and replacing reached row: 650000
+0523.407 (R) [notice] Searching and replacing reached row: 655000
+0527.699 (R) [notice] Searching and replacing reached row: 660000
+0532.034 (R) [notice] Searching and replacing reached row: 665000
+0536.403 (R) [notice] Searching and replacing reached row: 670000
+0540.871 (R) [notice] Searching and replacing reached row: 675000
+0545.347 (R) [notice] Searching and replacing reached row: 680000
+0549.821 (R) [notice] Searching and replacing reached row: 685000
+0554.351 (R) [notice] Searching and replacing reached row: 690000
+0558.880 (R) [notice] Searching and replacing reached row: 695000
+0563.467 (R) [notice] Searching and replacing reached row: 700000
+0568.080 (R) [notice] Searching and replacing reached row: 705000
+0572.672 (R) [notice] Searching and replacing reached row: 710000
+0577.310 (R) [notice] Searching and replacing reached row: 715000
+0582.003 (R) [notice] Searching and replacing reached row: 720000
+0586.688 (R) [notice] Searching and replacing reached row: 725000
+0591.444 (R) [notice] Searching and replacing reached row: 730000
+0596.211 (R) [notice] Searching and replacing reached row: 735000
+0601.120 (R) [notice] Searching and replacing reached row: 740000
+0605.986 (R) [notice] Searching and replacing reached row: 745000
+0610.827 (R) [notice] Searching and replacing reached row: 750000
+0615.739 (R) [notice] Searching and replacing reached row: 755000
+0620.679 (R) [notice] Searching and replacing reached row: 760000
+0625.615 (R) [notice] Searching and replacing reached row: 765000
+0630.613 (R) [notice] Searching and replacing reached row: 770000
+0635.611 (R) [notice] Searching and replacing reached row: 775000
+0640.642 (R) [notice] Searching and replacing reached row: 780000
+0645.738 (R) [notice] Searching and replacing reached row: 785000
+0650.867 (R) [notice] Searching and replacing reached row: 790000
+0656.003 (R) [notice] Searching and replacing reached row: 795000
+0661.204 (R) [notice] Searching and replacing reached row: 800000
+0666.417 (R) [notice] Searching and replacing reached row: 805000
+0671.638 (R) [notice] Searching and replacing reached row: 810000
+0676.910 (R) [notice] Searching and replacing reached row: 815000
+0682.172 (R) [notice] Searching and replacing reached row: 820000
+0687.485 (R) [notice] Searching and replacing reached row: 825000
+0692.808 (R) [notice] Searching and replacing reached row: 830000
+0698.150 (R) [notice] Searching and replacing reached row: 835000
+0703.525 (R) [notice] Searching and replacing reached row: 840000
+0708.976 (R) [notice] Searching and replacing reached row: 845000
+0714.440 (R) [notice] Searching and replacing reached row: 850000
+0719.885 (R) [notice] Searching and replacing reached row: 855000
+0725.530 (R) [notice] Searching and replacing reached row: 860000
+0731.091 (R) [notice] Searching and replacing reached row: 865000
+0737.360 (R) [notice] Searching and replacing reached row: 870000
+0742.913 (R) [notice] Searching and replacing reached row: 875000
+0748.509 (R) [notice] Searching and replacing reached row: 880000
+0754.310 (R) [notice] Searching and replacing reached row: 885000
+0760.037 (R) [notice] Searching and replacing reached row: 890000
+0765.870 (R) [notice] Searching and replacing reached row: 895000
+0771.787 (R) [notice] Searching and replacing reached row: 900000
+0777.420 (R) [notice] Searching and replacing reached row: 905000
+0783.081 (R) [notice] Searching and replacing reached row: 910000
+0788.950 (R) [notice] Searching and replacing reached row: 915000
+0794.657 (R) [notice] Searching and replacing reached row: 920000
+0800.511 (R) [notice] Searching and replacing reached row: 925000
+0806.404 (R) [notice] Searching and replacing reached row: 930000
+0812.555 (R) [notice] Searching and replacing reached row: 935000
+0818.675 (R) [notice] Searching and replacing reached row: 940000
+0824.727 (R) [notice] Searching and replacing reached row: 945000
+0830.954 (R) [notice] Searching and replacing reached row: 950000
+0837.598 (R) [notice] Searching and replacing reached row: 955000
+0843.909 (R) [notice] Searching and replacing reached row: 960000
+0850.044 (R) [notice] Searching and replacing reached row: 965000
+0856.176 (R) [notice] Searching and replacing reached row: 970000
+0862.247 (R) [notice] Searching and replacing reached row: 975000
+0868.530 (R) [notice] Searching and replacing reached row: 980000
+0875.948 (R) [notice] Searching and replacing reached row: 985000
+0882.020 (R) [notice] Searching and replacing reached row: 990000
+0888.269 (R) [notice] Searching and replacing reached row: 995000
+0894.962 (R) [notice] Searching and replacing reached row: 1000000
+0901.463 (R) [notice] Searching and replacing reached row: 1005000
+0908.410 (R) [notice] Searching and replacing reached row: 1010000
+0915.145 (R) [notice] Searching and replacing reached row: 1015000
+0921.691 (R) [notice] Searching and replacing reached row: 1020000
+0928.927 (R) [notice] Searching and replacing reached row: 1025000
+0936.096 (R) [notice] Searching and replacing reached row: 1030000
+0942.707 (R) [notice] Searching and replacing reached row: 1035000
+0950.052 (R) [notice] Searching and replacing reached row: 1040000
+0957.312 (R) [notice] Searching and replacing reached row: 1045000
+0965.026 (R) [notice] Searching and replacing reached row: 1050000
+0971.984 (R) [notice] Searching and replacing reached row: 1055000
+0978.725 (R) [notice] Searching and replacing reached row: 1060000
+0985.747 (R) [notice] Searching and replacing reached row: 1065000
+0992.710 (R) [notice] Searching and replacing reached row: 1070000
+0999.977 (R) [notice] Searching and replacing reached row: 1075000
+1006.991 (R) [notice] Searching and replacing reached row: 1080000
+1013.965 (R) [notice] Searching and replacing reached row: 1085000
+1021.005 (R) [notice] Searching and replacing reached row: 1090000
+1027.766 (R) [notice] Searching and replacing reached row: 1095000
+1034.790 (R) [notice] Searching and replacing reached row: 1100000
+1044.660 (R) [notice] Searching and replacing reached row: 1105000
+1052.123 (R) [notice] Searching and replacing reached row: 1110000
+1059.134 (R) [notice] Searching and replacing reached row: 1115000
+1067.205 (R) [notice] Searching and replacing reached row: 1120000
+1074.634 (R) [notice] Searching and replacing reached row: 1125000
+1082.669 (R) [notice] Searching and replacing reached row: 1130000
+1091.985 (R) [notice] Searching and replacing reached row: 1135000
+1099.252 (R) [notice] Searching and replacing reached row: 1140000
+1106.428 (R) [notice] Searching and replacing reached row: 1145000
+1113.899 (R) [notice] Searching and replacing reached row: 1150000
+1123.002 (R) [notice] Searching and replacing reached row: 1155000
+1132.981 (R) [notice] Searching and replacing reached row: 1160000
+1142.887 (R) [notice] Searching and replacing reached row: 1165000
+1157.204 (R) [notice] Searching and replacing reached row: 1170000
+1164.783 (R) [notice] Searching and replacing reached row: 1175000
+1172.363 (R) [notice] Searching and replacing reached row: 1180000
+1180.212 (R) [notice] Searching and replacing reached row: 1185000
+1188.161 (R) [notice] Searching and replacing reached row: 1190000
+1195.921 (R) [notice] Searching and replacing reached row: 1195000
+1204.017 (R) [notice] Searching and replacing reached row: 1200000
+1211.848 (R) [notice] Searching and replacing reached row: 1205000
+1219.654 (R) [notice] Searching and replacing reached row: 1210000
+1227.688 (R) [notice] Searching and replacing reached row: 1215000
+1235.647 (R) [notice] Searching and replacing reached row: 1220000
+1243.390 (R) [notice] Searching and replacing reached row: 1225000
+1251.744 (R) [notice] Searching and replacing reached row: 1230000
+1259.792 (R) [notice] Searching and replacing reached row: 1235000
+1267.922 (R) [notice] Searching and replacing reached row: 1240000
+1276.291 (R) [notice] Searching and replacing reached row: 1245000
+1284.524 (R) [notice] Searching and replacing reached row: 1250000
+1292.863 (R) [notice] Searching and replacing reached row: 1255000
+1301.417 (R) [notice] Searching and replacing reached row: 1260000
+1309.781 (R) [notice] Searching and replacing reached row: 1265000
+1318.292 (R) [notice] Searching and replacing reached row: 1270000
+1326.831 (R) [notice] Searching and replacing reached row: 1275000
+1335.819 (R) [notice] Searching and replacing reached row: 1280000
+1344.712 (R) [notice] Searching and replacing reached row: 1285000
+1352.848 (R) [notice] Searching and replacing reached row: 1290000
+1361.402 (R) [notice] Searching and replacing reached row: 1295000
+1370.094 (R) [notice] Searching and replacing reached row: 1300000
+1378.315 (R) [notice] Searching and replacing reached row: 1305000
+1386.304 (R) [notice] Searching and replacing reached row: 1310000
+1395.100 (R) [notice] Searching and replacing reached row: 1315000
+1403.725 (R) [notice] Searching and replacing reached row: 1320000
+1412.347 (R) [notice] Searching and replacing reached row: 1325000
+1420.716 (R) [notice] Searching and replacing reached row: 1330000
+1429.120 (R) [notice] Searching and replacing reached row: 1335000
+1438.043 (R) [notice] Searching and replacing reached row: 1340000
+1447.116 (R) [notice] Searching and replacing reached row: 1345000
+1455.612 (R) [notice] Searching and replacing reached row: 1350000
+1464.151 (R) [notice] Searching and replacing reached row: 1355000
+1472.718 (R) [notice] Searching and replacing reached row: 1360000
+1481.225 (R) [notice] Searching and replacing reached row: 1365000
+1489.719 (R) [notice] Searching and replacing reached row: 1370000
+1498.320 (R) [notice] Searching and replacing reached row: 1375000
+1506.919 (R) [notice] Searching and replacing reached row: 1380000
+1515.522 (R) [notice] Searching and replacing reached row: 1385000
+1524.217 (R) [notice] Searching and replacing reached row: 1390000
+1533.123 (R) [notice] Searching and replacing reached row: 1395000
+1541.828 (R) [notice] Searching and replacing reached row: 1400000
+1550.727 (R) [notice] Searching and replacing reached row: 1405000
+1559.769 (R) [notice] Searching and replacing reached row: 1410000
+1569.071 (R) [notice] Searching and replacing reached row: 1415000
+1578.660 (R) [notice] Searching and replacing reached row: 1420000
+1597.303 (R) [notice] Searching and replacing reached row: 1425000
+1614.769 (R) [notice] Searching and replacing reached row: 1430000
