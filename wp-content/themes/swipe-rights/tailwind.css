@@ -1,0 +1,23 @@
+/*
+Theme Name: Yoga Theme
+Author: 
+Author URI: 
+Description: An woocommerce theme with Tailwind CSS.
+Version: 1.0.0
+Text Domain: bks
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply max-w-[1140px] mx-auto my-0;
+}
+
+header {
+    @apply border-b-black border-b flex;
+}
+ul.desk-top-menu {
+    @apply flex gap-8;
+  }
