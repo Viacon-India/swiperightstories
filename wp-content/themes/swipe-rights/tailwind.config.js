@@ -135,7 +135,7 @@ module.exports = {
         auto : "auto",
       },
       colors: {
-        'primary': '#FF8C8C'
+        'primary': '#101010'
       }
     },
   },
