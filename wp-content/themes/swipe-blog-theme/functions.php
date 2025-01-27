@@ -113,17 +113,17 @@ function footer_content() {
 	);
 		
 	add_settings_field( // Option 1
-		'text', // Option ID
+		'content_data', // Option ID
 		'Text', // Label
 		'text_callback', // !important - This is where the args go!
 		'general', // Page it will be displayed (General Settings)
 		'footer_content', // Name of our section
 		array( // The $args
-			'text' // Should match Option ID
+			'content_data' // Should match Option ID
 		)  
 	);
 		
-	register_setting('general','text', 'esc_attr');
+	register_setting('general','content_data', 'esc_attr');
 
 }
 add_action('admin_init', 'footer_content'); //Enable Footer Text in Pages
@@ -134,5 +134,5 @@ function footer_content_callback() { // Section Callback
 	
 function text_callback($argu) {  // Textbox Callback
 	$text = get_option($argu[0]);
-	echo '<textarea rows="4" cols="50" type="text" name="'. $argu[0] .'" id="'. $argu[0] .'">' . $text . '</textarea>';
+	echo '<textarea rows="4" cols="50" type="content_data" name="'. $argu[0] .'" id="'. $argu[0] .'">' . $text . '</textarea>';
 }

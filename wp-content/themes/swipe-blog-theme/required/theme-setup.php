@@ -72,3 +72,34 @@ function register_my_menus()
 		'categories-menu'		=> 'Categories Menu'
 	));
 }
+
+
+function logo_url()
+{
+	$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
+	if (has_custom_logo()) {
+		$custom_logo_id = get_theme_mod('custom_logo');
+		$custom_logo_data = wp_get_attachment_image_src($custom_logo_id, 'full');
+		$custom_logo_url = $custom_logo_data[0];
+		return '<img class="w-full h-full object-contain" src="'.esc_url($custom_logo_url).'" alt="logo"/>';
+	} else {
+		return '<img class="w-full h-full object-contain" src="'.esc_url($logo_url).'" alt="logo"/>';;
+	}
+}
+
+
+
+
+// Check and Add Favicon
+function add_favicon()
+{
+	if (!has_site_icon()  && !is_customize_preview()) {
+		$favicon_url = get_stylesheet_directory_uri() . '/images/favicon.png';
+		echo '<link rel="icon" type="image/gif" href="' . $favicon_url . '" />';
+	} else {
+		echo '<link rel="icon" type="image/gif" href="' . wp_get_attachment_image_url(get_option('site_icon'), 'full') . '">';
+	}
+}
+add_action('wp_head', 'add_favicon');
+add_action('login_head', 'add_favicon');
+add_action('admin_head', 'add_favicon');

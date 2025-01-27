@@ -22,9 +22,9 @@
         <div class="w-full flex justify-between items-center relative">
 
           <div class="navbar-start w-fit">
-            <a href="#">
+            <a href="<?php echo home_url(); ?>">
               <figure class="rounded-none m-0 w-[196px] md:w-[126px] xl:w-[240px] h-[48px] md:h-[38px] xl:h-[42px]">
-                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
+                <?php echo logo_url(); ?>
               </figure>
             </a>
           </div>
