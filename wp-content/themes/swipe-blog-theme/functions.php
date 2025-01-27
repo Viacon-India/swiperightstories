@@ -136,3 +136,30 @@ function text_callback($argu) {  // Textbox Callback
 	$text = get_option($argu[0]);
 	echo '<textarea rows="4" cols="50" type="content_data" name="'. $argu[0] .'" id="'. $argu[0] .'">' . $text . '</textarea>';
 }
+
+/////////////////////////
+//Add Post Views Function
+function set_post_views($postID) {
+	$count_key = 'post_views_count';
+	$count = get_post_meta($postID, $count_key, true);
+	if($count==''){
+		$count = 0;
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+	}else{
+		$count++;
+		update_post_meta($postID, $count_key, $count);
+	}
+}
+
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function track_post_views ($post_id) {
+	if ( !is_single() ) return;
+	if ( empty ( $post_id) ) {
+		global $post;
+		$post_id = $post->ID;    
+	}
+	set_post_views($post_id);
+}
+add_action( 'wp_head', 'track_post_views');

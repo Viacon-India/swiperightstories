@@ -1,4 +1,27 @@
-<?php get_header(); ?>
+<?php get_header();
+
+$recent_posts = get_posts(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'order'   => 'DESC',
+        'posts_per_page' => 1,
+        'orderby' => 'date',
+    )
+);
+
+$most_viewed_posts = get_posts(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'order'   => 'DESC',
+        'posts_per_page' => 7,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+    )
+);
+
+?>
 <div class="page-wrapper pt-[68px]">
     <div class="hero-sec py-[160px] bg-[#FE4705]">
         <div class="container mx-auto">
@@ -68,83 +91,43 @@
             </div>
         </div>
     </div>
+
+    <?php 
+    
+    
+    if($most_viewed_posts) : ?>
+
     <div class="scroller-slider relative pb-[100px]">
         <div class="swiper mySwiper-one bg-[#FFFFFF] pl-10 h-[440px]">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
+
+                <?php foreach($most_viewed_posts as $post_by_viewed) { ?>                                    
+
+                    <div class="swiper-slide">
+                        <div class="scroller-card">
+                            <figure>
+                                <?php if (has_post_thumbnail($post_by_viewed->ID)) : ?>
+                                    <?php echo get_the_post_thumbnail($post_by_viewed->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" class="w-full h-full object-contain" alt="card" />     
+                                <?php endif; ?>
+                                
+                                <div class="scroller-overlay">
+                                    <p><?php echo get_the_title($post_by_viewed->ID); ?></p>
+                                </div>
+                            </figure>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scroller-card">
-                        <figure>
-                            <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                            <div class="scroller-overlay">
-                                <p>I SLEPT WITH SOMEONE & THEN HE LOST INTEREST. WHAT HAPPENED?</p>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
+
+                <?php } ?>                
+                
             </div>
             <div class="swiper-scrollbar"></div>
         </div>
     </div>
+
+    <?php endif; ?>
+
     <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[100px]">
         <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
             <figure>
