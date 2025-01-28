@@ -3,7 +3,7 @@
 add_action('wp_enqueue_scripts', 'my_plugin_assets');
 function my_plugin_assets()
 {
-	$ver = '1.0.'.rand(10,100);	
+	$ver = '1.1.'.rand(10,100);	
 
 	wp_enqueue_script('jquery.min', get_template_directory_uri() . '/js/jquery-3.7.1.min.js', array('jquery'), $ver, true);
 	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/ThemeScript.js', array('jquery'), $ver, true);
