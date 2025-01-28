@@ -1,5 +1,5 @@
 /*
-Theme Name: Yoga Theme
+Theme Name: Yoga Theme2
 Author: 
 Author URI: 
 Description: An woocommerce theme with Tailwind CSS.
@@ -232,10 +232,10 @@ body{
   
   .modal-main{
     @apply mt-[3rem] xl:mt-[4rem] lg:mt-0 flex justify-center xl:w-[90%] 
-  }   
+  }    
 
   .modal-content{
-    @apply bg-[#F8E8DD] w-full h-full fixed animate-[animatetop_.8s] top-0 z-60 transition-all lg:flex
+    @apply bg-[#F8E8DD] w-full h-full fixed animate-[animatetop_.8s] top-[69px] z-60 transition-all lg:flex-col
   }
   
   .input-sec{
@@ -243,31 +243,15 @@ body{
   }
   
   .input-field{
-    @apply block w-full py-[18px] pl-12 text-lg leading-[22px] outline-none border border-[#8D847D]
-    text-[#202020] placeholder:text-[#BDBDBD] bg-[#FFFFFF] font-Poppins font-medium
+    @apply block w-full text-lg outline-none border-b border-[#FFFFFF] text-[46px] md:text-[54px] 2xl:text-[62px] tracking-[1px]
+    text-[#FFFFFF] placeholder:text-[#FFFFFF] bg-transparent font-MorganiteBold uppercase leading-[1] font-medium
   }
   
   .modal-body{
-    @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-5 md:gap-y-6 xl:gap-y-5 gap-x-6 xl:gap-x-10 pr-6 md:pr-8
+    @apply pr-6 md:pr-8
   }
   .toggle-cut{
     @apply absolute top-[20px] right-[20px] md:top-[42px] md:right-[42px] cursor-pointer
-  }
-
-  .modal-card{
-    @apply flex gap-2 items-center
-  }
-  .modal-card-detail{
-    @apply flex flex-col gap-2 
-  }
-  .modal-img-wrapper{
-    @apply mb-0 relative h-[72px] min-w-[76px]
-  }
-  .modal-card-img{
-    @apply w-full h-full object-cover
-  }
-  .modal-card-title{
-    @apply text-[#202020] text-[18px] leading-[1.2] font-Poppins font-medium line-clamp-3 tracking-[0.36px] 
   }
   @keyframes animatetop{
     from {
@@ -279,16 +263,19 @@ body{
   }
 
   .search-card{
-    @apply flex sm:flex-col gap-3
+    @apply w-full flex flex-col-reverse md:flex-row gap-3 justify-between 
   }
   .search-card figure{
-    @apply h-[100px] min-w-[100px] sm:w-full sm:h-[174px] xl:h-[180px] 2xl:h-[214px] mb-2 xl:mb-3 
+    @apply w-full h-[300px] xl:h-[350px] mb-2 xl:mb-3 
   }
   .search-card img{
     @apply w-full h-full object-cover
   }
   .search-card-title{
-    @apply text-[#202020] text-[16px] md:text-[18px] xl:text-[20px] font-Poppins font-medium leading-[1.5]
+    @apply text-[#202020] font-MorganiteBold text-[46px] md:text-[54px] 2xl:text-[62px] tracking-[1px] font-medium leading-[1]
+  }
+  .search-card-author{
+    @apply font-Poppins text-[16px] md:text-[18px] font-medium
   }
 
 /* Footer section */
@@ -988,13 +975,130 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
   
   .common-input-fled {
     @apply input input-bordered input-md w-full max-w-full mb-[8px] md:mb-[8px] lg:mb-[14.25px] xl:mb-[20.5px] 2xl:mb-[26.75px] 3xl:mb-[33px] rounded-none
-  
-    focus-within:outline-none  focus-within:border-primary bg-[#F3EDE9];
+    focus-within:outline-none focus-within:border-primary bg-[#F3EDE9] text-[14px] md:text-[15px] px-[16px];
   }
   
   .common-text-aria {
     @apply relative  textarea textarea-bordered textarea-lg w-full max-w-full h-[98px] md:h-[98px] lg:h-[123.5px] xl:h-[149px] 2xl:h-[174.5px] 3xl:h-[196px] rounded-none
-    focus-within:outline-none  focus-within:border-primary bg-[#F3EDE9];
+    focus-within:outline-none  focus-within:border-primary bg-[#F3EDE9] text-[14px] md:text-[15px] px-[16px];
+  }
+  .contact-us-figure {
+    @apply absolute sm:top-[-75px] 2xl:top-[-76px] 3xl:top-[-76px];
+  }
+  .contact-us-img-sec {
+    @apply hidden md:w-1/2 md:flex;
+  }
+  .from-content-form {
+    @apply relative flex flex-col;
   }
   
-  
+  .from-content-sec {
+    @apply w-full md:w-1/2;
+  }
+
+
+
+
+  /* 404 page sec */
+.error-400-inaner{
+  @apply relative h-auto sm:h-[calc(100vh-8vh)] flex flex-col justify-center items-center
+  pb-[36px] sm:pb-0 
+}
+
+.big-card-center{
+  @apply w-full sm:w-[80%] md:w-[556px] lg:w-[750px] xl:w-[900px] bg-[#F3EDE9] relative h-[201px] sm:h-[160px] md:h-[200px] lg:h-80 xl:h-80 2xl:h-80
+  flex justify-center items-center px-[29px] sm:px-[40px] md:px-[81px]
+  lg:px-[92.25px] xl:px-[103.5px] 2xl:px-[114.75px] 3xl:px-[126px] z-[2]
+}
+
+.big-card-center::after {
+    @apply content-[""] flex sm:hidden absolute w-[60px] h-full -left-6 bg-[#F3EDE9];
+}
+
+.big-card-center::before {
+  @apply content-[""] flex sm:hidden absolute w-[60px] h-full -right-6 bg-[#F3EDE9];
+}
+
+.four-zero-four-title{
+  @apply text-[40px] md:text-[42px] lg:text-[45px] xl:text-[60px] 2xl:text-[80px] 3xl:text-[100px]
+  font-MorganiteBold text-center uppercase leading-[1];
+}
+
+.go-back-cta{
+  @apply relative bg-[#101010] flex flex-row items-center justify-center uppercase font-normal font-Poppins
+  py-[10px] px-[20px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[23px] 3xl:text-[24px]
+  text-white w-fit mt-[16px] md:mt-[36px] lg:mt-[39px] xl:mt-[42px] 2xl:mt-[45px] 3xl:mt-[48px]
+}
+
+.common-card-four-o-four{
+  @apply hidden sm:flex sm:w-[300px] md:w-[380px] lg:w-[434px] py-[10px] px-[20px] border-solid border border-[#000000]
+  bg-white
+}
+
+.common-card-four-o-four-p{
+  @apply text-[32px] md:text-[42px] font-MorganiteBold text-center uppercase leading-[1]
+}
+.single-page-comment-from-submit-button {
+  @apply relative w-full md:w-fit py-[17.5px] md:py-[17.5px] lg:py-[16.5px] px-[46px] md:px-[46px] lg:px-[48px] bg-primary
+  text-white font-Poppins uppercase font-medium text-[14px] md:text-[14px] lg:text-[16px]
+  mt-[28px] sm:mt-[20px] md:mt-[20px] lg:mt-[32px]
+}
+
+/* Author Page */
+.author-card{
+  @apply flex flex-col md:flex-row gap-2 md:gap-4 items-start bg-[#F3EDE9] p-5 md:p-6 mt-[56px]
+}
+.author-fig{
+  @apply mb-0 relative w-[60px] h-[60px] border border-[#101010]
+}
+.author-img{
+  @apply w-full h-full object-cover absolute
+}
+.author-detail{
+  @apply lg:w-5/6
+}
+.author-title{
+  @apply text-primary text-[34px] xl:text-[54px] 2xl:text-[64px] font-MorganiteBold font-bold uppercase leading-[1]
+}
+.author-designation{
+  @apply text-[#0C0C0C] font-Poppins text-[12px] md:text-[14px] uppercase mb-3 mt-1
+}
+.author-card-desc{
+  @apply text-[#0C0C0C] text-[16px] lg:text-[18px] font-Poppins leading-[1.6] mt-2 md:mt-3
+}
+
+/* About page css */
+.about-title{
+  @apply text-[48px] md:text-[54px] lg:text-[60px] xl:text-[72px] 2xl:text-[80px] leading-[1] text-primary font-MorganiteBold 
+  uppercase text-center
+}
+.page-content p{
+  @apply text-[#0C0C0C] text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[1.6] mb-6 font-Poppins last:!mb-0
+}
+.page-content ol{
+  @apply pl-4 lg:pl-6 mb-6 
+}
+.page-content ol li{
+  @apply text-[#0C0C0C] text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[1.7] mb-1 lg:mb-2 font-Poppins list-decimal last:mb-0
+}
+.page-content ul{
+  @apply pl-4 lg:pl-6 mb-6
+}
+.page-content ul li{
+  @apply text-[#0C0C0C] text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[1.6] mb-1 lg:mb-2 list-disc font-Poppins last:mb-0
+}
+.page-content a{
+  @apply hover:text-[#FE4705] border-b border-[#1F2937] cursor-pointer hover:border-[#FE4705]
+}
+.page-content h2{
+  @apply text-[40px] xl:text-[52px] 2xl:text-[60px] leading-[1] text-[#0C0C0C] pt-6 2xl:pt-7 mb-2 font-MorganiteBold uppercase font-bold text-center
+}
+.page-content h3{
+  @apply text-[38px] xl:text-[48px] 2xl:text-[54px] leading-[1] text-[#0C0C0C] pt-6 2xl:pt-7 mb-2 font-MorganiteBold uppercase font-bold text-center
+}
+.page-content h4{
+  @apply text-[36px] xl:text-[46px] 2xl:text-[50px] leading-[1] text-[#0C0C0C] pt-5 2xl:pt-6 mb-2 font-MorganiteBold uppercase font-bold text-center
+}
+.page-content h5{
+  @apply text-[32px] xl:text-[42px] 2xl:text-[48px] leading-[1] text-[#0C0C0C] pt-5 2xl:pt-6 mb-2 font-MorganiteBold uppercase font-bold text-center
+}
