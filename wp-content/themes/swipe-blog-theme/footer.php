@@ -13,7 +13,9 @@ $footer_content = get_option('content_data');
         <div class="footer-main">
             <div class="footer-detail w-full xl:w-[30%]">
                 <figure class="rounded-none m-0 w-[260px] h-[46px]">
-                    <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri(); ?>/images/logo2.png" alt="logo" />
+                    <img class="w-full h-full object-cover" 
+                    src="<?php echo get_template_directory_uri(); ?>/images/logo2.png" 
+                    alt="logo" />
                 </figure>
                 
                 <p class="footer-desc"><?php echo $footer_content; ?></p>
@@ -59,38 +61,37 @@ $footer_content = get_option('content_data');
             </div>
             <div class="footer-category-wrapper flex flex-col md:flex-row md:gap-[110px] justify-between w-full xl:w-[60%] mt-10 xl:mt-0">
                 <div class="footer-list-sec md:w-[40%] xl:w-[50%]">
-                    <div class="footer-box-sec">
-                        <h2 class="footer-list-title">Categories</h2>
+                    <div class="footer-box-sec">                        
+                        <?php
+                        $locations = get_nav_menu_locations();
+                        $cat_menu = wp_get_nav_menu_object( $locations[ 'categories-menu' ] );
+                        $cat_menu_items = wp_get_nav_menu_items($cat_menu->term_id); ?>
+
+                        <h2 class="footer-list-title"><?php echo $cat_menu->name; ?></h2>
                         <ul class="footer-list-box">
+                            <?php foreach ($cat_menu_items as $cat_menu_item) { ?>
                             <li>
-                                <a class="footer-list footer-hov" href="">Business</a>
+                                <a class="footer-list footer-hov" href="<?php echo $cat_menu_item->url; ?>">
+                                    <?php echo $cat_menu_item->title; ?>
+                                </a>
                             </li>
-                            <li>
-                                <a class="footer-list footer-hov" href="">Entertainment</a>
-                            </li>
-                            <li>
-                                <a class="footer-list footer-hov" href="">Lifestyle</a>
-                            </li>
-                            <li>
-                                <a class="footer-list footer-hov" href="">Society</a>
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="footer-box-sec">
-                        <h2 class="footer-list-title">Useful Links</h2>
+                        <?php
+                        $locations = get_nav_menu_locations();
+                        $useful_menu = wp_get_nav_menu_object( $locations[ 'useful-links' ] );
+                        $useful_menu_items = wp_get_nav_menu_items($useful_menu->term_id); ?>
+                        <h2 class="footer-list-title"><?php echo $useful_menu->name; ?></h2>
                         <ul class="footer-list-box">
+                            <?php foreach ($useful_menu_items as $useful_menu_item) { ?>
                             <li>
-                                <a class="footer-list footer-hov" href="">About Us</a>
+                                <a class="footer-list footer-hov" href="<?php echo $useful_menu_item->url; ?>">
+                                    <?php echo $useful_menu_item->title; ?>
+                                </a>
                             </li>
-                            <li>
-                                <a class="footer-list footer-hov" href="">Contact Us</a>
-                            </li>
-                            <li>
-                                <a class="footer-list footer-hov" href="">Write For Us</a>
-                            </li>
-                            <li>
-                                <a class="footer-list footer-hov" href="">Privacy Policy</a>
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
