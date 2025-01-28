@@ -101,6 +101,13 @@
   <div id="myModal" class="h-full" style="width:100% !important; display:none">
 
     <div class="modal-content">
+      <div class="bg-[#FE4705] py-[100px]">
+        <div class="container mx-auto">
+          <div class="input-sec">
+            <input type="text" id="default-search" class="input-field" placeholder="Type & Hit Enter..." required>
+          </div>
+        </div>
+      </div>
       <div class="container mx-auto flex justify-center items-center relative">
         <div class="toggle-cut">
           <span onclick="document.getElementById('myModal').style.display='none'" class="close ">
@@ -114,66 +121,21 @@
 
           <div class="modal-wrapper pt-5 lg:pt-0">
 
-            <div class="input-sec">
-              <div class="w-11 h-11 flex justify-center items-center absolute top-[8.5px] left-2 cursor-pointer">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.0495 16.0772L12.9451 11.9729C14.063 10.6056 14.6126 8.86099 14.4803 7.09988C14.3479 5.33877 13.5437 3.69589 12.2341 2.51107C10.9244 1.32624 9.20946 0.690119 7.44393 0.73427C5.6784 0.778422 3.99739 1.49947 2.74858 2.74828C1.49978 3.99708 0.778727 5.6781 0.734576 7.44363C0.690424 9.20915 1.32655 10.9241 2.51137 12.2338C3.6962 13.5434 5.33907 14.3476 7.10019 14.48C8.8613 14.6123 10.6059 14.0627 11.9732 12.9448L16.0775 17.0492C16.2087 17.1664 16.3797 17.2289 16.5555 17.224C16.7313 17.219 16.8986 17.147 17.0229 17.0226C17.1473 16.8983 17.2193 16.731 17.2243 16.5552C17.2292 16.3794 17.1667 16.2084 17.0495 16.0772ZM7.62644 13.1253C6.53808 13.1258 5.47402 12.8035 4.56888 12.1991C3.66373 11.5948 2.95816 10.7356 2.54143 9.73016C2.1247 8.72475 2.01553 7.61832 2.22773 6.55085C2.43993 5.48339 2.96397 4.50284 3.73356 3.73325C4.50314 2.96367 5.48369 2.43963 6.55116 2.22742C7.61863 2.01522 8.72505 2.12439 9.73047 2.54112C10.7359 2.95785 11.5951 3.66342 12.1994 4.56857C12.8038 5.47372 13.1261 6.53778 13.1256 7.62613C13.1235 9.08397 12.5435 10.4815 11.5127 11.5124C10.4818 12.5432 9.08427 13.1232 7.62644 13.1253Z" fill="#202020" />
-                </svg>
-              </div>
-              <input type="text" id="default-search" class="input-field" placeholder="Type & Hit Enter..." required>
-            </div>
-
             <div class="modal-body-wrapper flex overflow-y-auto h-[72vh] md:h-[72vh] lg:h-[50vh] 2xl:h-[35vh] relative mt-5 md:mt-6 lg:mt-8">
               <div class="modal-body">
 
                 <div class="search-card">
+                  <div class="search-card-detail">
+                    <h3 class="search-card-title"><a href="">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</a></h3>
+                    <span class="search-card-author"> By Deepannita Dey</span>
+                  </div>
                   <a href="">
                     <figure>
                       <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
                     </figure>
                   </a>
-                  <h3 class="search-card-title"><a href="">10 Things To Do In Arkansas In 2022 – Best Activities To Indulge In While On A Trip</a></h3>
                 </div>
-                <div class="search-card">
-                  <a href="">
-                    <figure>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                  </a>
-                  <h3 class="search-card-title"><a href="">10 Things To Do In Arkansas In 2022 – Best Activities To Indulge In While On A Trip</a></h3>
-                </div>
-                <div class="search-card">
-                  <a href="">
-                    <figure>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                  </a>
-                  <h3 class="search-card-title"><a href="">10 Things To Do In Arkansas In 2022 – Best Activities To Indulge In While On A Trip</a></h3>
-                </div>
-                <div class="search-card">
-                  <a href="">
-                    <figure>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                  </a>
-                  <h3 class="search-card-title"><a href="">10 Things To Do In Arkansas In 2022 – Best Activities To Indulge In While On A Trip</a></h3>
-                </div>
-                <div class="search-card">
-                  <a href="">
-                    <figure>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                  </a>
-                  <h3 class="search-card-title"><a href="">10 Things To Do In Arkansas In 2022 – Best Activities To Indulge In While On A Trip</a></h3>
-                </div>
-                <div class="search-card">
-                  <a href="">
-                    <figure>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                  </a>
-                  <h3 class="search-card-title"><a href="">10 Things To Do In Arkansas In 2022 – Best Activities To Indulge In While On A Trip</a></h3>
-                </div>
+
               </div>
             </div>
           </div>
