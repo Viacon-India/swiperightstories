@@ -97,8 +97,9 @@ $footer_content = get_option('content_data');
                 </div>
                 <div class="footer-subscribe-sec md:w-[60%] xl:w-[50%] mt-4 md:mt-0">
                     <h2 class="footer-list-title">Newsletter</h2>
-                    <input class="footer-subs-input" type="text" placeholder="Email Address">
-                    <button class="footer-subs-btn">Subscribe</button>
+                    <?php echo do_shortcode( '[email-subscribers-form id="1"]' ); ?>
+                    <!-- <input class="footer-subs-input" type="text" placeholder="Email Address">
+                    <button class="footer-subs-btn">Subscribe</button> -->
                 </div>
             </div>
         </div>
@@ -116,15 +117,10 @@ $footer_content = get_option('content_data');
 
 </section>
 
-
-
-
 <?php wp_footer(); ?>
 
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
 <?php wp_footer(); ?>
 

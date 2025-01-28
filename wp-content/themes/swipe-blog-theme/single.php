@@ -96,14 +96,15 @@
                             <div class="add-post">
                                 <h2 class="sidebar-title">Table Of Contents</h2>
                                 <ul class="box-item-sec">
-                                    <li class="box-item-wrapper"><button class="box-item box-line">Introduction</button></li>
+                                <?php echo table_of_content('box-item-wrapper', ''); ?>
+                                    <!-- <li class="box-item-wrapper"><button class="box-item box-line">Introduction</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">What Is The Meaning Of The Cross Tattoo....</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">Minimal Cross Tattoos</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">Cross Tattoo With Armband</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">Big Back Cross Tattoo</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">Stylish Chest Cross Tattoo</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">Leg Cross Tattoo For Women</button></li>
-                                    <li class="box-item-wrapper"><button class="box-item box-line">Rib Cross Tattoo For Men</button></li>
+                                    <li class="box-item-wrapper"><button class="box-item box-line">Rib Cross Tattoo For Men</button></li> -->
                                 </ul>
                             </div>
                                                             

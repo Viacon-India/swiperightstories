@@ -1,3 +1,5 @@
+<?php /* Template Name: About Page Template */ ?>
+
 <?php get_header();
 
 while (have_posts()) : the_post(); ?>
@@ -16,5 +18,4 @@ while (have_posts()) : the_post(); ?>
 </section>
 
 <?php endwhile;
-
 get_footer(); ?>
