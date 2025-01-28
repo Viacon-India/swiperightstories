@@ -8,7 +8,14 @@
         $cat_Name = $cat[0]->cat_name;
         $author_id = get_the_author_meta('ID');
         $author_designation = get_the_author_meta('designation', $author_id);
-        $author_name = get_the_author_meta('display_name', $author_id);
+        
+        $first_name = get_user_meta( $author_id, 'first_name', true );
+        $last_name = get_user_meta( $author_id, 'last_name', true );
+        if($first_name) {
+            $author_name = $first_name.' '.$last_name;
+        } else {
+            $author_name = get_the_author_meta('display_name', $author_id);
+        }
         $author_URL = get_author_posts_url($author_id);
         $author_desc = get_the_author_meta('description', $author_id);
         $avater_url = esc_url( get_avatar_url( $author_id ) );
