@@ -5,10 +5,11 @@ function my_plugin_assets()
 {
 	$ver = '1.1.'.rand(10,100);	
 
-	wp_enqueue_script('jquery.min', get_template_directory_uri() . '/js/jquery-3.7.1.min.js', array('jquery'), $ver, true);
+	wp_enqueue_script('jquery.min', get_template_directory_uri() . '/js/jquery-3.7.1.js', array('jquery'), $ver, true);
+	wp_enqueue_script('swiper-bundle.min', get_template_directory_uri() . '/js/swiper-bundle.min.js', array('jquery'), $ver, true);
 	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/themescript.js', array('jquery'), $ver, true);
 
-	wp_enqueue_style('owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', $ver, 'all');
+	// wp_enqueue_style('owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', $ver, 'all');
 
 	wp_enqueue_style('style', get_stylesheet_uri(), $ver, 'all');
 
@@ -46,6 +47,7 @@ if (!function_exists('custom_theme_setup')) {
 
 		add_image_size('single-thumbnail', 	950, 600, true);
 		add_image_size('related-thumbnail', 440, 297, true);
+		add_image_size('contact-thumbnail', 660, 728, true);
 
 		set_post_thumbnail_size(1200, 9999);
 
@@ -103,3 +105,213 @@ function add_favicon()
 add_action('wp_head', 'add_favicon');
 add_action('login_head', 'add_favicon');
 add_action('admin_head', 'add_favicon');
+
+
+
+function toc($html) {
+    if (is_single()) {
+        if (empty($html)) return $html; // Check if HTML content is empty
+        $dom = new DOMDocument();
+
+        // Suppress warnings from malformed HTML and check for errors
+        libxml_use_internal_errors(true);
+
+        // Try to load the HTML and check if it's valid
+        $loaded = @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+
+        // If loading the HTML failed, return the original HTML
+        if (!$loaded) {
+            libxml_clear_errors();
+            return $html;
+        }
+
+        // Proceed if HTML loaded correctly
+        libxml_clear_errors();
+
+        // Loop through all elements to add IDs to h2, h3, h4 elements
+        foreach($dom->getElementsByTagName('*') as $element) {
+            if ($element->tagName == 'h2' || $element->tagName == 'h3' || $element->tagName == 'h4') {
+                $title_id = str_replace(array(' '), array('-'), rtrim(preg_replace('#[\s]{2,}#', ' ', preg_replace('#[^\w\säüöß]#', null, str_replace(array('ä', 'ü', 'ö', 'ß'), array('ae', 'ue', 'oe', 'ss'), html_entity_decode(strtolower($element->textContent)))))));
+                $element->setAttribute('id', $title_id);
+            }
+        }
+        $html = $dom->saveHTML();
+    }
+    return $html;
+}
+add_filter('the_content', 'toc');
+
+
+function table_of_content($li_class, $a_class) {
+    $toc = '';
+    $html = get_the_content();
+
+    if (empty($html)) return $toc; // Return empty TOC if content is empty
+
+    $dom = new DOMDocument();
+
+    // Suppress warnings from malformed HTML and check for errors
+    libxml_use_internal_errors(true);
+
+    // Try to load the HTML and check if it's valid
+    $loaded = @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+
+    // If loading the HTML failed, return an empty TOC
+    if (!$loaded) {
+        libxml_clear_errors();
+        return $toc;
+    }
+
+    // Proceed if HTML loaded correctly
+    libxml_clear_errors();
+
+    // Loop through all elements to generate the TOC
+    foreach($dom->getElementsByTagName('*') as $element) {
+        if ($element->tagName == 'h2' || $element->tagName == 'h3' || $element->tagName == 'h4') {
+            $title_id = str_replace(array(' '), array('-'), rtrim(preg_replace('#[\s]{2,}#', ' ', preg_replace('#[^\w\säüöß]#', null, str_replace(array('ä', 'ü', 'ö', 'ß'), array('ae', 'ue', 'oe', 'ss'), html_entity_decode(strtolower($element->textContent)))))));
+            $toc .= '<li class="' . $li_class . '"><a href="' . get_the_permalink() . '#' . $title_id . '" id="toc-' . $title_id . '" class="' . $a_class . '">' . $element->textContent . '</a></li>';
+        }
+    }
+    return $toc;
+}
+
+
+////////////////////////
+/*---------------------Add Image To Category--------------------*/
+function add_taxonomy_fields($taxonomy ) { ?>
+	<tr class="form-field">
+		<th scope="row" valign="top"><label>Image</label></th>
+		<td>
+			<div style="display: flex;">
+				<div style="line-height: 60px; margin-right: 10px;display: flex;flex-direction: column;gap: 6px;">
+					<input type="hidden" id="tax_image_id" name="tax_image_id" value="" />
+					<button type="button" class="upload_image_button button">Upload/Add image</button>
+					<button type="button" class="remove_image_button button" style="display: none;">Remove image</button>
+				</div>
+				<div id="tax_image" style="float: left; display: none;"><img src="" width="60px" height="60px" alt="LOGO"/></div>
+			</div>
+			<script>
+				jQuery(document).ready( function($){
+					var file_frame;
+					$( 'body' ).on( 'click', '.upload_image_button', function( event ) {
+						event.preventDefault();
+						if ( file_frame ) {
+							file_frame.open();
+							return;
+						}
+						file_frame = wp.media.frames.downloadable_file = wp.media({
+							title: '<?php _e( 'Choose a Logo', 'category-featured-image' ); ?>',
+							button: {
+								text: '<?php _e( 'Use as Logo', 'category-featured-image' ); ?>'
+							},
+							multiple: false
+						});
+						file_frame.on( 'select', function() {
+							var attachment           = file_frame.state().get( 'selection' ).first().toJSON();
+							var attachment_thumbnail = attachment.sizes.full;
+							$( '#tax_image_id').val( attachment.id );
+							$( '#tax_image' ).show().find( 'img' ).attr( 'src', attachment_thumbnail.url );
+							$( '.remove_image_button' ).show();
+						});
+						file_frame.open();
+					});
+
+					$( 'body' ).on( 'click', '.remove_image_button', function() {
+						$( '#tax_image').hide().find( 'img' ).attr( 'src', '' );
+						$( '#tax_image_id' ).val( '' );
+						$( '.remove_image_button' ).hide();
+						return false;
+					});
+				});
+			</script>
+			<div style="clear:both;"></div>
+		</td>
+	</tr><?php
+}
+add_action('category_add_form_fields', 'add_taxonomy_fields', 10, 2);
+function edit_taxonomy_fields( $term, $taxonomy ) {
+	$thumbnail_id = get_term_meta( $term->term_id, 'tax_image_id', true );
+	if ( $thumbnail_id ) {
+		$image = wp_get_attachment_image_url( $thumbnail_id, 'full' );
+	} else {
+		$image = '';
+	} ?>
+	<tr class="form-field">
+		<th scope="row" valign="top"><label>Image</label></th>
+		<td>
+			<div style="display: flex;">
+				<div style="line-height: 60px; margin-right: 10px;display: flex;flex-direction: column;gap: 6px;">
+					<input type="hidden" id="tax_image_id" name="tax_image_id" value="<?php echo $thumbnail_id; ?>" />
+					<button type="button" class="upload_image_button button">Upload/Add image</button>
+					<button type="button" class="remove_image_button button" <?php echo (empty($image))?'style="display: none;"':''; ?>>Remove image</button>
+				</div>
+				<div id="tax_image" style="float: left; <?php echo (empty($image))?'display: none;':''; ?>"><img src="<?php echo esc_url( $image ); ?>" width="60px" height="60px" alt="LOGO"/></div>
+			</div>
+			<script>
+				jQuery(document).ready( function($){
+					var file_frame;
+					$( 'body' ).on( 'click', '.upload_image_button', function( event ) {
+						event.preventDefault();
+						if ( file_frame ) {
+							file_frame.open();
+							return;
+						}
+						file_frame = wp.media.frames.downloadable_file = wp.media({
+							title: '<?php _e( 'Choose a Logo', 'category-featured-image' ); ?>',
+							button: {
+								text: '<?php _e( 'Use as Logo', 'category-featured-image' ); ?>'
+							},
+							multiple: false
+						});
+						file_frame.on( 'select', function() {
+							var attachment           = file_frame.state().get( 'selection' ).first().toJSON();
+							var attachment_thumbnail = attachment.sizes.full;
+							$( '#tax_image_id' ).val( attachment.id );
+							$( '#tax_image' ).show().find( 'img' ).attr( 'src', attachment_thumbnail.url );
+							$( '.remove_image_button' ).show();
+						});
+						file_frame.open();
+					});
+
+					$( 'body' ).on( 'click', '.remove_image_button', function() {
+						$( '#tax_image' ).hide().find( 'img' ).attr( 'src', '' );
+						$( '#tax_image_id' ).val( '' );
+						$( '.remove_image_button' ).hide();
+						return false;
+					});
+				});
+			</script>
+			<div style="clear:both;"></div>
+		</td>
+	</tr><?php
+}
+add_action('category_edit_form_fields', 'edit_taxonomy_fields', 10, 2);
+
+function save_taxonomy_fields( $term_id){
+	if ( isset( $_POST['tax_image_id'] ) ) {
+		update_term_meta( $term_id, 'tax_image_id', $_POST['tax_image_id'] );
+	}
+}
+add_action('edited_category', 'save_taxonomy_fields', 10, 2);
+add_action('create_category', 'save_taxonomy_fields', 10, 2);
+
+
+
+//Code for HSTS
+function wps_enable_strict_transport_security_hsts_header_wordpress() {
+    header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload' );
+}
+add_action('send_headers','wps_enable_strict_transport_security_hsts_header_wordpress' );
+ 
+ 
+add_filter('wpseo_opengraph_url', 'custom_opengraph_url');
+function custom_opengraph_url($url) {
+   
+    $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+ 
+    if (strpos($current_url, '/page/') !== false) {
+        return $current_url;
+    } else {
+        return $url; // Return the original URL for other pages
+    }
+}

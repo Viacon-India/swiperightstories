@@ -5,7 +5,7 @@ $recent_posts = get_posts(
         'post_type' => 'post',
         'post_status' => 'publish',
         'order'   => 'DESC',
-        'posts_per_page' => 1,
+        'posts_per_page' => 5,
         'orderby' => 'date',
     )
 );
@@ -21,26 +21,71 @@ $most_viewed_posts = get_posts(
     )
 );
 
+
+$category_slugs = ['find', 'uncategorized', 'find', 'uncategorized'];
+$category_one_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[0],
+        'posts_per_page' => 3,
+    )
+);
+
+$category_two_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[1],
+        'posts_per_page' => 3,
+    )
+);
+
+$category_three_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[2],
+        'posts_per_page' => 3,
+    )
+);
+
+$category_four_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[3],
+        'posts_per_page' => 3,
+    )
+);
+
+
 ?>
 <div class="page-wrapper pt-[68px]">
     <div class="hero-sec py-[160px] bg-[#FE4705]">
         <div class="container mx-auto">
-            <div class="hero-main">
-                <div class="hero-detail">
-                    <h2 class="heroSecTitle">Breaking Down Tinder’s 2023 Future Of Dating Report: A Dating Renaissance</h2>
-                    <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
-                    <a class="readMoreBtn group" href="">READ MORE
-                        <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
-                        </svg>
-                    </a>
+            <?php if($recent_posts[0]) : ?>
+                <div class="hero-main">
+                    <div class="hero-detail">
+                        <h2 class="heroSecTitle"><?php echo get_the_title($recent_posts[0]->ID); ?></h2>
+                        <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
+                        <a class="readMoreBtn group" href="<?php echo get_the_permalink($recent_posts[0]); ?>">READ MORE
+                            <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero-img-sec">
+                        <figure class="w-full h-[517px]">
+                            <?php if (has_post_thumbnail($recent_posts[0]->ID)) : ?>
+                                <?php echo get_the_post_thumbnail($recent_posts[0]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" class="w-full h-full object-contain" alt="card" />     
+                            <?php endif; ?>
+                        </figure>
+                    </div>
                 </div>
-                <div class="hero-img-sec">
-                    <figure class="w-full h-[517px]">
-                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" alt="logo" />
-                    </figure>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="common-slider-sec">
@@ -119,7 +164,8 @@ $most_viewed_posts = get_posts(
                         </div>
                     </div>
 
-                <?php } ?>                
+                <?php }
+                wp_reset_postdata(); ?>                
                 
             </div>
             <div class="swiper-scrollbar"></div>
@@ -165,87 +211,59 @@ $most_viewed_posts = get_posts(
         <div class="container mx-auto">
             <h2 class="section-title">Dating Apps</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
+
+            <?php   
+            if ($category_one_query->have_posts()){
+                while ($category_one_query->have_posts()){
+                    $category_one_query->the_post();
+                    get_template_part('template-parts/content', 'default-card');
+                }
+            }            
+            ?>
+
             </div>
         </div>
     </div>
     <div class="hero-sec py-[160px] bg-[#EB023D] mb-[100px]">
         <div class="container mx-auto">
-            <div class="hero-main">
-                <div class="hero-detail">
-                    <h2 class="heroSecTitle">Breaking Down Tinder’s 2023 Future Of Dating Report: A Dating Renaissance</h2>
-                    <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
-                    <a class="readMoreBtn hover:!text-[#EB023D] group" href="">READ MORE
-                        <svg class="group-hover:fill-[#EB023D]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
-                        </svg>
-                    </a>
+            
+            <?php if($recent_posts[2]) : ?>
+                <div class="hero-main">
+                    <div class="hero-detail">
+                        <h2 class="heroSecTitle"><?php echo get_the_title($recent_posts[2]->ID); ?></h2>
+                        <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
+                        <a class="readMoreBtn hover:!text-[#EB023D] group" href="<?php echo get_the_permalink($recent_posts[2]); ?>">READ MORE
+                            <svg class="group-hover:fill-[#EB023D]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero-img-sec">
+                        <figure class="w-full h-[517px]">
+                            <?php if (has_post_thumbnail($recent_posts[2]->ID)) : ?>
+                                <?php echo get_the_post_thumbnail($recent_posts[2]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" class="w-full h-full object-contain" alt="card" />     
+                            <?php endif; ?>
+                        </figure>
+                    </div>
                 </div>
-                <div class="hero-img-sec">
-                    <figure class="w-full h-[517px]">
-                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" alt="logo" />
-                    </figure>
-                </div>
-            </div>
+            <?php endif; ?>
+
         </div>
     </div>
     <div class="default-card-sec mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Modern Dating</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
+                <?php   
+                if ($category_two_query->have_posts()){
+                    while ($category_two_query->have_posts()){
+                        $category_two_query->the_post();
+                        get_template_part('template-parts/content', 'default-card');
+                    }
+                }            
+                ?>
             </div>
         </div>
     </div>
@@ -286,87 +304,55 @@ $most_viewed_posts = get_posts(
         <div class="container mx-auto">
             <h2 class="section-title">Dating Diary</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
+                <?php   
+                if ($category_three_query->have_posts()){
+                    while ($category_three_query->have_posts()){
+                        $category_three_query->the_post();
+                        get_template_part('template-parts/content', 'default-card');
+                    }
+                }            
+                ?>
             </div>
         </div>
     </div>
     <div class="hero-sec py-[160px] bg-[#FE4705] mb-[100px]">
         <div class="container mx-auto">
-            <div class="hero-main">
-                <div class="hero-detail">
-                    <h2 class="heroSecTitle">Breaking Down Tinder’s 2023 Future Of Dating Report: A Dating Renaissance</h2>
-                    <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
-                    <a class="readMoreBtn group" href="">READ MORE
-                        <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
-                        </svg>
-                    </a>
+            <?php if($recent_posts[4]) : ?>
+                <div class="hero-main">
+                    <div class="hero-detail">
+                        <h2 class="heroSecTitle"><?php echo get_the_title($recent_posts[4]->ID); ?></h2>
+                        <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
+                        <a class="readMoreBtn group" href="<?php echo get_the_permalink($recent_posts[4]); ?>">READ MORE
+                            <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero-img-sec">
+                        <figure class="w-full h-[517px]">
+                            <?php if (has_post_thumbnail($recent_posts[4]->ID)) : ?>
+                                <?php echo get_the_post_thumbnail($recent_posts[4]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" class="w-full h-full object-contain" alt="card" />     
+                            <?php endif; ?>
+                        </figure>
+                    </div>
                 </div>
-                <div class="hero-img-sec">
-                    <figure class="w-full h-[517px]">
-                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" alt="logo" />
-                    </figure>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="default-card-sec mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Find</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
-                <div class="default-card">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                    </figure>
-                    <div class="default-card-detail">
-                        <p>outfits</p>
-                        <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                    </div>
-                </div>
+                <?php   
+                if ($category_four_query->have_posts()){
+                    while ($category_four_query->have_posts()){
+                        $category_four_query->the_post();
+                        get_template_part('template-parts/content', 'default-card');
+                    }
+                }            
+                ?>
             </div>
         </div>
     </div>
