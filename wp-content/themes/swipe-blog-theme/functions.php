@@ -163,3 +163,37 @@ function track_post_views ($post_id) {
 	set_post_views($post_id);
 }
 add_action( 'wp_head', 'track_post_views');
+
+
+/////////////User
+add_action( 'show_user_profile', 'extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+
+function extra_user_profile_fields( $user ) { ?>
+    <h3><?php _e("Extra profile information", "blank"); ?></h3>
+
+    <table class="form-table">
+		<tr>
+			<th><label for="designation"><?php _e("Designation"); ?></label></th>
+			<td>
+				<input type="text" name="designation" id="designation" value="<?php echo esc_attr( get_the_author_meta( 'designation', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description"><?php _e("Please enter your designation."); ?></span>
+			</td>
+		</tr>    
+    </table>
+<?php }
+
+
+add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+
+function save_extra_user_profile_fields( $user_id ) {
+    if ( empty( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'update-user_' . $user_id ) ) {
+        return;
+    }
+    
+    if ( !current_user_can( 'edit_user', $user_id ) ) { 
+        return false; 
+    }
+    update_user_meta( $user_id, 'designation', $_POST['designation'] );
+}
