@@ -6,7 +6,7 @@ function my_plugin_assets()
 	$ver = '1.1.'.rand(10,100);	
 
 	wp_enqueue_script('jquery.min', get_template_directory_uri() . '/js/jquery-3.7.1.min.js', array('jquery'), $ver, true);
-	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/ThemeScript.js', array('jquery'), $ver, true);
+	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/themescript.js', array('jquery'), $ver, true);
 
 	wp_enqueue_style('owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', $ver, 'all');
 
@@ -69,7 +69,7 @@ function register_my_menus()
 	register_nav_menus(array(
 		'header-menu'		=> 'Header Menu',
 		'useful-links'		=> 'Useful Links',
-		'categories-menu'		=> 'Categories Menu'
+		'categories-menu'	=> 'Categories Menu'
 	));
 }
 

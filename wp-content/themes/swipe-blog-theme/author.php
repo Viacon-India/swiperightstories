@@ -32,7 +32,7 @@ $designation = get_the_author_meta( 'designation', $author_id, true );
             </div>
             <div class="author-detail">
                 <h2 class="author-title hidden md:block"><?php echo $display_name; ?></h2>
-                <span class="author-designation hidden md:block">designation</span>
+                <span class="author-designation hidden md:block"><?php echo $designation; ?></span>
                 <?php if(!empty($author_desc)) { echo '<p class="author-card-desc">'.$author_desc.' </p>'; } ?>
             </div>
         </div>
