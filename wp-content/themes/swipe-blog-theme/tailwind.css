@@ -235,7 +235,7 @@ body{
   }    
 
   .modal-content{
-    @apply bg-[#F8E8DD] w-full h-full fixed animate-[animatetop_.8s] top-[69px] z-60 transition-all lg:flex-col
+    @apply bg-[#F8E8DD] w-full h-full fixed animate-[animatetop_.8s] top-[64px] z-60 transition-all lg:flex-col
   }
   
   .input-sec{
@@ -280,7 +280,7 @@ body{
 
 /* Footer section */
 .footer-main{
-  @apply pt-5 pb-[80px] md:pt-[60px] md:pb-[100px] xl:pb-[120px] flex flex-col xl:flex-row justify-between
+  @apply pt-5 pb-[40px] md:pt-[60px] md:pb-[100px] xl:pb-[120px] flex flex-col xl:flex-row justify-between
 }
 .footer-desc{
   @apply text-[#979797] text-[15px] md:text-[16px] leading-[1.6] font-Poppins mt-2 md:mt-4 xl:mt-6 capitalize font-medium
@@ -325,7 +325,7 @@ body{
 /*..........................................................Home page.................................................................... */
 
 .hero-main{
-  @apply flex flex-col lg:flex-row gap-[60px]
+  @apply flex flex-col lg:flex-row gap-5 md:gap-8 2xl:gap-[60px]
 }
 .hero-detail{
   @apply w-full lg:w-[50%]
@@ -334,13 +334,14 @@ body{
   @apply w-full lg:w-[50%]
 }
 .heroSecTitle{
-  @apply text-[#FFFFFF] font-MorganiteBold text-[90px] leading-[74px] w-[75%] uppercase mb-4 tracking-[3.6px]
+  @apply text-[#FFFFFF] font-MorganiteBold text-[50px] md:text-[90px] leading-[46px] md:leading-[74px] md:w-[75%] 
+  uppercase mb-4 tracking-[2.6px] lg:tracking-[3.6px]
 }
 .heroSecDetail{
   @apply text-[#FFFFFF] font-Poppins text-[18px] font-normal
 }
 .readMoreBtn{
-  @apply text-[#FFFFFF] px-5 py-[10px] flex gap-1 items-center border-2 border-[#FFFFFF] w-fit mt-[60px] hover:bg-white
+  @apply text-[#FFFFFF] px-5 py-[10px] flex gap-1 items-center border-2 border-[#FFFFFF] w-fit mt-8 lg:mt-[60px] hover:bg-white
   hover:text-[#FE4705] font-Poppins transition-all duration-300
 }
 
@@ -350,16 +351,16 @@ body{
 }
 
 .infiniteSlider {
-  @apply shadow-[0_10px_20px_-5px_rgba(0,0,0,0.125)] h-[160px] overflow-hidden relative w-full m-auto bg-[#FFFFFF];
+  @apply shadow-[0_10px_20px_-5px_rgba(0,0,0,0.125)] h-[88px] lg:h-[160px] overflow-hidden relative w-full m-auto bg-[#FFFFFF];
 }
 .slide-track {
   @apply animate-[scroll_40s_linear_infinite] flex w-[calc(250px_*_14)] h-full
 }
 .slide {
-  @apply h-full w-[250px];
+  @apply h-full w-[120px] lg:w-[250px];
 }
 .slide h3{
-  @apply font-MorganiteBlack text-[120px] italic
+  @apply font-MorganiteBlack text-[60px] lg:text-[120px] italic
 }
 .slide:nth-child(3n+1) h3 {
   @apply text-[#000000]
@@ -409,7 +410,7 @@ body{
 
 
 .vertical-img-sec figure{
-  @apply w-full h-[560px] border border-[#000000]
+  @apply w-full h-[300px] lg:h-[560px] border border-[#000000]
 }
 .vertical-img-sec img{
   @apply w-full h-full object-cover
@@ -417,7 +418,7 @@ body{
 
 /* Vertical card section */
 .small-card figure{
-  @apply w-[196px] h-[196px] border border-[#101010]
+  @apply w-full lg:w-[196px] h-[196px] border border-[#101010]
 }
 .small-card img{
   @apply w-full h-full object-cover
@@ -429,25 +430,25 @@ body{
 
 /* Default card sec */
 .section-title{
-  @apply text-[#000000] text-[80px] font-MorganiteBold uppercase text-center leading-[1] 
+  @apply text-[#000000] text-[60px] lg:text-[80px] font-MorganiteBold uppercase text-center leading-[1] 
 }
 .default-card{
   @apply border border-[#101010]
 }
 .default-card figure{
-  @apply w-full h-[300px] 
+  @apply w-full h-[225px] md:h-[300px] 
 }
 .default-card img{
   @apply w-full h-full object-cover
 }
 .default-card-detail{
-  @apply p-5
+  @apply p-3 lg:p-5
 }
 .default-card-detail p{
-  @apply text-[#101010] text-[16px] font-Poppins leading-[1] mb-4 uppercase
+  @apply text-[#101010] text-[14px] lg:text-[16px] font-Poppins leading-[1] mb-4 uppercase
 }
 .default-card-detail h2{
-  @apply text-[#101010] text-[48px] font-MorganiteBold leading-[1] uppercase
+  @apply text-[#101010] text-[36px] lg:text-[48px] font-MorganiteBold leading-[1] uppercase
 }
 
 
@@ -455,7 +456,7 @@ body{
 /* Single page css */
 
 .single-page-banner {
-  @apply relative w-full bg-[#F3EDE9] overflow-hidden pt-[68px];
+  @apply relative w-full bg-[#F3EDE9] overflow-hidden pt-[64px];
 }
 
 .single-page-banner-inner {
@@ -471,7 +472,7 @@ body{
 .single-page-cat {
   @apply font-Poppins uppercase font-semibold text-primary mb-[4px] md:mb-[8px] lg:mb-[8px] flex gap-2 first:text-[#7B7B7B]
   after:content-[">"] after:text-[#7B7B7B] after:flex after:items-end after:gap-2 after:last:hidden
-  text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[14px] 2xl:text-[15px] 3xl:text-[16px];
+  text-[12px] lg:text-[13px] xl:text-[14px] 2xl:text-[15px] 3xl:text-[16px];
 }
 
 .single-page-banner-img-card {
@@ -481,7 +482,7 @@ body{
 
 .single-page-title {
   @apply font-MorganiteBold text-primary uppercase leading-[1] w-full lg:w-[70%]
-  text-[18px] sm:text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] 2xl:text-[66px] 3xl:text-[72px]
+  text-[40px] md:text-[48px] lg:text-[54px] xl:text-[60px] 2xl:text-[66px] 3xl:text-[72px]
   mb-[8px] md:mb-[4px] lg:mb-[8px];
 }
 
@@ -497,7 +498,7 @@ body{
 
 .single-page-bannner-author-name {
   @apply text-[16px] sm:text-[16px] md:text-[16px] lg:text-[19px] 
-xl:text-[22px] 2xl:text-[25px] 3xl:text-[28px] font-MorganiteBold font-medium;
+xl:text-[22px] 2xl:text-[25px] 3xl:text-[28px] font-Poppins font-medium;
 }
 
 .single-page-bannner-author-name-define {
@@ -731,7 +732,7 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
   @apply w-12 h-12 flex justify-center items-center bg-[#FFFFFF] duration-300 hover:bg-[#141414] border border-[#000000]
 }
 
-/* single page auithor hcard sec */
+/* single page author card sec */
 
 .single-author-sec{
   @apply relative py-[16px] md:py-[16px] lg:py-[21px] xl:py-[26px] 2xl:py-[31px] 3xl:py-[36px]
@@ -743,7 +744,8 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
 }
 
 .author-card-content .single-author-card-title{
-  @apply relative text-[44px] md:text-[44px] lg:text-[45px] xl:text-[46px] 2xl:text-[47px] 3xl:text-[48px] text-center sm:text-left font-MorganiteBold font-medium !mt-0
+  @apply relative text-[44px] md:text-[44px] lg:text-[45px] xl:text-[46px] 2xl:text-[47px] 3xl:text-[48px] text-center 
+  sm:text-left font-MorganiteBold font-medium !mt-0
 }
 
 .author-card-content > .single-author-card-dsc{
@@ -958,7 +960,7 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
   
   
   .contact-about-p {
-    @apply relative text-[14px] md:text-[14px] lg:text-[16px] font-Poppins;
+    @apply text-[#0C0C0C] relative text-[14px] md:text-[14px] lg:text-[16px] font-Poppins;
   }
   
   
@@ -995,7 +997,9 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
   .from-content-sec {
     @apply w-full md:w-1/2;
   }
-
+  .wpcf7-submit{
+    @apply bg-[#000000] text-[#FFFFFF] px-5 py-[10px] font-Poppins text-[24px]
+  }
 
 
 
@@ -1046,7 +1050,7 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
 
 /* Author Page */
 .author-card{
-  @apply flex flex-col md:flex-row gap-2 md:gap-4 items-start bg-[#F3EDE9] p-5 md:p-6 mt-[56px]
+  @apply flex flex-col md:flex-row gap-2 md:gap-4 items-start bg-[#F3EDE9] p-5 md:p-6 mt-0 mt-8 lg:mt-[56px]
 }
 .author-fig{
   @apply mb-0 relative w-[60px] h-[60px] border border-[#101010]

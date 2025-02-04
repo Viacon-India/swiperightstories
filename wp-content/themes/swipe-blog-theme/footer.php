@@ -120,18 +120,31 @@ $footer_content = get_option('content_data');
 <?php wp_footer(); ?>
 
 <!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <?php wp_footer(); ?>
 
 <script>
     // Slider
     var swiper = new Swiper(".mySwiper-one", {
-        slidesPerView: 4.5,
         spaceBetween: 20,
         scrollbar: {
             el: ".swiper-scrollbar",
             // hide: true,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2.3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 50,
+          },
         },
     });
 
