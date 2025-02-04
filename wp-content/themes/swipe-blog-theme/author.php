@@ -16,7 +16,7 @@ $avater_url =  get_template_directory_uri()."/images/default-author.jpg";
 $designation = get_the_author_meta( 'designation', $author_id, true );
 ?>
 
-<div class="author-page pt-[68px]">
+<div class="author-page pt-[64px]">
     <div class="container mx-auto">
         <div class="author-card">
             <div class="w-fit flex gap-2">
@@ -36,7 +36,7 @@ $designation = get_the_author_meta( 'designation', $author_id, true );
                 <?php if(!empty($author_desc)) { echo '<p class="author-card-desc">'.$author_desc.' </p>'; } ?>
             </div>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
             <?php
             if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post();

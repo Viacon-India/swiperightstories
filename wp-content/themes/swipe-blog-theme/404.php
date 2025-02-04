@@ -12,7 +12,7 @@ $most_viewed_posts = get_posts(
 );
 ?>
 
-<section class="error-404">
+<section class="error-404 pt-[64px]">
     <div class="container mx-auto relative">
 
         <div class="error-400-inaner">

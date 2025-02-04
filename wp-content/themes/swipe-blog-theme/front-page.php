@@ -61,8 +61,8 @@ $category_four_query = new WP_Query(
 
 
 ?>
-<div class="page-wrapper pt-[68px]">
-    <div class="hero-sec py-[160px] bg-[#FE4705]">
+<div class="page-wrapper pt-[64px]">
+    <div class="hero-sec py-[44px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[160px] bg-[#FE4705]">
         <div class="container mx-auto">
             <?php if($recent_posts[0]) : ?>
                 <div class="hero-main">
@@ -76,7 +76,7 @@ $category_four_query = new WP_Query(
                         </a>
                     </div>
                     <div class="hero-img-sec">
-                        <figure class="w-full h-[517px]">
+                        <figure class="w-full h-[254px] md:h-[517px]">
                             <?php if (has_post_thumbnail($recent_posts[0]->ID)) : ?>
                                 <?php echo get_the_post_thumbnail($recent_posts[0]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
                             <?php else : ?>
@@ -174,17 +174,17 @@ $category_four_query = new WP_Query(
 
     <?php endif; ?>
 
-    <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[100px]">
+    <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
         <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
             <figure>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
             </figure>
         </div>
-        <div class="py-[100px] pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
+        <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
             <div class="container mx-auto">
-                <h2 class="text-[#101010] text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
+                <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
                 <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">*counts down the seconds until warm weather*</p>
-                <div class="flex gap-5 mt-[52px]">
+                <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
                     <div class="small-card">
                         <figure>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
@@ -207,7 +207,7 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-    <div class="default-card-sec mb-[100px]">
+    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Dating Apps</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
@@ -224,7 +224,7 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-    <div class="hero-sec py-[160px] bg-[#EB023D] mb-[100px]">
+    <div class="hero-sec py-[44px] lg:py-[160px] bg-[#EB023D] mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             
             <?php if($recent_posts[2]) : ?>
@@ -239,7 +239,7 @@ $category_four_query = new WP_Query(
                         </a>
                     </div>
                     <div class="hero-img-sec">
-                        <figure class="w-full h-[517px]">
+                        <figure class="w-full h-[254px] md:h-[517px]">
                             <?php if (has_post_thumbnail($recent_posts[2]->ID)) : ?>
                                 <?php echo get_the_post_thumbnail($recent_posts[2]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
                             <?php else : ?>
@@ -252,7 +252,7 @@ $category_four_query = new WP_Query(
 
         </div>
     </div>
-    <div class="default-card-sec mb-[100px]">
+    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Modern Dating</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
@@ -267,17 +267,17 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-    <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[100px]">
+    <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
         <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
             <figure>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
             </figure>
         </div>
-        <div class="py-[100px] pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
+        <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]"">
             <div class="container mx-auto">
-                <h2 class="text-[#101010] text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
+                <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
                 <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">*counts down the seconds until warm weather*</p>
-                <div class="flex gap-5 mt-[52px]">
+                <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
                     <div class="small-card">
                         <figure>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
@@ -300,7 +300,7 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-    <div class="default-card-sec mb-[100px]">
+    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Dating Diary</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
@@ -315,7 +315,7 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-    <div class="hero-sec py-[160px] bg-[#FE4705] mb-[100px]">
+    <div class="hero-sec py-[44px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[160px] bg-[#FE4705] mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <?php if($recent_posts[4]) : ?>
                 <div class="hero-main">
@@ -329,7 +329,7 @@ $category_four_query = new WP_Query(
                         </a>
                     </div>
                     <div class="hero-img-sec">
-                        <figure class="w-full h-[517px]">
+                        <figure class="w-full h-[254px] md:h-[517px]">
                             <?php if (has_post_thumbnail($recent_posts[4]->ID)) : ?>
                                 <?php echo get_the_post_thumbnail($recent_posts[4]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
                             <?php else : ?>
@@ -341,7 +341,7 @@ $category_four_query = new WP_Query(
             <?php endif; ?>
         </div>
     </div>
-    <div class="default-card-sec mb-[100px]">
+    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Find</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">

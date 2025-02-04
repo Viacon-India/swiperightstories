@@ -30,7 +30,7 @@ while (have_posts()) : the_post(); ?>
         <div class="contact-us-from-sec">
             <div class="from-content-sec">
                 <div class="from-content-form">
-                    <?php echo do_shortcode( '[contact-form-7 id="d95beea" title="Contact Form"]' ); ?>
+                    <?php echo do_shortcode( '[contact-form-7 id="35bfd24" title="Contact form 1"]' ); ?>
                 </div>
             </div>
 

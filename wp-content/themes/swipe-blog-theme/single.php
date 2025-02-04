@@ -60,7 +60,7 @@
                             </p>
                             <p>
                                 <span class="single-page-banner-author-name-define text-[16px] font-Poppins">Written by</span>
-                                <a href="<?php echo get_author_posts_url($author_id); ?>" class="single-page-banner-author-name text-[24px] font-semibold font-Poppins">
+                                <a href="<?php echo get_author_posts_url($author_id); ?>" class="single-page-banner-author-name text-[20px]">
                                     <?php echo $author_name; ?>
                                 </a>
                             </p>
@@ -111,13 +111,13 @@
 
                             <?php $related = get_posts(
                                 array(
-                                    'category__in' => $cat_ID,
+                                    // 'category__in' => $cat_ID,
                                     'post_type' => 'post',
-                                    'orderby' => 'rand',
-                                    'post_status' => 'publish',
-                                    'order'   => 'DESC',
+                                    // 'orderby' => 'rand',
+                                    // 'post_status' => 'publish',
+                                    // 'order'   => 'DESC',
                                     'posts_per_page' => 7,
-                                    'post__not_in' => array($post_id)
+                                    // 'post__not_in' => array($post_id)
                                 )
                             );
                             if ($related) : ?>
@@ -209,7 +209,7 @@
                                 <?php ?>
                                     <img class="single-author-card-img" 
                                     src="<?php echo $avater_url; ?>" 
-                                    alt=" single page author card  image  ">
+                                    alt=" single page author card  image">
                                 </figure>
                                 <div class="author-card-content">
                                     <h2 class="single-author-card-title"><?php echo $author_name; ?></h2>
