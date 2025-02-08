@@ -221,7 +221,7 @@
 
                         <div class="comment-from-sec">
                             <div id="respond" class="comment-respond">
-                                <h2 class="comment-from-title">Leave A Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/istanagreenworld/poster-image-of-climate-change/#respond" style="display:none;">Cancel reply</a></small></h2>
+                                <!-- <h2 class="comment-from-title">Leave A Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/istanagreenworld/poster-image-of-climate-change/#respond" style="display:none;">Cancel reply</a></small></h2>
                                 <form action="" class="comment-form" novalidate="">
                                     <p class="comment-notes">
                                         <span id="email-notes">Your email address will not be published.</span>
@@ -240,50 +240,28 @@
                                     <p class="form-submit"><button type="submit" class="single-page-comment-from-submit-button">POST COMMENT</button> <input type="hidden" name="comment_post_ID" value="2881" id="comment_post_ID">
                                         <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                     </p>
-                                </form>
+                                </form> -->
+                                <?php comment_form(); ?>
                             </div>
                         </div>
 
-
+                        <?php 
+                        $parent_comments = get_comments(array(
+                            'post_id' => $post_id,
+                            'status' => 'approve',
+                            'hierarchical' => 'threaded',
+                            'orderby' => 'date',
+                            'order' => 'ASC'
+                        ));
+                        if (!empty($parent_comments)) : ?>
                         <div class="all-comment-sec">
                             <h2 class="all-comment-title">
                                 All Comments
                             </h2>
 
+                            <?php foreach ($parent_comments as $parent_comment) : ?>
                             <div class="replay-card-inner">
 
-                                <div class="replay-card">
-                                    <div class="replay-card-user-wrapper">
-                                        <figure class="replay-c-u-w-figure">
-                                            <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/author-image.png" alt="Author comment Image">
-                                        </figure>
-
-                                        <div class="replay-card-user-content">
-                                            <h2 class=" replay-user-name">
-                                                Akash Kumar
-                                            </h2>
-                                            <div class="replay-date-with-edit-wrapper">
-                                                <span class="replay-date-with-edit">25 July 2023 at 10:08 AM</span>
-                                                <span class="replay-date-with-edit-line">|</span>
-                                                <a href="#" class="replay-date-with-edit underline ">
-                                                    Edit
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p class="replay-card-massage">
-                                        Great post! We are very strong on the content front but could use some help with video. Any tips, hacks,
-                                        etc for getting started with video production? but could use some help with video.
-                                    </p>
-                                    <div class="replay-card-button-wrapper">
-                                        <button class="replay-card-common-button">Reply</button>
-                                        <span class="replay-card-common-line">|</span>
-                                        <button class="replay-card-common-button">Edit</button>
-                                        <span class="replay-card-common-line">|</span>
-                                        <button class="replay-card-common-button">Report</button>
-                                    </div>
-                                </div>
 
 
 
@@ -291,105 +269,113 @@
 
                                     <div class="replay-card-user-wrapper">
                                         <figure class="replay-c-u-w-figure">
-                                            <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/author-image.png" alt="Author comment Image">
+                                            <img class="img-responsive" 
+                                            src="<?php echo get_avatar_url($parent_comment->user_id); ?>" 
+                                            alt="Author comment Image">
                                         </figure>
 
                                         <div class="replay-card-user-content">
-                                            <h2 class=" replay-user-name">
-                                                Akash Kumar
-                                            </h2>
+                                            <h2 class=" replay-user-name"><?php echo $parent_comment->comment_author; ?></h2>
                                             <div class="replay-date-with-edit-wrapper">
-                                                <span class="replay-date-with-edit">25 July 2023 at 10:08 AM</span>
-                                                <span class="replay-date-with-edit-line">|</span>
-                                                <a href="#" class="replay-date-with-edit underline ">
-                                                    Edit
-                                                </a>
+                                                <span class="replay-date-with-edit"><?php echo $parent_comment->comment_date; ?></span>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <p class="replay-card-massage">
-                                        Great post! We are very strong on the content front but could use some help with video. Any tips, hacks,
-                                        etc for getting started with video production? but could use some help with video.
-                                    </p>
+                                    <p class="replay-card-massage"><?php echo $parent_comment->comment_content; ?></p>
 
                                     <div class="replay-card-button-wrapper">
-                                        <button class="replay-card-common-button">Reply</button>
-                                        <span class="replay-card-common-line">|</span>
-                                        <button class="replay-card-common-button">Edit</button>
-                                        <span class="replay-card-common-line">|</span>
-                                        <button class="replay-card-common-button">Report</button>
+                                        <a href="<?php echo get_permalink($post_id); ?>/?replytocom=<?php echo $parent_comment->comment_ID; ?>#respond">
+                                            <button class="replay-card-common-button">Reply</button>
+                                        </a>
                                     </div>
-                                    <div class="replay-card-replay">
 
-                                        <div class="replay-card-user-wrapper">
-                                            <figure class="replay-c-u-w-figure">
-                                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/author-image.png" alt="Author comment Image">
-                                            </figure>
+                                    <?php $child_comments = get_comments(array(
+                                        'parent' => $parent_comment->comment_ID,
+                                        'hierarchical' => 'threaded',
+                                        'status' => 'approve',
+                                        'orderby' => 'date',
+                                        'order' => 'ASC'
+                                    ));
+                                    if (!empty($child_comments)) : ?>
+                                        <?php 
+                                        foreach ($child_comments as $child_comment) : ?>
 
-                                            <div class="replay-card-user-content">
-                                                <h2 class=" replay-user-name">
-                                                    Akash Kumar
-                                                </h2>
-                                                <div class="replay-date-with-edit-wrapper">
-                                                    <span class="replay-date-with-edit">25 July 2023 at 10:08 AM</span>
-                                                    <span class="replay-date-with-edit-line">|</span>
-                                                    <a href="#" class="replay-date-with-edit underline">
-                                                        Edit
-                                                    </a>
+                                        <div class="replay-card-replay">
+                                            <div class="replay-card-user-wrapper">
+                                                <figure class="replay-c-u-w-figure">
+                                                    <img class="img-responsive" src="<?php echo get_avatar_url($child_comment->user_id); ?>" 
+                                                    alt="Author comment Image">
+                                                </figure>
+                                                <div class="replay-card-user-content">
+                                                    <h2 class=" replay-user-name"><?php echo $child_comment->comment_author; ?></h2>
+                                                    <div class="replay-date-with-edit-wrapper">
+                                                        <span class="replay-date-with-edit"><?php echo $child_comment->comment_date; ?></span>
+                                                        <span class="replay-date-with-edit-line">|</span>
+                                                        <a href="#" class="replay-date-with-edit underline">
+                                                            Edit
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <p class="replay-card-massage">
-                                            Great post! We are very strong on the content front but could use some help with video. Any tips, hacks,
-                                            etc for getting started with video production? but could use some help with video.
-                                        </p>
-                                        <div class="replay-card-button-wrapper">
-                                            <button class="replay-card-common-button">Reply</button>
-                                            <span class="replay-card-common-line">|</span>
-                                            <button class="replay-card-common-button">Edit</button>
-                                            <span class="replay-card-common-line">|</span>
-                                            <button class="replay-card-common-button">Report</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="replay-card">
-                                    <div class="replay-card-user-wrapper">
-                                        <figure class="replay-c-u-w-figure">
-                                            <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/author-image.png" alt="Author comment Image">
-                                        </figure>
-
-                                        <div class="replay-card-user-content">
-                                            <h2 class=" replay-user-name">
-                                                Akash Kumar
-                                            </h2>
-                                            <div class="replay-date-with-edit-wrapper">
-                                                <span class="replay-date-with-edit">25 July 2023 at 10:08 AM</span>
-                                                <span class="replay-date-with-edit-line">|</span>
-                                                <a href="#" class="replay-date-with-edit underline ">
-                                                    Edit
+                                            <p class="replay-card-massage"><?php echo $child_comment->comment_content; ?></p>
+                                            <div class="replay-card-button-wrapper">
+                                                <a href="<?php echo get_permalink($post_id); ?>/?replytocom=<?php echo $child_comment->comment_ID; ?>#respond">
+                                                    <button class="replay-card-common-button">Reply</button>
                                                 </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </div>  
+                                            
+                                            
 
-                                    <p class="replay-card-massage">
-                                        Great post! We are very strong on the content front but could use some help with video. Any tips, hacks,
-                                        etc for getting started with video production? but could use some help with video.
-                                    </p>
-                                    <div class="replay-card-button-wrapper">
-                                        <button class="replay-card-common-button">Reply</button>
-                                        <span class="replay-card-common-line">|</span>
-                                        <button class="replay-card-common-button">Edit</button>
-                                        <span class="replay-card-common-line">|</span>
-                                        <button class="replay-card-common-button">Report</button>
-                                    </div>
+                                            <?php $third_child_comments = get_comments(array(
+                                                'parent' => $child_comment->comment_ID,
+                                                'hierarchical' => 'threaded',
+                                                'status' => 'approve',
+                                                'orderby' => 'date',
+                                                'order' => 'ASC'
+                                            ));
+                                            if (!empty($third_child_comments)) : ?>
+                                                <?php 
+                                                foreach ($third_child_comments as $third_child_comment) : ?>
+
+                                                <div class="replay-card-replay">
+                                                    <div class="replay-card-user-wrapper">
+                                                        <figure class="replay-c-u-w-figure">
+                                                            <img class="img-responsive" src="<?php echo get_avatar_url($third_child_comment->user_id); ?>" 
+                                                            alt="Author comment Image">
+                                                        </figure>
+                                                        <div class="replay-card-user-content">
+                                                            <h2 class=" replay-user-name"><?php echo $third_child_comment->comment_author; ?></h2>
+                                                            <div class="replay-date-with-edit-wrapper">
+                                                                <span class="replay-date-with-edit"><?php echo $third_child_comment->comment_date; ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="replay-card-massage"><?php echo $third_child_comment->comment_content; ?></p>                                                                                          
+                                                </div>
+
+                                                <?php 
+                                                endforeach; 
+                                            endif; ?>
+
+
+
+                                        </div>
+
+                                        <?php 
+                                        endforeach; 
+                                    endif; ?>
+
+
                                 </div>
+
+
                             </div>
+                            <?php endforeach; ?>
+
                         </div>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>

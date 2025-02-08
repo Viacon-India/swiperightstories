@@ -31,6 +31,17 @@ $category_one_query = new WP_Query(
         'posts_per_page' => 3,
     )
 );
+$category_one_most_viewed_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[0],
+        'posts_per_page' => 4,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+    )
+);
+
 
 $category_two_query = new WP_Query(
     array(
@@ -40,6 +51,17 @@ $category_two_query = new WP_Query(
         'posts_per_page' => 3,
     )
 );
+$category_two_most_viewed_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[1],
+        'posts_per_page' => 1,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+    )
+);
+
 
 $category_three_query = new WP_Query(
     array(
@@ -49,6 +71,17 @@ $category_three_query = new WP_Query(
         'posts_per_page' => 3,
     )
 );
+$category_three_most_viewed_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[2],
+        'posts_per_page' => 4,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+    )
+);
+
 
 $category_four_query = new WP_Query(
     array(
@@ -56,6 +89,16 @@ $category_four_query = new WP_Query(
         'post_status' => 'publish',
         'category_name'     => $category_slugs[3],
         'posts_per_page' => 3,
+    )
+);
+$category_four_most_viewed_query = new WP_Query(
+    array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'category_name'     => $category_slugs[3],
+        'posts_per_page' => 1,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
     )
 );
 
@@ -67,7 +110,7 @@ $category_four_query = new WP_Query(
             <?php if($recent_posts[0]) : ?>
                 <div class="hero-main">
                     <div class="hero-detail">
-                        <h2 class="heroSecTitle"><?php echo get_the_title($recent_posts[0]->ID); ?></h2>
+                        <h1 class="heroSecTitle"><?php echo get_the_title($recent_posts[0]->ID); ?></h1>
                         <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
                         <a class="readMoreBtn group" href="<?php echo get_the_permalink($recent_posts[0]); ?>">READ MORE
                             <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
@@ -172,41 +215,60 @@ $category_four_query = new WP_Query(
         </div>
     </div>
 
-    <?php endif; ?>
+    <?php endif; 
+    
+    
+    if($recent_posts[1]) { ?>
 
-    <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
-        <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
-            <figure>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-            </figure>
-        </div>
-        <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
-            <div class="container mx-auto">
-                <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">*counts down the seconds until warm weather*</p>
-                <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
-                    <div class="small-card">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                        </figure>
-                        <h2>Floral Dress</h2>
-                    </div>
-                    <div class="small-card">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                        </figure>
-                        <h2>Raffia Bag</h2>
-                    </div>
-                    <div class="small-card">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                        </figure>
-                        <h2>Lace Blouse</h2>
+        <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
+            <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
+                <figure>
+                    <?php if (has_post_thumbnail($recent_posts[1]->ID)) : ?>
+                        <?php echo get_the_post_thumbnail($recent_posts[1]->ID, 'car1-thumbnail'); ?>
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />     
+                    <?php endif; ?>
+                </figure>
+            </div>
+            <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
+                <div class="container mx-auto">
+                    <a href="<?php echo get_permalink($recent_posts[1]->ID); ?>">
+                        <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">
+                            <?php echo get_the_title($recent_posts[1]->ID); ?>
+                        </h2>
+                    </a>
+                    <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
+                        <?php echo get_post_meta($recent_posts[1]->ID, 'post_sub_title', true); ?>
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
+
+
+                        <div class="small-card">
+                            <figure>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
+                            </figure>
+                            <h2>Floral Dress</h2>
+                        </div>
+                        <div class="small-card">
+                            <figure>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
+                            </figure>
+                            <h2>Raffia Bag</h2>
+                        </div>
+                        <div class="small-card">
+                            <figure>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
+                            </figure>
+                            <h2>Lace Blouse</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <?php 
+    } ?>
+
+
     <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Dating Apps</h2>
@@ -231,7 +293,7 @@ $category_four_query = new WP_Query(
                 <div class="hero-main">
                     <div class="hero-detail">
                         <h2 class="heroSecTitle"><?php echo get_the_title($recent_posts[2]->ID); ?></h2>
-                        <p class="heroSecDetail">Leather jackets have long been a quintessential wardrobe staple. Not only are they virtually effortless to wear</p>
+                        <p class="heroSecDetail"> <?php echo get_post_meta($recent_posts[2]->ID, 'post_sub_title', true); ?></p>
                         <a class="readMoreBtn hover:!text-[#EB023D] group" href="<?php echo get_the_permalink($recent_posts[2]); ?>">READ MORE
                             <svg class="group-hover:fill-[#EB023D]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
@@ -267,16 +329,31 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
+
+    <?php if($recent_posts[3]) : ?>
     <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
         <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
             <figure>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
+                <?php if (has_post_thumbnail($recent_posts[3]->ID)) : ?>
+                    <?php echo get_the_post_thumbnail($recent_posts[3]->ID, 'car1-thumbnail'); ?>
+                <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />     
+                <?php endif; ?>
             </figure>
         </div>
-        <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]"">
+        <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
             <div class="container mx-auto">
-                <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">*counts down the seconds until warm weather*</p>
+                <a href="<?php echo get_the_permalink( $recent_posts[3]->ID ); ?>">
+                    <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">
+                        <?php echo get_the_title($recent_posts[3]->ID); ?>
+                    </h2>
+                </a>
+                <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
+                    <?php echo get_post_meta($recent_posts[3]->ID, 'post_sub_title', true); ?>
+                </p>
+                <div class="hiddencont" id="hiddencont3">
+                    <?php echo $recent_posts[3]->post_content; ?>
+                </div>
                 <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
                     <div class="small-card">
                         <figure>
@@ -300,6 +377,8 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
+    <?php endif; ?>
+
     <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Dating Diary</h2>

@@ -49,6 +49,7 @@ if (!function_exists('custom_theme_setup')) {
 		add_image_size('related-thumbnail', 440, 297, true);
 		add_image_size('contact-thumbnail', 660, 728, true);
 		add_image_size('search-thumbnail', 441, 351, true);
+		add_image_size('card1-thumbnail', 680, 518, true);
 
 		set_post_thumbnail_size(1200, 9999);
 
@@ -323,3 +324,37 @@ function custom_opengraph_url($url) {
         return $url; // Return the original URL for other pages
     }
 }
+
+
+
+
+
+add_filter( 'comment_form_fields', 'custom_comment_form_fields' );
+function custom_comment_form_fields( $fields ) {
+	unset($fields['author']);
+	unset($fields['email']);
+	unset($fields['url']);
+	unset($fields['comment']);
+	unset($fields['cookies']);
+
+	$fields['email-wrapper-open']	= '<div class="comment-from-row">';
+	$fields['author']	= '<input type="text" class="comment-from-input" id="author" name="author" placeholder="Enter your name" required>';
+	$fields['email']	= '<input type="email" class="comment-from-input" id="email" name="email" placeholder="Enter your email" required>';
+	$fields['url']		= '<input type="url" class="comment-from-input" id="url" name="url" placeholder="website">';
+	$fields['email-wrapper-close']	= '</div>';
+	$fields['comment']	= '<div class="comment-from-text-aria-wrapper"><textarea class="comment-from-text-aria" id="comment" name="comment" placeholder="Write a comment" cols="30" rows="7" required></textarea></div>';
+	$fields['cookies']	= '<div class="single-page-comment-from-massage-checkbox-wrapper"><input class="translate-y-[6px] md:translate-y-0" id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent" class="text-[16px] font-Lato text-[#8A8A8A]">Save my name, email, and website in this browser for the next time I comment.</label></div>';
+	return $fields;
+}
+
+
+function custom_comment_form_defaults( $defaults ) {
+	$defaults['class_form']				= 'reply-box flex flex-col gap-[10px] md:gap-[18px]';
+	$defaults['title_reply']			= 'Leave A Reply';
+	$defaults['title_reply_before']		= '<h2 class="comment-from-title">';
+	$defaults['title_reply_after']		= '</h2>';
+	$defaults['submit_button']			= '<button type="submit" class="single-page-comment-from-submit-button">Post Comment</button>';
+	return $defaults;
+	
+}
+add_filter( 'comment_form_defaults', 'custom_comment_form_defaults' );

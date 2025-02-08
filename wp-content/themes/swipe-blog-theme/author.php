@@ -40,7 +40,7 @@ $designation = get_the_author_meta( 'designation', $author_id, true );
             <?php
             if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post();
-                    get_template_part('template-parts/content', 'default-card');
+                    get_template_part('template-parts/content', 'archive-card');
                 endwhile; ?>
             <?php else : ?>
                 <p class="inner-detail">Sorry, but "<capital class="uppercase"><?php echo $display_name; ?></capital>" has not published any posts.</p>
