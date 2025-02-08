@@ -52,8 +52,8 @@ $designation = get_the_author_meta( 'designation', $author_id, true );
                 <?php the_posts_pagination(
                     array(
                         'mid_size' => 1,
-                        'prev_text'          => _x('', 'previous set of Posts'),
-                        'next_text'          => _x('', 'next set of Posts')
+                        'prev_text'          => _x('<<', 'previous set of Posts'),
+                        'next_text'          => _x('>>', 'next set of Posts')
                     )
                 ); ?>
             </div>

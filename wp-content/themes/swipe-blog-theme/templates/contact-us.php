@@ -6,7 +6,6 @@ while (have_posts()) : the_post(); ?>
 
 <section class="contact-us-page mt-[68px]">
     <div class="container mx-auto">
-
         <div class="page-common-wrapper">
             <div class="page-common-wrapper-inner">
                 <div class="contact-about-common-title-wrapper">
@@ -14,7 +13,6 @@ while (have_posts()) : the_post(); ?>
                         <?php the_title(); ?>
                     </h2>
                 </div>
-
                 <p class="contact-about-p">
                     <?php the_content(); ?>                    
                 </p>
@@ -23,25 +21,20 @@ while (have_posts()) : the_post(); ?>
     </div>
 </section>
 
-
 <section class="contact-us-from-sec-wrapper">
     <div class="container mx-auto">
-
         <div class="contact-us-from-sec">
             <div class="from-content-sec">
                 <div class="from-content-form">
-                    <?php echo do_shortcode( '[contact-form-7 id="35bfd24" title="Contact form 1"]' ); ?>
+                    <?php echo do_shortcode(get_post_meta( get_the_ID(), 'contact_form_shortcode', true )); ?>
                 </div>
             </div>
-
             <div class="contact-us-img-sec">
                 <figure class="contact-us-figure">
                     <?php echo get_the_post_thumbnail(get_the_ID(), 'contact-thumbnail', array('class' => 'img-responsive')); ?>
                 </figure>
             </div>
-
         </div>
-
     </div>
 </section>
 

@@ -1106,3 +1106,8 @@ xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] font-MorganiteBold font-medium;
 .page-content h5{
   @apply text-[32px] xl:text-[42px] 2xl:text-[48px] leading-[1] text-[#0C0C0C] pt-5 2xl:pt-6 mb-2 font-MorganiteBold uppercase font-bold text-center
 }
+.pagination .nav-links span.page-numbers.current {
+  @apply relative w-full md:w-fit py-[17.5px] md:py-[17.5px] lg:py-[16.5px] px-[46px] md:px-[46px] lg:px-[48px] border border-primary
+  text-primary font-Poppins uppercase font-medium text-[14px] md:text-[14px] lg:text-[16px]
+  mt-[28px] sm:mt-[20px] md:mt-[20px] lg:mt-[32px]
+}

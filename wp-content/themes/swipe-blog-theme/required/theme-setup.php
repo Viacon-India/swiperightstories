@@ -48,6 +48,7 @@ if (!function_exists('custom_theme_setup')) {
 		add_image_size('single-thumbnail', 	950, 600, true);
 		add_image_size('related-thumbnail', 440, 297, true);
 		add_image_size('contact-thumbnail', 660, 728, true);
+		add_image_size('search-thumbnail', 441, 351, true);
 
 		set_post_thumbnail_size(1200, 9999);
 
@@ -76,19 +77,26 @@ function register_my_menus()
 }
 
 
-function logo_url()
-{
-	$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
-	if (has_custom_logo()) {
-		$custom_logo_id = get_theme_mod('custom_logo');
-		$custom_logo_data = wp_get_attachment_image_src($custom_logo_id, 'full');
-		$custom_logo_url = $custom_logo_data[0];
-		return '<img class="w-full h-full object-contain" src="'.esc_url($custom_logo_url).'" alt="logo"/>';
-	} else {
-		return '<img class="w-full h-full object-contain" src="'.esc_url($logo_url).'" alt="logo"/>';;
+if(!function_exists('logo_url')) {
+	function logo_url() {
+		$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
+		if (has_custom_logo()) {
+			$custom_logo_id = get_theme_mod('custom_logo');
+			$custom_logo_data = wp_get_attachment_image_src($custom_logo_id, 'full');
+			$custom_logo_url = $custom_logo_data[0];
+			return '<img class="w-full h-full object-contain" src="'.esc_url($custom_logo_url).'" alt="logo"/>';
+		} else {
+			return '<img class="w-full h-full object-contain" src="'.esc_url($logo_url).'" alt="logo"/>';;
+		}
 	}
 }
 
+if(!function_exists('footer_logo_url')) {
+	function footer_logo_url() {
+		$footer_logo_url = get_stylesheet_directory_uri() . '/images/logo2.png';
+		return '<img class="w-full h-full object-contain" src="'.esc_url($footer_logo_url).'" alt="logo"/>';
+	}
+}
 
 
 
