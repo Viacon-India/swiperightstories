@@ -379,7 +379,7 @@ body{
   @apply translate-y-0
 }
 .scroller-card figure{
-  @apply relative w-[400px] h-[400px]
+  @apply relative w-full h-[400px]
 }
 .scroller-card img{
   @apply w-full h-full object-cover 
@@ -389,7 +389,7 @@ body{
   transition-all duration-500 whitespace-normal
 }
 .scroller-overlay p{
-  @apply text-[#FFFFFF] text-[48px] 2xl:text-[60px] text-center font-MorganiteBold leading-[1] tracking-[3px]
+  @apply text-[#FFFFFF] text-[48px] 3xl:text-[60px] text-center font-MorganiteBold leading-[1] tracking-[3px]
 }
 .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
   @apply flex justify-start absolute bottom-[2px]
@@ -404,7 +404,6 @@ body{
 .scroller-slider::-webkit-scrollbar-thumb {
   @apply !bg-red-600
 }
-
 
 .vertical-img-sec figure{
   @apply w-full h-[300px] lg:h-[560px] border border-[#000000]
@@ -423,7 +422,9 @@ body{
 .small-card h2{
   @apply text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins pt-4
 }
-
+.smallCard .small-card{
+  @apply md:last:hidden 2xl:last:block
+}
 
 /* Default card sec */
 .section-title{
