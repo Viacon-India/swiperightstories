@@ -22,7 +22,7 @@ $most_viewed_posts = get_posts(
 );
 
 
-$category_slugs = ['find', 'uncategorized', 'find', 'uncategorized'];
+$category_slugs = ['dating-apps', 'modern-dating', 'dating-diary', 'find'];
 $category_one_query = new WP_Query(
     array(
         'post_type' => 'post',
