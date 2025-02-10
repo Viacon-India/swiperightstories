@@ -9,9 +9,11 @@ jQuery(document).ready(function(){
         if(value<=2)
         return `
         <div class="small-card">
-            <figure>
-                <img src="${$(this).attr('src')}" alt="card" />
-            </figure>
+            <a href="${$("#hiddencont1").attr('data-link')}">
+                <figure>
+                    <img src="${$(this).attr('src')}" alt="card" />
+                </figure>
+            </a>
         </div>`;
 
     }).get();
@@ -21,9 +23,11 @@ jQuery(document).ready(function(){
         if(value<=2)
         return `
         <div class="small-card">
-            <figure>
-                <img src="${$(this).attr('src')}" alt="card" />
-            </figure>
+            <a href="${$("#hiddencont3").attr('data-link')}">
+                <figure>
+                    <img src="${$(this).attr('src')}" alt="card" />
+                </figure>
+            </a>
         </div>`;
     }).get();
     $('#hiddencont3').next('.smallCard').empty().append(contentThree);

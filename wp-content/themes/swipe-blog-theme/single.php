@@ -29,7 +29,20 @@
 
         $facebook = get_option('facebook');
         $twitter = get_option('twitter');
-        $linkedin = get_option('linkedin');            
+        $linkedin = get_option('linkedin');   
+        
+        $related = get_posts(
+            array(
+                'category__in' => $cat_ID,
+                'post_type' => 'post',
+                'orderby' => 'rand',
+                'post_status' => 'publish',
+                'order'   => 'DESC',
+                'posts_per_page' => 7,
+                'post__not_in' => array($post_id)
+            )
+        );
+
         ?>
 
 
@@ -109,17 +122,7 @@
                             </div>
                                                             
 
-                            <?php $related = get_posts(
-                                array(
-                                    // 'category__in' => $cat_ID,
-                                    'post_type' => 'post',
-                                    // 'orderby' => 'rand',
-                                    // 'post_status' => 'publish',
-                                    // 'order'   => 'DESC',
-                                    'posts_per_page' => 7,
-                                    // 'post__not_in' => array($post_id)
-                                )
-                            );
+                            <?php 
                             if ($related) : ?>
                             <div class="side-bar-card-box">
 
@@ -221,26 +224,6 @@
 
                         <div class="comment-from-sec">
                             <div id="respond" class="comment-respond">
-                                <!-- <h2 class="comment-from-title">Leave A Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/istanagreenworld/poster-image-of-climate-change/#respond" style="display:none;">Cancel reply</a></small></h2>
-                                <form action="" class="comment-form" novalidate="">
-                                    <p class="comment-notes">
-                                        <span id="email-notes">Your email address will not be published.</span>
-                                        <span class="required-field-message">Required fields are marked <span class="required">*</span></span>
-                                    </p>
-                                    <div class="comment-from-row">
-                                        <input type="text" class="comment-from-input" name="author" placeholder="YOUR NAME*" required="">
-                                        <input type="email" class="comment-from-input" name="email" placeholder="YOUR EMAIL*" required="">
-                                        <input type="url" class="comment-from-input" name="url" placeholder="YOUR WEBSITE">
-                                    </div>
-                                    <div class="comment-from-text-aria-wrapper"><textarea class="comment-from-text-aria" id="comment" name="comment" placeholder="TYPE COMMENT HERE*" cols="30" rows="8" required=""></textarea></div>
-                                    <div class="single-page-comment-from-massage-checkbox-wrapper">
-                                        <div class="comment-from-check-box-wrapper"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent"></label></div>
-                                        <p class="single-page-comment-from-checkbox-massage">Save my name, email, and website in this browser for the next time I comment.</p>
-                                    </div>
-                                    <p class="form-submit"><button type="submit" class="single-page-comment-from-submit-button">POST COMMENT</button> <input type="hidden" name="comment_post_ID" value="2881" id="comment_post_ID">
-                                        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                                    </p>
-                                </form> -->
                                 <?php comment_form(); ?>
                             </div>
                         </div>
@@ -261,9 +244,6 @@
 
                             <?php foreach ($parent_comments as $parent_comment) : ?>
                             <div class="replay-card-inner">
-
-
-
 
                                 <div class="replay-card">
 
@@ -388,24 +368,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
 
                     <?php 
-                    $i = 0;
+                    $x = 0;
                     foreach ($related as $post) {
                         setup_postdata($post);
-                        if($i>3)
-                        get_template_part('template-parts/content', 'related-card');
-                        $i++;
+                        if($x>3){
+                            get_template_part('template-parts/content', 'related-card');
+                        }
+                        $x++;
                     }
                     wp_reset_postdata(); ?>
-                    
-                    <!-- <div class="default-card">
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
-                        </figure>
-                        <div class="default-card-detail">
-                            <p>outfits</p>
-                            <h2>Sézane’s New Spring Collection is Full of Pieces You’ll Never Get Sick Of Wearing</h2>
-                        </div>
-                    </div> -->
 
                 </div>
             </div>
