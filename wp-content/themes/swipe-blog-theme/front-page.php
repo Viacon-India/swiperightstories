@@ -240,9 +240,13 @@ $category_four_most_viewed_query = new WP_Query(
                     <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
                         <?php echo get_post_meta($recent_posts[1]->ID, 'post_sub_title', true); ?>
                     </p>
-                    <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
 
-
+                    <div class="hidden" id="hiddencont1">
+                        <?php echo $recent_posts[1]->post_content; ?>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px] smallCard">
+                        
                         <div class="small-card">
                             <figure>
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />
@@ -351,10 +355,10 @@ $category_four_most_viewed_query = new WP_Query(
                 <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
                     <?php echo get_post_meta($recent_posts[3]->ID, 'post_sub_title', true); ?>
                 </p>
-                <div class="hiddencont" id="hiddencont3">
+                <div class="hidden" id="hiddencont3">
                     <?php echo $recent_posts[3]->post_content; ?>
                 </div>
-                <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px]">
+                <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px] smallCard">
                     <div class="small-card">
                         <figure>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />

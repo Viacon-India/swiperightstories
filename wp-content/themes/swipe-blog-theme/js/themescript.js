@@ -4,10 +4,28 @@ jQuery(document).ready(function(){
     $('.emaillist .es-email').addClass('footer-subs-input');
     $('.emaillist input[type=submit]').addClass('footer-subs-btn');
 
-    html = $('#hiddencont3').html();
-    console.log(html);
-    html.each(function() {
-        console.log($(this).find('img'));
-    })
+    var contentOne = $('#hiddencont1 img').map(function(value, index) {
 
-}) ;
+        if(value<=2)
+        return `
+        <div class="small-card">
+            <figure>
+                <img src="${$(this).attr('src')}" alt="card" />
+            </figure>
+        </div>`;
+
+    }).get();
+    $('#hiddencont1').next('.smallCard').empty().append(contentOne);
+
+    var contentThree = $('#hiddencont3 img').map(function(value, index) {
+        if(value<=2)
+        return `
+        <div class="small-card">
+            <figure>
+                <img src="${$(this).attr('src')}" alt="card" />
+            </figure>
+        </div>`;
+    }).get();
+    $('#hiddencont3').next('.smallCard').empty().append(contentThree);
+
+});
