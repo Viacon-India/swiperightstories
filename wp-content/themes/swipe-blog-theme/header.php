@@ -38,20 +38,18 @@
             <ul class="menu menu-horizontal relative text-lg lg:gap-4 xl:gap-7 hidden lg:flex !p-0">
               <?php foreach ($header_menu_items as $header_menu_item) {
                 
-                // echo '<pre>';
-                // print_r($header_menu_item); 
-                // echo '</pre>'; ?>
+                ?>
                 <li class="nav-drop group">
                     <a class="nav-links nav-hov" href="<?php echo $header_menu_item->url; ?>">
                         <?php echo $header_menu_item->title;
                         
-                        if($header_menu_item->menu_item_parent != 0) { ?>
+                        /*if($header_menu_item->menu_item_parent != 0) { ?>
                           <svg class="group-hover:rotate-180 !transition-all !duration-3000" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.7302 1.07458C11.6912 0.982056 11.6006 0.921875 11.5 0.921875L0.500023 0.921997C0.399559 0.921997 0.308861 0.982178 0.269677 1.07471C0.230614 1.16724 0.250756 1.27429 0.320824 1.34631L5.82082 7.00317C5.86782 7.05151 5.93252 7.07886 6.00002 7.07886C6.06753 7.07886 6.13223 7.05151 6.17922 7.00317L11.6792 1.34619C11.7493 1.27405 11.7693 1.16711 11.7302 1.07458Z" fill="#101010" />
                           </svg>
-                        <?php } ?>
+                        <?php }*/ ?>
                     </a>
-                    <?php if($header_menu_item->menu_item_parent != 0) { ?>
+                    <?php /*if($header_menu_item->menu_item_parent != 0) { ?>
                     <ul class="center-dropdown">
                       <li><a class="drop-list" href="">Submenu 1</a></li>
                       <li><a class="drop-list" href="">Submenu 2</a></li>
@@ -59,49 +57,9 @@
                       <li><a class="drop-list" href="">Submenu 4</a></li>
                       <li><a class="drop-list" href="">Submenu 5</a></li>
                     </ul>
-                    <?php } ?>
+                    <?php } */?>
                 </li>
               <?php } ?>
-
-              <!-- <li class="nav-drop group">
-                <a href="#" class="nav-links nav-hov">
-                  Dating Apps
-                  <svg class="group-hover:rotate-180 !transition-all !duration-3000" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.7302 1.07458C11.6912 0.982056 11.6006 0.921875 11.5 0.921875L0.500023 0.921997C0.399559 0.921997 0.308861 0.982178 0.269677 1.07471C0.230614 1.16724 0.250756 1.27429 0.320824 1.34631L5.82082 7.00317C5.86782 7.05151 5.93252 7.07886 6.00002 7.07886C6.06753 7.07886 6.13223 7.05151 6.17922 7.00317L11.6792 1.34619C11.7493 1.27405 11.7693 1.16711 11.7302 1.07458Z" fill="#101010" />
-                  </svg>
-                </a>
-                <ul class="center-dropdown">
-                  <li><a class="drop-list" href="">Submenu 1</a></li>
-                  <li><a class="drop-list" href="">Submenu 2</a></li>
-                  <li><a class="drop-list" href="">Submenu 3</a></li>
-                  <li><a class="drop-list" href="">Submenu 4</a></li>
-                  <li><a class="drop-list" href="">Submenu 5</a></li>
-                </ul>
-              </li>
-              <li class="nav-drop group">
-                <a href="#" class="nav-links nav-hov">
-                  Modern Dating
-                  <svg class="group-hover:rotate-180 !transition-all !duration-3000" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.7302 1.07458C11.6912 0.982056 11.6006 0.921875 11.5 0.921875L0.500023 0.921997C0.399559 0.921997 0.308861 0.982178 0.269677 1.07471C0.230614 1.16724 0.250756 1.27429 0.320824 1.34631L5.82082 7.00317C5.86782 7.05151 5.93252 7.07886 6.00002 7.07886C6.06753 7.07886 6.13223 7.05151 6.17922 7.00317L11.6792 1.34619C11.7493 1.27405 11.7693 1.16711 11.7302 1.07458Z" fill="#101010" />
-                  </svg>
-                </a>
-              </li>
-              <li class="nav-drop group">
-                <a href="#" class="nav-links nav-hov">
-                  Dating Diary
-                  <svg class="group-hover:rotate-180 !transition-all !duration-3000" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.7302 1.07458C11.6912 0.982056 11.6006 0.921875 11.5 0.921875L0.500023 0.921997C0.399559 0.921997 0.308861 0.982178 0.269677 1.07471C0.230614 1.16724 0.250756 1.27429 0.320824 1.34631L5.82082 7.00317C5.86782 7.05151 5.93252 7.07886 6.00002 7.07886C6.06753 7.07886 6.13223 7.05151 6.17922 7.00317L11.6792 1.34619C11.7493 1.27405 11.7693 1.16711 11.7302 1.07458Z" fill="#101010" />
-                  </svg>
-                </a>
-              </li>
-              <li class="nav-drop group">
-                <a href="#" class="nav-links nav-hov">
-                  Find
-                  <svg class="group-hover:rotate-180 !transition-all !duration-3000" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.7302 1.07458C11.6912 0.982056 11.6006 0.921875 11.5 0.921875L0.500023 0.921997C0.399559 0.921997 0.308861 0.982178 0.269677 1.07471C0.230614 1.16724 0.250756 1.27429 0.320824 1.34631L5.82082 7.00317C5.86782 7.05151 5.93252 7.07886 6.00002 7.07886C6.06753 7.07886 6.13223 7.05151 6.17922 7.00317L11.6792 1.34619C11.7493 1.27405 11.7693 1.16711 11.7302 1.07458Z" fill="#101010" />
-                  </svg>
-                </a>
-              </li> -->
             </ul>
             <div class="flex justify-end items-center w-fit md:ml-[26px] pr-5">
               <button onclick="document.getElementById('myModal').style.display='block'" class="search-btn group" aria-label="search-button">
@@ -189,16 +147,18 @@
 
     <div class="ham-content" style="width: 100%;">
       <div class="ham-main">
+
+        <?php foreach ($header_menu_items as $header_menu_item) { ?>
+
         <div class="ham-list">
-          <h4 class="ham-links ham-accordion">Billionaires</h4>
-          <div class="ham-submenu newPanel">
-            <a class="submenu-list" href="">Submenu 1</a>
-            <a class="submenu-list" href="">Submenu 1</a>
-            <a class="submenu-list" href="">Submenu 1</a>
-            <a class="submenu-list" href="">Submenu 1</a>
-          </div>
+          <a href="<?php echo $header_menu_item->url; ?>">
+            <h4 class="ham-links ham-accordion"><?php echo $header_menu_item->title; ?></h4>
+          </a>
         </div>
-        <div class="ham-list">
+
+
+        <?php } ?>
+        <!-- <div class="ham-list">
           <h4 class="ham-links ham-accordion"> Wealth</h4>
           <div class="ham-submenu newPanel">
             <a class="submenu-list" href="">Submenu 1</a>
@@ -220,8 +180,8 @@
             <a class="submenu-list" href="">Submenu 1</a>
 
           </div>
-        </div>
-        <div class="ham-list">
+        </div> -->
+        <!-- <div class="ham-list">
           <h4 class="ham-links ham-accordion">Blogs</h4>
           <div class="ham-submenu newPanel">
             <a class="submenu-list" href="">Submenu 1</a>
@@ -229,7 +189,7 @@
             <a class="submenu-list" href="">Submenu 1</a>
             <a class="submenu-list" href="">Submenu 1</a>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
