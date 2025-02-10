@@ -65,7 +65,7 @@ $category_four_query = new WP_Query(
 
 ?>
 <div class="page-wrapper pt-[64px]">
-    <div class="hero-sec py-[44px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[160px] bg-[#FE4705]">
+    <div class="hero-sec py-[44px] md:py-[40px] 2xl:py-[160px] bg-[#FE4705]">
         <div class="container mx-auto">
             <?php if($recent_posts[0]) : ?>
                 <div class="hero-main">

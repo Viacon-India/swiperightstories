@@ -132,14 +132,14 @@
   <div id="myModal" class="h-full" style="width:100% !important; display:none">
  
     <div class="modal-content">
-      <div class="bg-[#FE4705] py-[40px] md:py-[100px]">
+      <div class="bg-[#FE4705] py-[40px] md:pt-[16px] md:pb-[28px] 2xl:py-[100px]">
         <div class="container mx-auto">
           <form class="input-sec">
             <input type="text" id="default-search" class="input-field" placeholder="Type & Hit Enter..." name="s" required>
           </form>
         </div>
       </div>
-      <div class="container mx-auto flex justify-center items-center">
+      <div class=" px-4 md:px-0 flex justify-center items-center">
         <div class="toggle-cut">
           <span onclick="document.getElementById('myModal').style.display='none'" class="close ">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">

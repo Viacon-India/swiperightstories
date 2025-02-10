@@ -134,7 +134,7 @@ $footer_content = get_option('content_data');
         },
         breakpoints: {
           0: {
-            slidesPerView: 1.2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           768: {
@@ -142,7 +142,11 @@ $footer_content = get_option('content_data');
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 4.5,
+            slidesPerView: 2.9,
+            spaceBetween: 50,
+          },
+          1536: {
+            slidesPerView: 4.2,
             spaceBetween: 50,
           },
         },

@@ -4,7 +4,7 @@
     <div class="w-page-wrapper">
       <div class="page-content">
         
-        <div class="bg-[#FE4705] py-[40px] md:py-[100px]">
+        <div class="bg-[#FE4705] py-[40px] md:pt-[16px] md:pb-[28px] 2xl:py-[100px]">
             <div class="container mx-auto">
                 <form class="input-sec">
                     <input type="text" id="default-search" 
