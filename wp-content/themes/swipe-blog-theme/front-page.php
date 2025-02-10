@@ -194,10 +194,10 @@ $category_four_query = new WP_Query(
                     </figure>
                 </a>
             </div>
-            <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
+            <div class="py-[40px] lg:py-[100px] pl-0 3xl:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
                 <div class="container mx-auto">
                     <a href="<?php echo get_permalink($recent_posts[1]->ID); ?>">
-                        <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">
+                        <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full 2xl:w-[60%] uppercase">
                             <?php echo get_the_title($recent_posts[1]->ID); ?>
                         </h2>
                     </a>
@@ -294,10 +294,10 @@ $category_four_query = new WP_Query(
                 </figure>
             </a>
         </div>
-        <div class="py-[40px] lg:py-[100px] pl-0 lg:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
+        <div class="py-[40px] lg:py-[100px] pl-0 3xl:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
             <div class="container mx-auto">
                 <a href="<?php echo get_the_permalink( $recent_posts[3]->ID ); ?>">
-                    <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full lg:w-[60%] uppercase">
+                    <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full 2xl:w-[60%] uppercase">
                         <?php echo get_the_title($recent_posts[3]->ID); ?>
                     </h2>
                 </a>
