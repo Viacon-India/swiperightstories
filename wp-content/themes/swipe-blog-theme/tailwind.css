@@ -231,7 +231,7 @@ body{
    
   
   .modal-main{
-    @apply mt-[3rem] xl:mt-[4rem] lg:mt-0 flex justify-center xl:w-[90%] 
+    @apply mt-[1rem] xl:mt-[4rem] lg:mt-0 flex justify-center xl:w-[90%] 
   }    
 
   .modal-content{
@@ -247,9 +247,6 @@ body{
     text-[#FFFFFF] placeholder:text-[#FFFFFF] bg-transparent font-MorganiteBold uppercase leading-[1] font-medium
   }
   
-  .modal-body{
-    @apply pr-6 md:pr-8
-  }
   .toggle-cut{
     @apply absolute top-[20px] right-[20px] md:top-[42px] md:right-[42px] cursor-pointer
   }
@@ -334,7 +331,7 @@ body{
   @apply w-full lg:w-[50%]
 }
 .heroSecTitle{
-  @apply text-[#FFFFFF] font-MorganiteBold text-[50px] md:text-[90px] leading-[46px] md:leading-[74px] md:w-[75%] 
+  @apply text-[#FFFFFF] font-MorganiteBold text-[50px] md:text-[80px] 2xl:text-[90px] leading-[46px] md:leading-[74px] xl:w-[85%] 2xl:w-[75%] 
   uppercase mb-4 tracking-[2.6px] lg:tracking-[3.6px]
 }
 .heroSecDetail{
@@ -392,7 +389,7 @@ body{
   transition-all duration-500 whitespace-normal
 }
 .scroller-overlay p{
-  @apply text-[#FFFFFF] text-[60px] text-center font-MorganiteBold leading-[1] tracking-[3px]
+  @apply text-[#FFFFFF] text-[48px] 2xl:text-[60px] text-center font-MorganiteBold leading-[1] tracking-[3px]
 }
 .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
   @apply flex justify-start absolute bottom-[2px]
@@ -448,6 +445,9 @@ body{
   @apply text-[#101010] text-[14px] lg:text-[16px] font-Poppins leading-[1] mb-4 uppercase
 }
 .default-card-detail h2{
+  @apply text-[#101010] text-[36px] lg:text-[48px] font-MorganiteBold leading-[1] uppercase
+}
+.default-card-detail h3{
   @apply text-[#101010] text-[36px] lg:text-[48px] font-MorganiteBold leading-[1] uppercase
 }
 

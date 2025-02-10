@@ -20,10 +20,10 @@ $cat_Name = $cat[0]->cat_name;
     </a>
     <div class="default-card-detail">
         <p><a href="<?php echo esc_url(get_category_link($cat_ID)); ?>"><?php echo $cat_Name; ?></a></p>
-        <h2>
+        <h3>
             <a href="<?php echo esc_url(get_the_permalink($post_ID)); ?>">
                 <?php echo $title; ?>
             </a>
-        </h2>
+        </h3>
     </div>
 </div>
