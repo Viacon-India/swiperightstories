@@ -27,7 +27,7 @@ $most_viewed_posts = get_posts(
         </div>
 
         
-        <?php foreach($most_viewed_posts as $post_by_viewed) { ?>   
+        <?php /*foreach($most_viewed_posts as $post_by_viewed) { ?>   
 
         <div class="absolute top-[19%] right-[1%] common-card-four-o-four ">
             <a href="">
@@ -37,7 +37,7 @@ $most_viewed_posts = get_posts(
             </a>
         </div>
 
-        <?php } ?>
+        <?php }*/ ?>
 
         <!-- <div class="absolute top-[9%] left-[10%] common-card-four-o-four">
             <div class="common-card-four-o-four-p">

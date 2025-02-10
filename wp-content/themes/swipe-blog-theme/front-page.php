@@ -65,32 +65,36 @@ $category_four_query = new WP_Query(
 
 ?>
 <div class="page-wrapper pt-[64px]">
-    <div class="hero-sec py-[44px] md:py-[40px] 2xl:py-[160px] bg-[#FE4705]">
-        <div class="container mx-auto">
-            <?php if($recent_posts[0]) : ?>
-                <div class="hero-main">
-                    <div class="hero-detail">
-                        <h1 class="heroSecTitle"><?php echo get_the_title($recent_posts[0]->ID); ?></h1>
-                        <p class="heroSecDetail"><?php echo get_post_meta($recent_posts[0]->ID, 'post_sub_title', true); ?></p>
-                        <a class="readMoreBtn group" href="<?php echo get_the_permalink($recent_posts[0]); ?>">READ MORE
-                            <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
-                            </svg>
-                        </a>
+
+    <?php if(!empty($recent_posts) && is_array($recent_posts)) { ?>
+        <div class="hero-sec py-[44px] md:py-[40px] 2xl:py-[160px] bg-[#FE4705]">
+            <div class="container mx-auto">
+                <?php if($recent_posts[0]) : ?>
+                    <div class="hero-main">
+                        <div class="hero-detail">
+                            <h1 class="heroSecTitle"><?php echo get_the_title($recent_posts[0]->ID); ?></h1>
+                            <p class="heroSecDetail"><?php echo get_post_meta($recent_posts[0]->ID, 'post_sub_title', true); ?></p>
+                            <a class="readMoreBtn group" href="<?php echo get_the_permalink($recent_posts[0]); ?>">READ MORE
+                                <svg class="group-hover:fill-[#FE4705]" width="6" height="7" viewBox="0 0 6 7" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.55791 2.84999L1.12017 0.188122C0.915227 0.065106 0.708732 0 0.537094 0C0.205266 0 0 0.233339 0 0.623918V6.37699C0 6.76711 0.205008 7 0.53606 7C0.707956 7 0.911153 6.93484 1.11655 6.81148L5.55636 4.14967C5.84188 3.97821 6 3.74748 6 3.49969C6.00006 3.25207 5.84375 3.02139 5.55791 2.84999Z" fill="" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hero-img-sec">
+                            <figure class="w-full h-[254px] md:h-[517px]">
+                                <?php if (has_post_thumbnail($recent_posts[0]->ID)) : ?>
+                                    <?php echo get_the_post_thumbnail($recent_posts[0]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" class="w-full h-full object-contain" alt="card" />     
+                                <?php endif; ?>
+                            </figure>
+                        </div>
                     </div>
-                    <div class="hero-img-sec">
-                        <figure class="w-full h-[254px] md:h-[517px]">
-                            <?php if (has_post_thumbnail($recent_posts[0]->ID)) : ?>
-                                <?php echo get_the_post_thumbnail($recent_posts[0]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" class="w-full h-full object-contain" alt="card" />     
-                            <?php endif; ?>
-                        </figure>
-                    </div>
-                </div>
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
+    <?php } ?>
+
     <div class="common-slider-sec">
         <div class="infiniteSlider">
             <div class="slide-track">
@@ -179,8 +183,7 @@ $category_four_query = new WP_Query(
 
     <?php endif; 
     
-    
-    if($recent_posts[1]) { ?>
+    if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>1) { ?>
 
         <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
             <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
@@ -217,26 +220,26 @@ $category_four_query = new WP_Query(
             </div>
         </div>
         <?php 
-    } ?>
+    } 
+    
+    if ($category_one_query->have_posts()) { ?>
 
-
-    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
-        <div class="container mx-auto">
-            <h2 class="section-title">Dating Apps</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-
-            <?php   
-            if ($category_one_query->have_posts()){
-                while ($category_one_query->have_posts()){
-                    $category_one_query->the_post();
-                    get_template_part('template-parts/content', 'default-card');
-                }
-            }            
-            ?>
-
+        <div class="default-card-sec mb-[40px] lg:mb-[100px]">
+            <div class="container mx-auto">
+                <h2 class="section-title">Dating Apps</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+                    <?php while ($category_one_query->have_posts()){
+                        $category_one_query->the_post();
+                        get_template_part('template-parts/content', 'default-card');
+                    } ?>
+                </div>
             </div>
         </div>
-    </div>
+
+    <?php }
+    
+    if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>2) { ?>
+
     <div class="hero-sec py-[44px] lg:py-[160px] bg-[#EB023D] mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             
@@ -265,71 +268,82 @@ $category_four_query = new WP_Query(
 
         </div>
     </div>
+
+    <?php } 
+    
+    if ($category_two_query->have_posts()){ ?>
+
     <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Modern Dating</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <?php   
-                if ($category_two_query->have_posts()){
-                    while ($category_two_query->have_posts()){
-                        $category_two_query->the_post();
-                        get_template_part('template-parts/content', 'default-card');
-                    }
-                }            
-                ?>
+                <?php while ($category_two_query->have_posts()){
+                    $category_two_query->the_post();
+                    get_template_part('template-parts/content', 'default-card');
+                } ?>
             </div>
         </div>
     </div>
 
-    <?php if($recent_posts[3]) : ?>
-    <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
-        <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
-            <a href="<?php echo get_the_permalink( $recent_posts[3]->ID ); ?>">
-                <figure>
-                    <?php if (has_post_thumbnail($recent_posts[3]->ID)) : ?>
-                        <?php echo get_the_post_thumbnail($recent_posts[3]->ID, 'car1-thumbnail'); ?>
-                    <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />     
-                    <?php endif; ?>
-                </figure>
-            </a>
-        </div>
-        <div class="py-[40px] lg:py-[100px] pl-0 3xl:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
-            <div class="container mx-auto">
+    <?php 
+    }
+    
+    
+    if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>3) {
+        if($recent_posts[3]) : ?>
+        <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
+            <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
                 <a href="<?php echo get_the_permalink( $recent_posts[3]->ID ); ?>">
-                    <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full 2xl:w-[60%] uppercase">
-                        <?php echo get_the_title($recent_posts[3]->ID); ?>
-                    </h2>
+                    <figure>
+                        <?php if (has_post_thumbnail($recent_posts[3]->ID)) : ?>
+                            <?php echo get_the_post_thumbnail($recent_posts[3]->ID, 'car1-thumbnail'); ?>
+                        <?php else : ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" alt="card" />     
+                        <?php endif; ?>
+                    </figure>
                 </a>
-                <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
-                    <?php echo get_post_meta($recent_posts[3]->ID, 'post_sub_title', true); ?>
-                </p>
-                <div class="hidden" id="hiddencont3" data-link="<?php echo get_permalink($recent_posts[3]->ID); ?>">
-                    <?php echo $recent_posts[3]->post_content; ?>
-                </div>
-                <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px] smallCard">
-                    
+            </div>
+            <div class="py-[40px] lg:py-[100px] pl-0 3xl:pl-[70px] bg-[#EFF3ED] w-full lg:w-[50%]">
+                <div class="container mx-auto">
+                    <a href="<?php echo get_the_permalink( $recent_posts[3]->ID ); ?>">
+                        <h2 class="text-[#101010] text-[48px] lg:text-[60px] font-MorganiteBold font-bold leading-[1] mb-5 w-full 2xl:w-[60%] uppercase">
+                            <?php echo get_the_title($recent_posts[3]->ID); ?>
+                        </h2>
+                    </a>
+                    <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
+                        <?php echo get_post_meta($recent_posts[3]->ID, 'post_sub_title', true); ?>
+                    </p>
+                    <div class="hidden" id="hiddencont3" data-link="<?php echo get_permalink($recent_posts[3]->ID); ?>">
+                        <?php echo $recent_posts[3]->post_content; ?>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px] smallCard">
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php endif; ?>
-
-    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
-        <div class="container mx-auto">
-            <h2 class="section-title">Dating Diary</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <?php   
-                if ($category_three_query->have_posts()){
-                    while ($category_three_query->have_posts()){
+        <?php endif; 
+    }
+    
+    
+    if ($category_three_query->have_posts()){ ?>
+        <div class="default-card-sec mb-[40px] lg:mb-[100px]">
+            <div class="container mx-auto">
+                <h2 class="section-title">Dating Diary</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+                    <?php  while ($category_three_query->have_posts()){
                         $category_three_query->the_post();
                         get_template_part('template-parts/content', 'default-card');
-                    }
-                }            
-                ?>
+                    } ?>
+                </div>
             </div>
         </div>
-    </div>
+    <?php } 
+    
+    
+    if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>4) {?>
+
+
     <div class="hero-sec py-[44px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[160px] bg-[#FE4705] mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <?php if($recent_posts[4]) : ?>
@@ -356,20 +370,24 @@ $category_four_query = new WP_Query(
             <?php endif; ?>
         </div>
     </div>
+    <?php }
+    
+    if ($category_four_query->have_posts()){?>
+
+
     <div class="default-card-sec mb-[40px] lg:mb-[100px]">
         <div class="container mx-auto">
             <h2 class="section-title">Find</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <?php   
-                if ($category_four_query->have_posts()){
-                    while ($category_four_query->have_posts()){
-                        $category_four_query->the_post();
-                        get_template_part('template-parts/content', 'default-card');
-                    }
-                }            
-                ?>
+                <?php while ($category_four_query->have_posts()){
+                    $category_four_query->the_post();
+                    get_template_part('template-parts/content', 'default-card');
+                } ?>
             </div>
         </div>
     </div>
+
+    <?php } ?>
+
 </div>
 <?php get_footer(); ?>
