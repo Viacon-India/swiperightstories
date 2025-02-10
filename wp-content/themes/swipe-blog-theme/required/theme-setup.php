@@ -3,7 +3,7 @@
 add_action('wp_enqueue_scripts', 'my_plugin_assets');
 function my_plugin_assets()
 {
-	$ver = '1.1.'.rand(10,100);	
+	$ver = '1.2.'.rand(10,100);	
 
 	wp_enqueue_script('jquery.min', get_template_directory_uri() . '/js/jquery-3.7.1.js', array('jquery'), $ver, true);
 	wp_enqueue_script('swiper-bundle.min', get_template_directory_uri() . '/js/swiper-bundle.min.js', array('jquery'), $ver, true);
@@ -48,6 +48,8 @@ if (!function_exists('custom_theme_setup')) {
 		add_image_size('single-thumbnail', 	950, 600, true);
 		add_image_size('related-thumbnail', 440, 297, true);
 		add_image_size('contact-thumbnail', 660, 728, true);
+		add_image_size('search-thumbnail', 441, 351, true);
+		add_image_size('card1-thumbnail', 680, 518, true);
 
 		set_post_thumbnail_size(1200, 9999);
 
@@ -76,19 +78,26 @@ function register_my_menus()
 }
 
 
-function logo_url()
-{
-	$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
-	if (has_custom_logo()) {
-		$custom_logo_id = get_theme_mod('custom_logo');
-		$custom_logo_data = wp_get_attachment_image_src($custom_logo_id, 'full');
-		$custom_logo_url = $custom_logo_data[0];
-		return '<img class="w-full h-full object-contain" src="'.esc_url($custom_logo_url).'" alt="logo"/>';
-	} else {
-		return '<img class="w-full h-full object-contain" src="'.esc_url($logo_url).'" alt="logo"/>';;
+if(!function_exists('logo_url')) {
+	function logo_url() {
+		$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
+		if (has_custom_logo()) {
+			$custom_logo_id = get_theme_mod('custom_logo');
+			$custom_logo_data = wp_get_attachment_image_src($custom_logo_id, 'full');
+			$custom_logo_url = $custom_logo_data[0];
+			return '<img class="w-full h-full object-contain" src="'.esc_url($custom_logo_url).'" alt="logo"/>';
+		} else {
+			return '<img class="w-full h-full object-contain" src="'.esc_url($logo_url).'" alt="logo"/>';;
+		}
 	}
 }
 
+if(!function_exists('footer_logo_url')) {
+	function footer_logo_url() {
+		$footer_logo_url = get_stylesheet_directory_uri() . '/images/logo2.png';
+		return '<img class="w-full h-full object-contain" src="'.esc_url($footer_logo_url).'" alt="logo"/>';
+	}
+}
 
 
 
@@ -315,3 +324,37 @@ function custom_opengraph_url($url) {
         return $url; // Return the original URL for other pages
     }
 }
+
+
+
+
+
+add_filter( 'comment_form_fields', 'custom_comment_form_fields' );
+function custom_comment_form_fields( $fields ) {
+	unset($fields['author']);
+	unset($fields['email']);
+	unset($fields['url']);
+	unset($fields['comment']);
+	unset($fields['cookies']);
+
+	$fields['email-wrapper-open']	= '<div class="comment-from-row">';
+	$fields['author']	= '<input type="text" class="comment-from-input" id="author" name="author" placeholder="Enter your name" required>';
+	$fields['email']	= '<input type="email" class="comment-from-input" id="email" name="email" placeholder="Enter your email" required>';
+	$fields['url']		= '<input type="url" class="comment-from-input" id="url" name="url" placeholder="website">';
+	$fields['email-wrapper-close']	= '</div>';
+	$fields['comment']	= '<div class="comment-from-text-aria-wrapper"><textarea class="comment-from-text-aria" id="comment" name="comment" placeholder="Write a comment" cols="30" rows="7" required></textarea></div>';
+	$fields['cookies']	= '<div class="single-page-comment-from-massage-checkbox-wrapper"><input class="translate-y-[6px] md:translate-y-0" id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent" class="text-[16px] font-Lato text-[#8A8A8A]">Save my name, email, and website in this browser for the next time I comment.</label></div>';
+	return $fields;
+}
+
+
+function custom_comment_form_defaults( $defaults ) {
+	$defaults['class_form']				= 'reply-box flex flex-col gap-[10px] md:gap-[18px]';
+	$defaults['title_reply']			= 'Leave A Reply';
+	$defaults['title_reply_before']		= '<h2 class="comment-from-title">';
+	$defaults['title_reply_after']		= '</h2>';
+	$defaults['submit_button']			= '<button type="submit" class="single-page-comment-from-submit-button">Post Comment</button>';
+	return $defaults;
+	
+}
+add_filter( 'comment_form_defaults', 'custom_comment_form_defaults' );

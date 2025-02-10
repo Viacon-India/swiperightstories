@@ -23,7 +23,7 @@
                     <?php echo strip_tags(single_cat_title()); ?>
                 </a>
             </div>
-            <h2 class="text-[#000000] text-[80px] font-MorganiteBold uppercase leading-[1] "><?php echo strip_tags(single_cat_title()); ?></h2>
+            <h1 class="text-[#000000] text-[80px] font-MorganiteBold uppercase leading-[1] "><?php echo strip_tags(single_cat_title()); ?></h1>
             <p class="text-[15px] sm:text-[16px] font-Poppins font-normal first:mt-0
                     mt-[8px] sm:mt-[9px] md:mt-[10px] lg:mt-[11px] xl:mt-[12px] 2xl:mt-[13px] 3xl:mt-[14px]
                     mb-[16px] sm:mb-[18px] md:mb-[20px] lg:mb-[22px] xl:mb-[24px] 2xl:mb-[26px] 3xl:mb-[24px]">
@@ -34,7 +34,7 @@
                 <?php
                 if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post();
-                        get_template_part('template-parts/content', 'default-card');
+                        get_template_part('template-parts/content', 'archive-card');
                     endwhile; ?>
                 <?php else : ?>
                     <p class="inner-detail">Sorry, there is no articles.</p>
@@ -46,8 +46,8 @@
                     <?php the_posts_pagination(
                         array(
                             'mid_size' => 1,
-                            'prev_text'          => _x('', 'previous set of Posts'),
-                            'next_text'          => _x('', 'next set of Posts')
+                            'prev_text'          => _x('<<', 'previous set of Posts'),
+                            'next_text'          => _x('>>', 'next set of Posts')
                         )
                     ); ?>
                 </div>

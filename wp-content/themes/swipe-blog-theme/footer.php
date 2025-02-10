@@ -12,11 +12,11 @@ $footer_content = get_option('content_data');
     <div class="container mx-auto">
         <div class="footer-main">
             <div class="footer-detail w-full xl:w-[30%]">
-                <figure class="rounded-none m-0 w-[260px] h-[46px]">
-                    <img class="w-full h-full object-cover" 
-                    src="<?php echo get_template_directory_uri(); ?>/images/logo2.png" 
-                    alt="logo" />
-                </figure>
+                <a href="<?php echo home_url(); ?>">
+                    <figure class="rounded-none m-0 w-[260px] h-[46px]">
+                        <?php echo footer_logo_url(); ?>
+                    </figure>
+                </a>
                 
                 <p class="footer-desc"><?php echo $footer_content; ?></p>
                 <div class="icon-sec">
@@ -120,7 +120,7 @@ $footer_content = get_option('content_data');
 <?php wp_footer(); ?>
 
 <!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
 <?php wp_footer(); ?>
 

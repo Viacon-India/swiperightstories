@@ -40,7 +40,7 @@ $designation = get_the_author_meta( 'designation', $author_id, true );
             <?php
             if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post();
-                    get_template_part('template-parts/content', 'default-card');
+                    get_template_part('template-parts/content', 'archive-card');
                 endwhile; ?>
             <?php else : ?>
                 <p class="inner-detail">Sorry, but "<capital class="uppercase"><?php echo $display_name; ?></capital>" has not published any posts.</p>
@@ -52,8 +52,8 @@ $designation = get_the_author_meta( 'designation', $author_id, true );
                 <?php the_posts_pagination(
                     array(
                         'mid_size' => 1,
-                        'prev_text'          => _x('', 'previous set of Posts'),
-                        'next_text'          => _x('', 'next set of Posts')
+                        'prev_text'          => _x('<<', 'previous set of Posts'),
+                        'next_text'          => _x('>>', 'next set of Posts')
                     )
                 ); ?>
             </div>
