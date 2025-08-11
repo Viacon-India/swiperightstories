@@ -8,30 +8,6 @@ $cont_featimage = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 
 while (have_posts()) : the_post(); ?>
 
-
-
-
-
-<section class="contact-us-page mt-[68px]">
-    <div class="container mx-auto">
-        <div class="page-common-wrapper">
-            <div class="page-common-wrapper-inner">
-                <div class="contact-about-common-title-wrapper">
-                    <h2 class="contact-about-common-title">
-                        <?php the_title(); ?>
-                    </h2>
-                </div>
-                <p class="contact-about-p">
-                    <?php the_content(); ?>                    
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<br><br><br>
-
-
-
 <style>
 input[type=text],
 input[type=email],
@@ -61,6 +37,11 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+/*div {*/
+/*  border-radius: 5px;*/
+/*  background-color: #f2f2f2;*/
+/*  padding: 20px;*/
+/*}*/
 
 .single-page-banner{
       border-radius: 5px;
@@ -70,6 +51,24 @@ input[type=submit]:hover {
 
 </style>
 
+<section class="contact-us-page mt-[68px]">
+    <div class="container mx-auto">
+        <div class="page-common-wrapper">
+            <div class="page-common-wrapper-inner">
+                <div class="contact-about-common-title-wrapper">
+                    <h2 class="contact-about-common-title">
+                        <?php the_title(); ?>
+                    </h2>
+                </div>
+                <p class="contact-about-p">
+                    <?php the_content(); ?>                    
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+
 <section class="single-page-banner container mx-auto">
   <div class="container mx-auto px-4">
     <div class="flex flex-col lg:flex-row bg-[#f5eee9] gap-x-20 py-4">
@@ -78,8 +77,10 @@ input[type=submit]:hover {
       <div class="w-full lg:w-1/2 p-6 lg:pl-10 lg:pr-6 flex items-center justify-center">
         <div class="w-full max-w-md bg-[#f2f2f2] p-6 rounded-md">
             
+            
            <?php echo do_shortcode('[contact-form-7 id="dc3d4a5" title="Contact Us Page Form"]'); ?>
             
+
         </div>
       </div>
 
@@ -99,11 +100,6 @@ input[type=submit]:hover {
     </div>
   </div>
 </section>
-
-
-
-
-
 
 
 <?php endwhile;
