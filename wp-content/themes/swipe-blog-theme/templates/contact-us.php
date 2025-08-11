@@ -1,8 +1,6 @@
-<?php /* Template Name: Contact Page Template */ ?>
+<?php /* Template Name: Contact Page Template */ 
 
-<?php get_header();
-
-
+get_header();
 $cont_featimage = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 
 
