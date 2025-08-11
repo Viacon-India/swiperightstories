@@ -198,3 +198,21 @@ function save_extra_user_profile_fields( $user_id ) {
     update_user_meta( $user_id, 'designation', $_POST['designation'] );
 }
 
+/////
+
+// Remove any existing robots meta tags output by plugins
+function force_index_follow_meta() {
+    // Remove any existing robots meta tags output by plugins
+    ob_start(function($buffer) {
+        // Remove existing robots meta tags
+        $buffer = preg_replace('/<meta name=[\'"]robots[\'"].*?>/i', '', $buffer);
+
+        // Add our forced robots meta tag just before </head>
+        $meta_tag = "<meta name='robots' content='index, follow' />\n";
+        $buffer = preg_replace('/<\/head>/i', $meta_tag . '</head>', $buffer);
+
+        return $buffer;
+    });
+}
+add_action('template_redirect', 'force_index_follow_meta');
+
