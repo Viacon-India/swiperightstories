@@ -45,7 +45,12 @@
 
         ?>
 
-
+<style>
+.wp-block-embed-instagram {
+  max-width: 350px; /* adjust the size */
+  width: 100%;
+}
+</style>
         <section class="single-page-banner">
             <div class=" container mx-auto">
                 <div class="single-page-banner-inner">
@@ -84,7 +89,8 @@
                         <div class="single-page-banner-img-card">
                             
                             <?php if (has_post_thumbnail()) : ?>
-                                <?php echo get_the_post_thumbnail($post_id, 'single-thumbnail', array('class' => 'img-responsive w-full h-full object-cover')); ?>
+                                     <?php /* echo get_the_post_thumbnail($post_id, 'single-thumbnail', array('class' => 'img-responsive w-full h-full object-cover')); */ ?>
+                                <?php  echo get_the_post_thumbnail($post_id, 'full', array('class' => 'img-responsive w-full h-auto object-contain'));  ?>
                             <?php else : ?>
                                 <figure class="export-img-card-wrapper">
                                     <img class="img-responsive w-full h-full object-cover" 
