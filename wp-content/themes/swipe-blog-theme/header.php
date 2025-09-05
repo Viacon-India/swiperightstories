@@ -10,6 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <!-- Favicon -->
+<!--<link rel="icon" href="https://swiperightstories.com/favicon.png" type="image/png" sizes="32x32">-->
+
+<link rel="icon" href="https://swiperightstories.com/wp-content/themes/swipe-blog-theme/images/favicon.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://swiperightstories.com/favicon.ico" sizes="full">
+<link rel="apple-touch-icon" href="https://swiperightstories.com/apple-touch-icon.png">
+
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMM77K3GTY"></script> 
+  <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-SMM77K3GTY'); </script>
 
   <?php wp_head(); ?>
 
