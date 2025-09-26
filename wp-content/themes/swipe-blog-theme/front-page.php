@@ -10,19 +10,30 @@ $recent_posts = get_posts(
     )
 );
 
-$most_viewed_posts = get_posts(
+// $most_viewed_posts = get_posts(
+//     array(
+//         'post_type' => 'post',
+//         'post_status' => 'publish',
+//         'order'   => 'DESC',
+//         'posts_per_page' => 7,
+//         'meta_key' => 'post_views_count',
+//         'orderby' => 'meta_value_num',
+//     )
+// );
+
+$dating_diary_posts = get_posts( 
     array(
-        'post_type' => 'post',
-        'post_status' => 'publish',
-        'order'   => 'DESC',
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'order'          => 'DESC',
         'posts_per_page' => 7,
-        'meta_key' => 'post_views_count',
-        'orderby' => 'meta_value_num',
+        'orderby'        => 'meta_value_num',
+        'category_name'  => 'dating-diary', // only posts from "dating-diary" category
     )
 );
 
 
-$category_slugs = ['find', 'uncategorized', 'find', 'uncategorized'];
+$category_slugs = ['dating-apps', 'modern-dating', 'dating-diary', 'find'];
 $category_one_query = new WP_Query(
     array(
         'post_type' => 'post',
@@ -147,13 +158,13 @@ $category_four_query = new WP_Query(
     <?php 
     
     
-    if($most_viewed_posts) : ?>
+    if($dating_diary_posts) : ?>
 
     <div class="scroller-slider relative pb-[100px]">
         <div class="swiper mySwiper-one bg-[#FFFFFF] pl-10 h-[440px]">
             <div class="swiper-wrapper">
 
-                <?php foreach($most_viewed_posts as $post_by_viewed) { ?>                                    
+                <?php foreach($dating_diary_posts as $post_by_viewed) { ?>                                    
 
                     <div class="swiper-slide">
                         <div class="scroller-card">
