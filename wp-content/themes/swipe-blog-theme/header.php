@@ -75,7 +75,7 @@
             </ul>
             <div class="flex justify-end items-center w-fit md:ml-[26px] pr-5">
               <button onclick="document.getElementById('myModal').style.display='block'" class="search-btn group" aria-label="search-button">
-                <p class="relative text-[#202020] text-[18px] leading-[17px] font-medium hidden lg:flex nav-hov font-Manrope">SEARCH</p>
+                <!-- <p class="relative text-[#202020] text-[18px] leading-[17px] font-medium hidden lg:flex nav-hov font-Manrope">SEARCH</p> -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 25 25" fill="#202020">
                   <path d="M19.0358 17.3872L24.0327 22.3828L22.3818 24.0336L17.3862 19.0368C15.5274 20.5269 13.2153 21.3374 10.833 21.334C5.03701 21.334 0.333008 16.63 0.333008 10.834C0.333008 5.03798 5.03701 0.333984 10.833 0.333984C16.629 0.333984 21.333 5.03798 21.333 10.834C21.3364 13.2163 20.5259 15.5283 19.0358 17.3872ZM16.6955 16.5215C18.1761 14.9989 19.003 12.9578 18.9997 10.834C18.9997 6.32132 15.3445 2.66732 10.833 2.66732C6.32034 2.66732 2.66634 6.32132 2.66634 10.834C2.66634 15.3455 6.32034 19.0007 10.833 19.0007C12.9568 19.004 14.9979 18.1771 16.5205 16.6965L16.6955 16.5215Z" fill="" />
                 </svg>
