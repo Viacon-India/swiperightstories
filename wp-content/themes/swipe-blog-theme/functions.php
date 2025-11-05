@@ -85,10 +85,21 @@ function social() {
 			'linkedin' // Should match Option ID
 		)
 	);
+
+		add_settings_field( // Reddit
+    		'reddit',
+    		'Reddit',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('reddit')
+    	);
+    	
 		
 	register_setting('general','facebook', 'esc_attr');
 	register_setting('general','twitter', 'esc_attr');
 	register_setting('general','linkedin', 'esc_attr');
+    register_setting('general', 'reddit', 'esc_attr');
 }
 add_action('admin_init', 'social'); //Enable Social Links Under Settings
 
