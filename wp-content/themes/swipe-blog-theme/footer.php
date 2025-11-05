@@ -20,7 +20,7 @@ $footer_content = get_option('content_data');
                 
                 <p class="footer-desc"><?php echo $footer_content; ?></p>
                 <div class="icon-sec">
-                    <?php if ($facebook || $twitter || $linkedin) :
+                    <?php if ($facebook || $twitter || $linkedin || $instagram || $youtube || $pinterest || $reddit) :
                         if($facebook) : ?>
                         <a href="<?php echo $facebook; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="social_link">
                             <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
@@ -56,6 +56,39 @@ $footer_content = get_option('content_data');
                             </svg>
                         </a>
                         <?php endif;
+                          if ($instagram) : ?>
+                            <a href="<?php echo $instagram; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#000000]" width="24" height="24" viewBox="0 0 24 24" fill="#979797">
+                                    <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5A4.25 4.25 0 0 1 16.25 20.5h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zm5.25-.75a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+                
+                        <?php if ($youtube) : ?>
+                            <a href="<?php echo $youtube; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="YouTube">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#000000]" width="24" height="24" viewBox="0 0 24 24" fill="#979797">
+                                <path d="M23.498 6.186c-.272-1.02-1.073-1.82-2.093-2.093C19.59 3.5 12 3.5 12 3.5s-7.59 0-9.405.593C1.575 4.366.774 5.166.502 6.186.001 8.02 0 12 0 12s0 3.98.502 5.814c.272 1.02 1.073 1.82 2.093 2.093C4.41 20.5 12 20.5 12 20.5s7.59 0 9.405-.593c1.02-.272 1.82-1.073 2.093-2.093.501-1.834.502-5.814.502-5.814s-.001-3.98-.502-5.814zM9.75 15.02V8.98l6.25 3.02-6.25 3.02z"/>
+                              </svg>
+                            </a>
+
+                        <?php endif; ?>
+                
+                        <?php if ($pinterest) : ?>
+                            <a href="<?php echo $pinterest; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="Pinterest">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#000000]" width="24" height="24" viewBox="0 0 24 24" fill="#979797">
+                                    <path d="M12 2C6.489 2 2 6.38 2 11.816c0 3.353 1.889 6.27 4.83 7.578-.068-.645-.13-1.637.026-2.343.142-.614.92-3.906.92-3.906s-.235-.474-.235-1.175c0-1.101.64-1.922 1.434-1.922.675 0 1 0.508 1 1.116 0 .679-.43 1.694-.653 2.636-.188.797.396 1.447 1.174 1.447 1.409 0 2.49-1.49 2.49-3.64 0-1.899-1.365-3.229-3.317-3.229-2.26 0-3.587 1.694-3.587 3.446 0 .68.26 1.408.584 1.804.064.079.073.149.056.229-.06.26-.194.817-.22.931-.033.143-.106.173-.243.104-.908-.42-1.477-1.735-1.477-2.793 0-2.277 1.658-4.37 4.783-4.37 2.51 0 4.459 1.788 4.459 4.182 0 2.494-1.57 4.5-3.751 4.5-.733 0-1.423-.38-1.657-.832l-.45 1.708c-.163.627-.604 1.415-.9 1.896.675.204 1.39.315 2.134.315 5.511 0 10-4.38 10-9.816S17.511 2 12 2z"/>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ($reddit) : ?>
+                            <a href="<?php echo esc_url($reddit); ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="Reddit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="#979797" class="transition-all duration-300 group-hover:fill-[#FF4500]">
+                                    <path d="M24 11.779a2.49 2.49 0 0 0-4.237-1.748c-1.017-.707-2.371-1.157-3.868-1.219l.818-3.856 2.701.573a1.765 1.765 0 1 0 .183-.868l-3.037-.646a.434.434 0 0 0-.512.326l-.957 4.518c-1.552.058-2.949.509-4.004 1.23a2.49 2.49 0 1 0-2.688 4.108c-.019.17-.029.343-.029.518 0 2.603 3.13 4.72 6.974 4.72s6.974-2.117 6.974-4.72c0-.173-.01-.344-.029-.513A2.49 2.49 0 0 0 24 11.779ZM8.733 12.444a1.126 1.126 0 1 1 0 2.252 1.126 1.126 0 0 1 0-2.252Zm6.583 3.894c-.792.79-2.299.854-3.319.854s-2.527-.064-3.319-.854a.434.434 0 1 1 .614-.614c.511.511 1.63.673 2.705.673s2.194-.162 2.705-.673a.434.434 0 1 1 .614.614ZM15.22 14.7a1.126 1.126 0 1 1 0-2.252 1.126 1.126 0 0 1 0 2.252Z"/>
+                                </svg>
+                            </a>
+                        <?php endif; 
                     endif; ?>
                 </div>
             </div>
