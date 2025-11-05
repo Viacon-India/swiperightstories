@@ -2,6 +2,10 @@
 $facebook = get_option('facebook');
 $twitter = get_option('twitter');
 $linkedin = get_option('linkedin');   
+$instagram = get_option('instagram');   
+$youtube = get_option('youtube');   
+$pinterest = get_option('pinterest');   
+$reddit = get_option('reddit');   
 $footer_content = get_option('content_data');  
 
 ?>
@@ -19,44 +23,34 @@ $footer_content = get_option('content_data');
                 </a>
                 
                 <p class="footer-desc"><?php echo $footer_content; ?></p>
-                <div class="icon-sec">
-                    <?php if ($facebook || $twitter || $linkedin || $instagram || $youtube || $pinterest || $reddit) :
-                        if($facebook) : ?>
-                        <a href="<?php echo $facebook; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="social_link">
-                            <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
-                                <g clip-path="url(#clip0_662_2926)">
-                                    <path d="M9.33366 9.00016H11.0003L11.667 6.3335H9.33366V5.00016C9.33366 4.3135 9.33366 3.66683 10.667 3.66683H11.667V1.42683C11.4497 1.39816 10.629 1.3335 9.76233 1.3335C7.95233 1.3335 6.66699 2.43816 6.66699 4.46683V6.3335H4.66699V9.00016H6.66699V14.6668H9.33366V9.00016Z" fill="" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_662_2926">
-                                        <rect width="16" height="16" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a>
-                        <?php endif;
-                        if($twitter) : ?>
-                        <a href="<?php echo $twitter; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="social_link">
-                            <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
-                                <g clip-path="url(#clip0_228_4218)">
-                                    <path d="M9.48942 6.77491L15.3177 0H13.9366L8.87589 5.88256L4.83392 0H0.171997L6.28424 8.89547L0.171997 16H1.55319L6.89742 9.78782L11.166 16H15.828L9.48908 6.77491H9.48942ZM7.59768 8.97384L6.97839 8.08805L2.05086 1.03974H4.17229L8.14887 6.72795L8.76816 7.61374L13.9372 15.0075H11.8158L7.59768 8.97418V8.97384Z" fill="" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_228_4218">
-                                        <rect width="16" height="16" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a>
-                        <?php endif;
-                        if($linkedin) : ?>
-                        <a href="<?php echo $linkedin; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="social_link">
-                            <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
-                                <path d="M4.62764 3.33345C4.62739 3.87632 4.29804 4.36484 3.79488 4.56865C3.29172 4.77246 2.71523 4.65086 2.33725 4.2612C1.95927 3.87152 1.85528 3.2916 2.07432 2.79488C2.29336 2.29816 2.79168 1.98383 3.3343 2.00012C4.05502 2.02175 4.62796 2.61241 4.62764 3.33345ZM4.66764 5.65345H2.00097V14.0001H4.66764V5.65345ZM8.88098 5.65345H6.22764V14.0001H8.85432V9.6201C8.85432 7.1801 12.0343 6.95343 12.0343 9.6201V14.0001H14.6677V8.71343C14.6677 4.60012 9.96099 4.75345 8.85432 6.77343L8.88098 5.65345Z" fill="" />
-                            </svg>
-                        </a>
-                        <?php endif;
-                          if ($instagram) : ?>
+               <div class="icon-sec">
+                    <?php if ($facebook || $twitter || $linkedin || $instagram || $youtube || $pinterest || $reddit) : ?>
+                
+                        <?php if ($facebook) : ?>
+                            <a href="<?php echo $facebook; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="Facebook">
+                                <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
+                                    <path d="M9.33366 9.00016H11.0003L11.667 6.3335H9.33366V5.00016C9.33366 4.3135 9.33366 3.66683 10.667 3.66683H11.667V1.42683C11.4497 1.39816 10.629 1.3335 9.76233 1.3335C7.95233 1.3335 6.66699 2.43816 6.66699 4.46683V6.3335H4.66699V9.00016H6.66699V14.6668H9.33366V9.00016Z" />
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+                
+                        <?php if ($twitter) : ?>
+                            <a href="<?php echo $twitter; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="Twitter">
+                                <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
+                                    <path d="M9.48942 6.77491L15.3177 0H13.9366L8.87589 5.88256L4.83392 0H0.171997L6.28424 8.89547L0.171997 16H1.55319L6.89742 9.78782L11.166 16H15.828L9.48908 6.77491H9.48942ZM7.59768 8.97384L6.97839 8.08805L2.05086 1.03974H4.17229L8.14887 6.72795L8.76816 7.61374L13.9372 15.0075H11.8158L7.59768 8.97418V8.97384Z" />
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+                
+                        <?php if ($linkedin) : ?>
+                            <a href="<?php echo $linkedin; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="LinkedIn">
+                                <svg class="group-hover:fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#979797">
+                                    <path d="M4.62764 3.33345C4.62739 3.87632 4.29804 4.36484 3.79488 4.56865C3.29172 4.77246 2.71523 4.65086 2.33725 4.2612C1.95927 3.87152 1.85528 3.2916 2.07432 2.79488C2.29336 2.29816 2.79168 1.98383 3.3343 2.00012C4.05502 2.02175 4.62796 2.61241 4.62764 3.33345ZM4.66764 5.65345H2.00097V14.0001H4.66764V5.65345ZM8.88098 5.65345H6.22764V14.0001H8.85432V9.6201C8.85432 7.1801 12.0343 6.95343 12.0343 9.6201V14.0001H14.6677V8.71343C14.6677 4.60012 9.96099 4.75345 8.85432 6.77343L8.88098 5.65345Z" />
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+                
+                        <?php if ($instagram) : ?>
                             <a href="<?php echo $instagram; ?>" class="icon-box group" rel="noopener noreferrer nofollow" target="_blank" aria-label="Instagram">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#000000]" width="24" height="24" viewBox="0 0 24 24" fill="#979797">
                                     <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5A4.25 4.25 0 0 1 16.25 20.5h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zm5.25-.75a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -88,9 +82,13 @@ $footer_content = get_option('content_data');
                                     <path d="M24 11.779a2.49 2.49 0 0 0-4.237-1.748c-1.017-.707-2.371-1.157-3.868-1.219l.818-3.856 2.701.573a1.765 1.765 0 1 0 .183-.868l-3.037-.646a.434.434 0 0 0-.512.326l-.957 4.518c-1.552.058-2.949.509-4.004 1.23a2.49 2.49 0 1 0-2.688 4.108c-.019.17-.029.343-.029.518 0 2.603 3.13 4.72 6.974 4.72s6.974-2.117 6.974-4.72c0-.173-.01-.344-.029-.513A2.49 2.49 0 0 0 24 11.779ZM8.733 12.444a1.126 1.126 0 1 1 0 2.252 1.126 1.126 0 0 1 0-2.252Zm6.583 3.894c-.792.79-2.299.854-3.319.854s-2.527-.064-3.319-.854a.434.434 0 1 1 .614-.614c.511.511 1.63.673 2.705.673s2.194-.162 2.705-.673a.434.434 0 1 1 .614.614ZM15.22 14.7a1.126 1.126 0 1 1 0-2.252 1.126 1.126 0 0 1 0 2.252Z"/>
                                 </svg>
                             </a>
-                        <?php endif; 
-                    endif; ?>
+                        <?php endif; ?>
+
+
+                
+                    <?php endif; ?>
                 </div>
+
             </div>
             <div class="footer-category-wrapper flex flex-col md:flex-row md:gap-[110px] justify-between w-full xl:w-[60%] mt-10 xl:mt-0">
                 <div class="footer-list-sec md:w-[40%] xl:w-[50%]">
