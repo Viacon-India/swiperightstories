@@ -12,7 +12,8 @@ $footer_content = get_option('content_data');
 
 
 </main>
-<section class="footer-sec bg-[#202020] mt-[80px] md:mt-[120px] lg:mt-[130px] xl:mt-[140px] 2xl:mt-[150px]">
+<!-- <section class="footer-sec bg-[#202020] mt-[80px] md:mt-[120px] lg:mt-[130px] xl:mt-[140px] 2xl:mt-[150px]"> -->
+<section class="footer-sec bg-[#202020] mt-[40px] md:mt-[60px] lg:mt-[70px] xl:mt-[80px] 2xl:mt-[90px]"> 
     <div class="container mx-auto">
         <div class="footer-main">
             <div class="footer-detail w-full xl:w-[30%]">

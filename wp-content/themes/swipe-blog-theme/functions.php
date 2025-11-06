@@ -45,48 +45,69 @@ add_action('save_post', 'save_custom_meta_box_data');
 
 ///////////////////
 // Add Custom Field in General Settings for Social Links
-function social() {  
-	add_settings_section(  
-		'social_links', // Section ID 
-		'Social Links', // Section Title
-		'social_callback', // Callback
-		'general' // What Page?  This makes the section show up on the General Settings Page
-	);
-		
-	add_settings_field( // Option 1
-		'facebook', // Option ID
-		'Facebook', // Label
-		'url_callback', // !important - This is where the args go!
-		'general', // Page it will be displayed (General Settings)
-		'social_links', // Name of our section
-		array( // The $args
-			'facebook' // Should match Option ID
-		)  
-	); 
-		
-	add_settings_field( // Option 2
-		'twitter', // Option ID
-		'Twitter', // Label
-		'url_callback', // !important - This is where the args go!
-		'general', // Page it will be displayed
-		'social_links', // Name of our section (General Settings)
-		array( // The $args
-			'twitter' // Should match Option ID
-		)  
-	); 
-
-	add_settings_field( // Option 3
-		'linkedin', // Option ID
-		'LinkedIn', // Label
-		'url_callback', // !important - This is where the args go!
-		'general', // Page it will be displayed
-		'social_links', // Name of our section (General Settings)
-		array( // The $args
-			'linkedin' // Should match Option ID
-		)
-	);
-
-		add_settings_field( // Reddit
+    function social() {  
+    	add_settings_section(  
+    		'social_links', // Section ID 
+    		'Social Links', // Section Title
+    		'social_callback', // Callback
+    		'general' // What Page? This makes the section show up on the General Settings Page
+    	);
+    		
+    	add_settings_field( // Facebook
+    		'facebook',
+    		'Facebook',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('facebook')
+    	); 
+    		
+    	add_settings_field( // Twitter
+    		'twitter',
+    		'Twitter',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('twitter')
+    	); 
+    
+    	add_settings_field( // LinkedIn
+    		'linkedin',
+    		'LinkedIn',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('linkedin')
+    	);
+    
+    	add_settings_field( // Instagram
+    		'instagram',
+    		'Instagram',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('instagram')
+    	);
+    	
+    	add_settings_field( // Youtube
+    		'youtube',
+    		'Youtube',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('youtube')
+    	);
+    	
+    		add_settings_field( // Pinterest
+    		'pinterest',
+    		'Pinterest',
+    		'url_callback',
+    		'general',
+    		'social_links',
+    		array('pinterest')
+    	);
+    	
+    		add_settings_field( // Reddit
     		'reddit',
     		'Reddit',
     		'url_callback',
@@ -94,23 +115,27 @@ function social() {
     		'social_links',
     		array('reddit')
     	);
+    		
+    	// Register settings
+    	register_setting('general', 'facebook', 'esc_attr');
+    	register_setting('general', 'twitter', 'esc_attr');
+    	register_setting('general', 'linkedin', 'esc_attr');
+    	register_setting('general', 'instagram', 'esc_attr');
+    	register_setting('general', 'youtube', 'esc_attr');
+    	register_setting('general', 'pinterest', 'esc_attr');
+    	register_setting('general', 'reddit', 'esc_attr');
+    }
+    add_action('admin_init', 'social'); //Enable Social Links Under Settings
+    
+    function social_callback() { // Section Callback
+    	echo '<p>Add Your Social Media Links Below</p>';  
+    }
     	
-		
-	register_setting('general','facebook', 'esc_attr');
-	register_setting('general','twitter', 'esc_attr');
-	register_setting('general','linkedin', 'esc_attr');
-    register_setting('general', 'reddit', 'esc_attr');
-}
-add_action('admin_init', 'social'); //Enable Social Links Under Settings
+    function url_callback($args) {  // Textbox Callback
+    	$option = get_option($args[0]);
+    	echo '<input type="url" id="'. esc_attr($args[0]) .'" name="'. esc_attr($args[0]) .'" value="' . esc_url($option) . '" class="regular-text ltr" />';
+    }
 
-function social_callback() { // Section Callback
-	echo '<p>Add Your Social Media Links Below</p>';  
-}
-	
-function url_callback($args) {  // Textbox Callback
-	$option = get_option($args[0]);
-	echo '<input type="url" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
-}
 
 
 
@@ -211,7 +236,6 @@ function save_extra_user_profile_fields( $user_id ) {
 
 /////
 
-// Remove any existing robots meta tags output by plugins
 function force_index_follow_meta() {
     // Remove any existing robots meta tags output by plugins
     ob_start(function($buffer) {
