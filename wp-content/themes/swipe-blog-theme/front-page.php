@@ -10,17 +10,6 @@ $recent_posts = get_posts(
     )
 );
 
-// $most_viewed_posts = get_posts(
-//     array(
-//         'post_type' => 'post',
-//         'post_status' => 'publish',
-//         'order'   => 'DESC',
-//         'posts_per_page' => 7,
-//         'meta_key' => 'post_views_count',
-//         'orderby' => 'meta_value_num',
-//     )
-// );
-
 $dating_diary_posts = get_posts( 
     array(
         'post_type'      => 'post',
@@ -28,10 +17,9 @@ $dating_diary_posts = get_posts(
         'order'          => 'DESC',
         'posts_per_page' => 7,
         'orderby'        => 'meta_value_num',
-        'category_name'  => 'dating-diary', // only posts from "dating-diary" category
+        'category_name'  => 'dating-diary',
     )
 );
-
 
 $category_slugs = ['dating-apps', 'modern-dating', 'dating-diary', 'find'];
 $category_one_query = new WP_Query(
@@ -43,7 +31,6 @@ $category_one_query = new WP_Query(
     )
 );
 
-
 $category_two_query = new WP_Query(
     array(
         'post_type' => 'post',
@@ -52,7 +39,6 @@ $category_two_query = new WP_Query(
         'posts_per_page' => 3,
     )
 );
-
 
 $category_three_query = new WP_Query(
     array(
@@ -63,7 +49,6 @@ $category_three_query = new WP_Query(
     )
 );
 
-
 $category_four_query = new WP_Query(
     array(
         'post_type' => 'post',
@@ -72,7 +57,6 @@ $category_four_query = new WP_Query(
         'posts_per_page' => 3,
     )
 );
-
 
 ?>
 <div class="page-wrapper pt-[64px]">
@@ -155,17 +139,11 @@ $category_four_query = new WP_Query(
         </div>
     </div>
 
-    <?php 
-    
-    
-    if($dating_diary_posts) : ?>
-
-    <div class="scroller-slider relative pb-[100px]">
+    <?php if($dating_diary_posts) : ?>
+    <div class="scroller-slider relative pb-[60px] md:pb-[80px]"> <!-- Reduced from pb-[100px] -->
         <div class="swiper mySwiper-one bg-[#FFFFFF] pl-10 h-[440px]">
             <div class="swiper-wrapper">
-
                 <?php foreach($dating_diary_posts as $post_by_viewed) { ?>                                    
-
                     <div class="swiper-slide">
                         <div class="scroller-card">
                             <a href="<?php echo get_the_permalink( $post_by_viewed->ID); ?>">
@@ -183,20 +161,16 @@ $category_four_query = new WP_Query(
                             </a>
                         </div>
                     </div>
-
                 <?php }
                 wp_reset_postdata(); ?>                
-                
             </div>
             <div class="swiper-scrollbar"></div>
         </div>
     </div>
-
     <?php endif; 
     
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>1) { ?>
-
-        <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
+        <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[30px] lg:mb-[60px]">
             <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
                 <a href="<?php echo get_permalink($recent_posts[1]->ID); ?>">
                     <figure>
@@ -218,42 +192,19 @@ $category_four_query = new WP_Query(
                     <p class="text-[#3F3F3F] text-[16px] leading-[1.5] font-Poppins">
                         <?php echo get_post_meta($recent_posts[1]->ID, 'post_sub_title', true); ?>
                     </p>
-
                     <div class="hidden" id="hiddencont1" data-link="<?php echo get_permalink($recent_posts[1]->ID); ?>">
                         <?php echo $recent_posts[1]->post_content; ?>
                     </div>
-                    
                     <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px] smallCard">
-                        
-                        
                     </div>
                 </div>
             </div>
         </div>
-        <?php 
-    } 
-    
-    if ($category_one_query->have_posts()) { ?>
-
-        <div class="default-card-sec mb-[40px] lg:mb-[100px]">
-            <div class="container mx-auto">
-                <h2 class="section-title">Dating Apps</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                    <?php while ($category_one_query->have_posts()){
-                        $category_one_query->the_post();
-                        get_template_part('template-parts/content', 'default-card');
-                    } ?>
-                </div>
-            </div>
-        </div>
-
-    <?php }
+    <?php } 
     
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>2) { ?>
-
-    <div class="hero-sec py-[44px] lg:py-[160px] bg-[#EB023D] mb-[40px] lg:mb-[100px]">
+    <div class="hero-sec py-[44px] lg:py-[160px] bg-[#EB023D] mb-[30px] lg:mb-[60px]"> 
         <div class="container mx-auto">
-            
             <?php if($recent_posts[2]) : ?>
                 <div class="hero-main">
                     <div class="hero-detail">
@@ -276,15 +227,12 @@ $category_four_query = new WP_Query(
                     </div>
                 </div>
             <?php endif; ?>
-
         </div>
     </div>
-
     <?php } 
     
     if ($category_two_query->have_posts()){ ?>
-
-    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
+    <div class="default-card-sec mb-[30px] lg:mb-[60px]">
         <div class="container mx-auto">
             <h2 class="section-title">Modern Dating</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
@@ -295,14 +243,11 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-
-    <?php 
-    }
-    
+    <?php }
     
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>3) {
         if($recent_posts[3]) : ?>
-        <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
+        <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[30px] lg:mb-[60px]">
             <div class="vertical-img-sec py-[60px] pr-[60px] bg-[#FFBB00] w-full lg:w-[50%]">
                 <a href="<?php echo get_the_permalink( $recent_posts[3]->ID ); ?>">
                     <figure>
@@ -328,7 +273,6 @@ $category_four_query = new WP_Query(
                         <?php echo $recent_posts[3]->post_content; ?>
                     </div>
                     <div class="flex flex-col md:flex-row gap-5 mt-8 lg:mt-[52px] smallCard">
-                        
                     </div>
                 </div>
             </div>
@@ -336,14 +280,13 @@ $category_four_query = new WP_Query(
         <?php endif; 
     }
     
-    
-    if ($category_three_query->have_posts()){ ?>
-        <div class="default-card-sec mb-[40px] lg:mb-[100px]">
+    if ($category_one_query->have_posts()){ ?>
+        <div class="default-card-sec mb-[30px] lg:mb-[60px]">
             <div class="container mx-auto">
-                <h2 class="section-title">Dating Diary</h2>
+                <h2 class="section-title">Dating Apps</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                    <?php  while ($category_three_query->have_posts()){
-                        $category_three_query->the_post();
+                    <?php  while ($category_one_query->have_posts()){
+                        $category_one_query->the_post();
                         get_template_part('template-parts/content', 'default-card');
                     } ?>
                 </div>
@@ -351,11 +294,8 @@ $category_four_query = new WP_Query(
         </div>
     <?php } 
     
-    
-    if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>4) {?>
-
-
-    <div class="hero-sec py-[44px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[160px] bg-[#FE4705] mb-[40px] lg:mb-[100px]">
+    if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>4) { ?>
+    <div class="hero-sec py-[44px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[160px] bg-[#FE4705] mb-[30px] lg:mb-[60px]"> 
         <div class="container mx-auto">
             <?php if($recent_posts[4]) : ?>
                 <div class="hero-main">
@@ -383,10 +323,8 @@ $category_four_query = new WP_Query(
     </div>
     <?php }
     
-    if ($category_four_query->have_posts()){?>
-
-
-    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
+    if ($category_four_query->have_posts()){ ?>
+    <div class="default-card-sec mb-[30px] lg:mb-[60px]">
         <div class="container mx-auto">
             <h2 class="section-title">Find</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
@@ -397,7 +335,6 @@ $category_four_query = new WP_Query(
             </div>
         </div>
     </div>
-
     <?php } ?>
 
 </div>
