@@ -12,7 +12,7 @@ $footer_content = get_option('content_data');
 
 
 </main>
-<!-- <section class="footer-sec bg-[#202020] mt-[80px] md:mt-[120px] lg:mt-[130px] xl:mt-[140px] 2xl:mt-[150px]"> -->
+<!--<section class="footer-sec bg-[#202020] mt-[80px] md:mt-[120px] lg:mt-[130px] xl:mt-[140px] 2xl:mt-[150px]"> -->
 <section class="footer-sec bg-[#202020] mt-[40px] md:mt-[60px] lg:mt-[70px] xl:mt-[80px] 2xl:mt-[90px]"> 
     <div class="container mx-auto">
         <div class="footer-main">
@@ -84,12 +84,35 @@ $footer_content = get_option('content_data');
                                 </svg>
                             </a>
                         <?php endif; ?>
-
-
-                
                     <?php endif; ?>
-                </div>
-
+                </div><br>
+                
+                
+                <!--google badge-->
+                 <a href="https://www.google.com/preferences/source?q=swiperightstories.com" target="_blank"   style="position: relative;  display: inline-block; "   onmouseover="this.querySelector('.tip').style.opacity='1';" onmouseout="this.querySelector('.tip').style.opacity='0';" >
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/swiperightstories.png" alt="Badge" class=""   style="width:300px; height:auto;"/>
+                        <!-- Tooltip element -->
+                        <span class="tip"
+                              style="
+                                  position: absolute;
+                                  bottom: 110%;
+                                  left: 50%;
+                                  transform: translateX(-50%);
+                                  background: #fff;
+                                  color: #000;
+                                  padding: 6px 10px;
+                                  border-radius: 6px;
+                                  font-size: 12px;
+                                  white-space: nowrap;
+                                  opacity: 0;
+                                  pointer-events: none;
+                                  transition: opacity .25s ease;
+                              ">
+                            Follow us on Google
+                        </span>
+                        </a>
+                
+                
             </div>
             <div class="footer-category-wrapper flex flex-col md:flex-row md:gap-[110px] justify-between w-full xl:w-[60%] mt-10 xl:mt-0">
                 <div class="footer-list-sec md:w-[40%] xl:w-[50%]">
@@ -130,8 +153,6 @@ $footer_content = get_option('content_data');
                 <div class="footer-subscribe-sec md:w-[60%] xl:w-[50%] mt-4 md:mt-0">
                     <h2 class="footer-list-title">Newsletter</h2>
                     <?php echo do_shortcode( '[email-subscribers-form id="1"]' ); ?>
-                    <!-- <input class="footer-subs-input" type="text" placeholder="Email Address">
-                    <button class="footer-subs-btn">Subscribe</button> -->
                 </div>
             </div>
         </div>
@@ -146,13 +167,7 @@ $footer_content = get_option('content_data');
             <p class="copyright">All Rights Reserved.</p>
         </div>
     </div>
-
 </section>
-
-<?php wp_footer(); ?>
-
-<!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
 <?php wp_footer(); ?>
 
@@ -162,7 +177,6 @@ $footer_content = get_option('content_data');
         spaceBetween: 20,
         scrollbar: {
             el: ".swiper-scrollbar",
-            // hide: true,
         },
         breakpoints: {
           0: {
@@ -184,19 +198,13 @@ $footer_content = get_option('content_data');
         },
     });
 
-
     // hamburger-menu
-    var newMenu = document.querySelector(".ham-dropdown");
-    var dropMenu = document.querySelector(".ham-content");
-
-
     $(document).ready(function() {
         $('.ham-dropdown').click(function() {
             $(".ham-dropdown").toggleClass("change-icon");
             $(".ham-content").toggleClass("change");
         })
     });
-
 
     // Navbar submenu
     var acc2 = document.getElementsByClassName("ham-accordion");
@@ -217,5 +225,4 @@ $footer_content = get_option('content_data');
 </script>
 
 </body>
-
 </html>
