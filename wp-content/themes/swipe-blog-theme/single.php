@@ -46,10 +46,12 @@
         ?>
 
 <style>
+    
 .wp-block-embed-instagram {
   max-width: 350px; /* adjust the size */
   width: 100%;
 }
+
 </style>
         <section class="single-page-banner">
             <div class=" container mx-auto">
@@ -85,11 +87,11 @@
                         </div>
                     </div>
 
-                    <div class="single-page-banner-image-sec">
+                    <div class="single-page-banner-image-sec container-fluid">
                         <div class="single-page-banner-img-card">
                             
                             <?php if (has_post_thumbnail()) : ?>
-                                     <?php /* echo get_the_post_thumbnail($post_id, 'single-thumbnail', array('class' => 'img-responsive w-full h-full object-cover')); */ ?>
+                            <?php /* echo get_the_post_thumbnail($post_id, 'single-thumbnail', array('class' => 'img-responsive w-full h-full object-cover')); */ ?>
                                 <?php  echo get_the_post_thumbnail($post_id, 'full', array('class' => 'img-responsive w-full h-auto object-contain'));  ?>
                             <?php else : ?>
                                 <figure class="export-img-card-wrapper">
@@ -125,6 +127,44 @@
                                     <li class="box-item-wrapper"><button class="box-item box-line">Leg Cross Tattoo For Women</button></li>
                                     <li class="box-item-wrapper"><button class="box-item box-line">Rib Cross Tattoo For Men</button></li> -->
                                 </ul>
+                            </div>
+                            
+                            
+                            <!--google badge-->
+                            
+                             <div class="add-post">
+                               <a href="https://www.google.com/preferences/source?q=swiperightstories.com"
+                                   target="_blank"
+                                   style="
+                                        position: relative;
+                                        display: inline-block;
+                                   "
+                                   onmouseover="this.querySelector('.tip').style.opacity='1';"
+                                   onmouseout="this.querySelector('.tip').style.opacity='0';"
+                                >
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/swiperightstories.png" alt="Badge">
+                        
+                                    <!-- Tooltip element -->
+                                    <span class="tip"
+                                          style="
+                                              position: absolute;
+                                              bottom: 110%;
+                                              left: 50%;
+                                              transform: translateX(-50%);
+                                              background: #000;
+                                              color: #fff;
+                                              padding: 6px 10px;
+                                              border-radius: 6px;
+                                              font-size: 12px;
+                                              white-space: nowrap;
+                                              opacity: 0;
+                                              pointer-events: none;
+                                              transition: opacity .25s ease;
+                                          ">
+                                        Follow us on Google
+                                    </span>
+                                </a>
+                               
                             </div>
                                                             
 
