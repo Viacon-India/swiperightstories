@@ -219,7 +219,8 @@ $category_four_query = new WP_Query(
                     <div class="hero-img-sec">
                         <figure class="w-full h-[254px] md:h-[517px]">
                             <?php if (has_post_thumbnail($recent_posts[2]->ID)) : ?>
-                                <?php echo get_the_post_thumbnail($recent_posts[2]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                                <?php /* echo get_the_post_thumbnail($recent_posts[2]->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); */ ?>
+                                <?php echo get_the_post_thumbnail($recent_posts[2]->ID, 'full', array('class' => 'w-full h-full object-cover')); ?>
                             <?php else : ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/card3.jpg" class="w-full h-full object-contain" alt="card" />     
                             <?php endif; ?>
