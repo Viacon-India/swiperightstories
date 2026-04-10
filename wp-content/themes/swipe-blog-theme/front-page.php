@@ -149,12 +149,13 @@ $category_four_query = new WP_Query(
                             <a href="<?php echo get_the_permalink( $post_by_viewed->ID); ?>">
                                 <figure>
                                     <?php if (has_post_thumbnail($post_by_viewed->ID)) : ?>
-                                        <?php echo get_the_post_thumbnail($post_by_viewed->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); ?>
+                                        <?php /* echo get_the_post_thumbnail($post_by_viewed->ID, 'related-thumbnail', array('class' => 'w-full h-full object-contain')); */ ?>
+                                        <?php echo get_the_post_thumbnail($post_by_viewed->ID, 'large', ['class' => 'w-full h-full object-cover']) ?>
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/card1.jpg" class="w-full h-full object-contain" alt="card" />     
                                     <?php endif; ?>
                                     
-                                    <div class="scroller-overlay">
+                                    <div class="scroller-overlay" style="text-transform: uppercase;">
                                         <p><?php echo get_the_title($post_by_viewed->ID); ?></p>
                                     </div>
                                 </figure>
