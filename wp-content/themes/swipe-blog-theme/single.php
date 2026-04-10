@@ -45,15 +45,27 @@
 
         ?>
 
-<style>
-    
-.wp-block-embed-instagram {
-  max-width: 350px; /* adjust the size */
-  width: 100%;
-}
-
-</style>
-        <section class="single-page-banner">
+            <style>
+                    
+                .wp-block-embed-instagram {
+                  max-width: 350px; /* adjust the size */
+                  width: 100%;
+                }
+                
+                  
+                .w-full {
+                    width: 100%;
+                }
+                
+                /* Desktop view */
+                @media (min-width: 768px) {
+                    .w-full {
+                        width: 90%;
+                    }
+                }
+                
+             </style>
+        <section class="single-page-banner" style="height: 620px;">
             <div class=" container mx-auto">
                 <div class="single-page-banner-inner">
 
