@@ -10,7 +10,8 @@ $cat_Name = $cat[0]->cat_name;
     <a href="<?php echo esc_url(get_the_permalink($post_ID)); ?>">
         <?php if (has_post_thumbnail()) : ?>
             <figure>
-                <?php echo get_the_post_thumbnail($post_ID, 'related-thumbnail'); ?>
+                 <?php /* echo get_the_post_thumbnail($post_ID, 'related-thumbnail'); */?>
+                 <?php echo get_the_post_thumbnail($post_ID, 'full', ['class' => 'img-fluid']); ?>
             </figure>
         <?php else : ?>
             <figure>
