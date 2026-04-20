@@ -80,7 +80,8 @@ function register_my_menus()
 
 if(!function_exists('logo_url')) {
 	function logo_url() {
-		$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
+// 		$logo_url = get_stylesheet_directory_uri() . '/images/logo.png';
+		$logo_url = get_stylesheet_directory_uri() . '/images/new_srs_logo.png';
 		if (has_custom_logo()) {
 			$custom_logo_id = get_theme_mod('custom_logo');
 			$custom_logo_data = wp_get_attachment_image_src($custom_logo_id, 'full');
@@ -94,7 +95,8 @@ if(!function_exists('logo_url')) {
 
 if(!function_exists('footer_logo_url')) {
 	function footer_logo_url() {
-		$footer_logo_url = get_stylesheet_directory_uri() . '/images/logo2.png';
+// 		$footer_logo_url = get_stylesheet_directory_uri() . '/images/logo2.png';
+		$footer_logo_url = get_stylesheet_directory_uri() . '/images/new_srs_footer.png';
 		return '<img class="w-full h-full object-contain" src="'.esc_url($footer_logo_url).'" alt="logo"/>';
 	}
 }
