@@ -464,25 +464,25 @@ $category_four_query = new WP_Query(
     <?php } */ ?>
     
     
-     <!-- Social Media Section -->
-    <div class="bg-white py-5 w-100 overflow-hidden">
+    <!-- Social Media Section -->
+    <div class="bg-white py-2 w-100 overflow-hidden">
         <section class="social-section d-flex flex-column align-items-center justify-content-center text-center">
             <h2 class="section-title">SOCIAL MEDIA</h2>
             
             <div class="social-fan-wrapper position-relative mx-auto mt-5 mb-5">
                 <!-- Card 0 -->
                 <div class="social-card">
-                    <img src="https://images.unsplash.com/photo-1518104593124-ac2e82a5eb9d?w=600&h=800&fit=crop" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 1 -->
                 <div class="social-card">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=800&fit=crop" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 2 (Center) -->
                 <div class="social-card social-card-content">
-                    <img src="https://images.unsplash.com/photo-1518104593124-ac2e82a5eb9d?w=600&h=800&fit=crop" class="social-img" alt="John and Emily">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" class="social-img" alt="John and Emily">
                     <div class="social-content d-flex flex-column justify-content-end p-4 text-center">
                         <h3 class="social-card-title m-0">John Krasinski</h3>
                         <div class="my-2">
@@ -508,18 +508,28 @@ $category_four_query = new WP_Query(
                 </div>
                 <!-- Card 3 -->
                 <div class="social-card">
-                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=800&fit=crop" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/4.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 4 -->
                 <div class="social-card">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=800&fit=crop" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/5.jpg" class="social-img" alt="Social Post">
+                    <div class="social-overlay"></div>
+                </div>
+                <!-- Card 5 -->
+                <div class="social-card">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/6.jpg" class="social-img" alt="Social Post">
+                    <div class="social-overlay"></div>
+                </div>
+                <!-- Card 6 -->
+                <div class="social-card">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/7.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
             </div>
 
             <!--<a href="#" class="btn social-follow-btn mt-5 mb-3 px-4 py-2">FOLLOW US &#9654;</a>-->
-            <a href="#" class="btn social-follow-btn mt-5 mb-3 px-4 py-2">FOLLOW US</a>
+            <a href="https://www.instagram.com/swiperightstoriesofficial/" class="btn social-follow-btn mt-5 mb-3 px-4 py-2" target="_blank">FOLLOW US</a>
         </section>
     </div>
       <!-- Social Media Section -->
