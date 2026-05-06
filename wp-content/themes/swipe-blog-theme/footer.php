@@ -25,6 +25,17 @@ $footer_content = get_option('content_data');
                 </a>
                 
                 <p class="footer-desc"><?php echo $footer_content; ?></p>
+
+                 <p style="margin-bottom:1;" class="footer-desc">
+                    To Reach Out To The <strong>Swipe Right Stories</strong> Team at 
+                    <a href="mailto:info@redhatmedia.net"
+                             style="color:#fff; text-decoration:none;"
+                             onmouseover="this.style.color='#6a5acd'; this.style.textDecoration='underline';"
+                             onmouseout="this.style.color='#fff'; this.style.textDecoration='none';">
+                              info@redhatmedia.net
+                    </a>
+                </p>
+                
                <div class="icon-sec">
                     <?php if ($facebook || $twitter || $linkedin || $instagram || $youtube || $pinterest || $reddit) : ?>
                 
