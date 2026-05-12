@@ -248,12 +248,15 @@ $category_four_query = new WP_Query(
                     </div>
                 </form>
                 
+                   
+                <?php /* echo do_shortcode('[contact-form-7 id="9243815" title="Home Page Subscribe Form"]'); */ ?>
+                
             </div>
         </section>
     </div>
     <!-- Newsletter Wrapper section-->
     
-    <?php
+    <?php /*
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>1) { ?>
 
         <div class="collection-sec flex flex-col lg:flex-row border-y border-[#000000] mb-[40px] lg:mb-[100px]">
@@ -291,9 +294,10 @@ $category_four_query = new WP_Query(
             </div>
         </div>
         <?php 
-    } 
+    } */
     
-    if ($category_one_query->have_posts()) { /*?>
+    /*
+    if ($category_one_query->have_posts()) { ?>
 
         <div class="default-card-sec mb-[40px] lg:mb-[100px]">
             <div class="container mx-auto">
@@ -307,8 +311,31 @@ $category_four_query = new WP_Query(
             </div>
         </div>
 
-    <?php */ }
+    <?php  } */
     
+    ?>
+    
+       <?php
+    
+    if ($category_two_query->have_posts()){ ?>
+
+    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
+        <div class="container mx-auto">
+            <h2 class="section-title">Modern Dating</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+                <?php while ($category_two_query->have_posts()){
+                    $category_two_query->the_post();
+                    get_template_part('template-parts/content', 'default-card');
+                } ?>
+            </div>
+        </div>
+    </div>
+
+    <?php 
+    }
+    ?>
+    
+    <?php
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>2) { ?>
 
     <div class="hero-sec py-[44px] lg:py-[160px] bg-[#EB023D] mb-[40px] lg:mb-[100px]">
@@ -340,25 +367,12 @@ $category_four_query = new WP_Query(
         </div>
     </div>
 
-    <?php } 
+    <?php }    ?>
     
-    if ($category_two_query->have_posts()){ ?>
-
-    <div class="default-card-sec mb-[40px] lg:mb-[100px]">
-        <div class="container mx-auto">
-            <h2 class="section-title">Modern Dating</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <?php while ($category_two_query->have_posts()){
-                    $category_two_query->the_post();
-                    get_template_part('template-parts/content', 'default-card');
-                } ?>
-            </div>
-        </div>
-    </div>
-
-    <?php 
-    }
+ 
     
+    <?php
+    /*
     
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>3) {
         if($recent_posts[3]) : ?>
@@ -395,7 +409,7 @@ $category_four_query = new WP_Query(
         </div>
         <?php endif; 
     }
-    
+    */
     /*
     if ($category_one_query->have_posts()){ ?>
         <div class="default-card-sec mb-[40px] lg:mb-[100px]">
@@ -413,7 +427,7 @@ $category_four_query = new WP_Query(
         
     } 
     */
-    
+    /*
     if(!empty($recent_posts) && is_array($recent_posts) && count($recent_posts)>4) {?>
 
 
@@ -443,7 +457,7 @@ $category_four_query = new WP_Query(
             <?php endif; ?>
         </div>
     </div>
-    <?php }
+    <?php } */
     
     /*
     if ($category_four_query->have_posts()){?>
@@ -464,7 +478,7 @@ $category_four_query = new WP_Query(
     <?php } */ ?>
     
     
-    <!-- Social Media Section -->
+     <!-- Social Media Section -->
     <div class="bg-white py-2 w-100 overflow-hidden">
         <section class="social-section d-flex flex-column align-items-center justify-content-center text-center">
             <h2 class="section-title">SOCIAL MEDIA</h2>
@@ -472,60 +486,60 @@ $category_four_query = new WP_Query(
             <div class="social-fan-wrapper position-relative mx-auto mt-5 mb-5">
                 <!-- Card 0 -->
                 <div class="social-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Group 2098.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 1 -->
                 <div class="social-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Group 2099.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 2 (Center) -->
-                <div class="social-card social-card-content">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" class="social-img" alt="John and Emily">
-                    <div class="social-content d-flex flex-column justify-content-end p-4 text-center">
-                        <h3 class="social-card-title m-0">John Krasinski</h3>
-                        <div class="my-2">
-                            <span class="dated-badge">DATED</span>
-                        </div>
-                        <h3 class="social-card-title m-0" style="color: #bcbcbc;">Emily Blunt</h3>
+                <!--<div class="social-card social-card-content">-->
+                <!--    <img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" class="social-img" alt="John and Emily">-->
+                <!--    <div class="social-content d-flex flex-column justify-content-end p-4 text-center">-->
+                <!--        <h3 class="social-card-title m-0">John Krasinski</h3>-->
+                <!--        <div class="my-2">-->
+                <!--            <span class="dated-badge">DATED</span>-->
+                <!--        </div>-->
+                <!--        <h3 class="social-card-title m-0" style="color: #bcbcbc;">Emily Blunt</h3>-->
                         <!-- Card Footer -->
-                        <div class="social-card-footer mt-4 d-flex justify-content-between align-items-center w-100">
-                            <div class="d-flex align-items-center text-start">
-                                <div class="brand-logo-circle d-flex align-items-center justify-content-center me-2">
-                                    <span class="brand-r text-danger fw-bold lh-1">R</span>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0 text-white fw-bold lh-1" style="font-size: 0.8rem; letter-spacing: 0.5px;">swiperightstoriesofficial</h6>
-                                    <small class="text-white-50" style="font-size: 0.65rem;">Swipe Right Stories</small>
-                                </div>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-white bi bi-instagram" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.487.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+                <!--        <div class="social-card-footer mt-4 d-flex justify-content-between align-items-center w-100">-->
+                <!--            <div class="d-flex align-items-center text-start">-->
+                <!--                <div class="brand-logo-circle d-flex align-items-center justify-content-center me-2">-->
+                <!--                    <span class="brand-r text-danger fw-bold lh-1">R</span>-->
+                <!--                </div>-->
+                <!--                <div>-->
+                <!--                    <h6 class="mb-0 text-white fw-bold lh-1" style="font-size: 0.8rem; letter-spacing: 0.5px;">swiperightstoriesofficial</h6>-->
+                <!--                    <small class="text-white-50" style="font-size: 0.65rem;">Swipe Right Stories</small>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-white bi bi-instagram" viewBox="0 0 16 16">-->
+                <!--                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.487.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>-->
+                <!--            </svg>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
                 <!-- Card 3 -->
                 <div class="social-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/4.jpg" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Group 2097.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 4 -->
                 <div class="social-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/5.jpg" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Group 2096.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 5 -->
                 <div class="social-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/6.jpg" class="social-img" alt="Social Post">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Group 2095.jpg" class="social-img" alt="Social Post">
                     <div class="social-overlay"></div>
                 </div>
                 <!-- Card 6 -->
-                <div class="social-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/7.jpg" class="social-img" alt="Social Post">
-                    <div class="social-overlay"></div>
-                </div>
+                <!--<div class="social-card">-->
+                <!--    <img src="<?php echo get_template_directory_uri(); ?>/images/Group 2098.jpg" class="social-img" alt="Social Post">-->
+                <!--    <div class="social-overlay"></div>-->
+                <!--</div>-->
             </div>
 
             <!--<a href="#" class="btn social-follow-btn mt-5 mb-3 px-4 py-2">FOLLOW US &#9654;</a>-->

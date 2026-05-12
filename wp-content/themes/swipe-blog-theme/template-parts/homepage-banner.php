@@ -40,10 +40,18 @@
   max-width: 600px;
 }
 
-.stat-number {
-  font-family: var(--font-heading);
+/*.stat-number {*/
+/*  font-family: var(--font-heading);*/
+/*  color: var(--primary-orange);*/
+/*  font-size: 2.8rem;*/
+/*  letter-spacing: 0.5px;*/
+/*  color:#FE4705;*/
+/*}*/
+
+.stat {
+  /*font-family: var(--font-heading);*/
   color: var(--primary-orange);
-  font-size: 2.8rem;
+  font-size: 8px;
   letter-spacing: 0.5px;
   color:#FE4705;
 }
@@ -320,7 +328,7 @@ nav.navbar {
   background-color: #ffb800;
   padding: 80px 20px;
   min-height: 350px;
-  border-top: 2px solid #000000;
+  border-top: 1px solid #000000;
   border-bottom: 2px solid #000000;
 }
 
@@ -684,6 +692,7 @@ nav.navbar {
 
 
 
+
 /*////////////////*/
 
 .animating-clone {
@@ -712,16 +721,19 @@ nav.navbar {
                     
                     <div class="row stats-row g-3">
                         <div class="col-4 stat-col">
-                            <h2 class="stat-number mb-1" data-target="500" data-suffix="+">0</h2>
-                            <p class="stat-label mb-0">Comparison Lists</p>
+                            <!--<h2 class="stat-number mb-1" data-target="500" data-suffix="+">0</h2>-->
+                            <h2 class="heroSecTitle stat" data-target="500" data-suffix="+" style="font-size:60pxpx !important;">0</h2>
+                            <p class="stat-label mb-0" style="font-size:15px">Comparison Lists</p>
                         </div>
                         <div class="col-4 stat-col">
-                           <h2 class="stat-number mb-1" data-target="5000" data-suffix="+">0</h2>
-                            <p class="stat-label mb-0">Hours of Research</p>
+                           <!--<h2 class="stat-number mb-1" data-target="5000" data-suffix="+">0</h2>-->
+                           <h2 class="heroSecTitle stat" data-target="5000" data-suffix="+" style="font-size:60pxpx !important;">0</h2>
+                            <p class="stat-label mb-0" style="font-size:15px">Hours of Research</p>
                         </div>
                         <div class="col-4 stat-col border-0">
-                           <h2 class="stat-number mb-1" data-target="500" data-suffix="+">0</h2>
-                            <p class="stat-label mb-0">Happy Subscriber's</p>
+                           <!--<h2 class="stat-number mb-1" data-target="500" data-suffix="+">0</h2>-->
+                           <h2 class="heroSecTitle stat" data-target="500" data-suffix="+" style="font-size:60pxpx !important;">0</h2>
+                            <p class="stat-label mb-0" style="font-size:15px">Happy Subscriber's</p>
                         </div>
                     </div>
                 </div>
@@ -1081,7 +1093,8 @@ function animateCounter(el) {
 const row = document.querySelector('.stats-row');
 const observer = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
-    row.querySelectorAll('.stat-number').forEach(animateCounter);
+    // row.querySelectorAll('.stat-number').forEach(animateCounter);
+    row.querySelectorAll('.stat').forEach(animateCounter);
     observer.disconnect(); // only fires once
   }
 }, { threshold: 0.3 });
