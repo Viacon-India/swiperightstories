@@ -162,7 +162,7 @@ $footer_content = get_option('content_data');
                         </ul>
                     </div>
                 </div>
-                <div class="footer-subscribe-sec md:w-[60%] xl:w-[50%] mt-4 md:mt-0">
+                <div class="footer-subscribe-sec md:w-[60%] xl:w-[50%] mt-0 md:mt-0">
                     <h2 class="footer-list-title">Newsletter</h2>
                     <?php echo do_shortcode( '[email-subscribers-form id="1"]' ); ?>
                 </div>
