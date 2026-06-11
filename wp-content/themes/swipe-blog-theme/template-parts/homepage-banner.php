@@ -732,7 +732,7 @@ nav.navbar {
                         </div>
                         <div class="col-4 stat-col border-0">
                            <!--<h2 class="stat-number mb-1" data-target="500" data-suffix="+">0</h2>-->
-                           <h2 class="heroSecTitle stat" data-target="500" data-suffix="+" style="font-size:60pxpx !important;">0</h2>
+                           <h2 class="heroSecTitle stat" data-target="1400" data-suffix="+" style="font-size:60pxpx !important;">0</h2>
                             <p class="stat-label mb-0" style="font-size:15px">Happy Subscriber's</p>
                         </div>
                     </div>
